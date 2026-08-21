@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicações | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Publicações de Kelvin Saldanha Mateus — Registros, estudos e participações em eventos nas áreas de tecnologia, engenharia e saúde.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Publicações | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Publicações de Kelvin Saldanha Mateus — Registros, estudos e participações em eventos nas áreas de tecnologia, engenharia e saúde.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/publicacoes.html">
+    <meta property="og:image" content="images/posts/expo-hospital-2026.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="publicacoes-titulo">
+            <div class="container">
+                <p class="hero__overline">Publicações</p>
+                <h1 class="hero__title" id="publicacoes-titulo" style="font-size: clamp(2rem, 5vw, 3rem);">Publicações</h1>
+                <p class="hero__subtitle">Registros, estudos e participações em eventos.</p>
+            </div>
+        </section>
+
+        <!-- LISTA DE PUBLICAÇÕES -->
+        <section class="section" id="lista-publicacoes" aria-labelledby="lista-publicacoes-titulo">
+            <div class="container">
+                <div class="publicacoes-grid" id="publicacoes-grid">
+                    <!-- POST 01 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/expo-hospital-2026.jpg" alt="Participação na Expo Hospital 2026" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Evento</span>
+                                <time datetime="2026-08-12">12 ago. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Expo Hospital 2026</h3>
+                            <p class="post-card__summary">Experiência na Expo Hospital 2026, com contato direto com tecnologias e equipamentos da área da saúde.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 02 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/esterilizador-plasma.jpg" alt="Esterilizador por Plasma" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2026-07-25">25 jul. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Esterilizador por Plasma</h3>
+                            <p class="post-card__summary">Estudo sobre tecnologias de esterilização e sua aplicação em equipamentos hospitalares.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 03 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/eye-tracker.jpg" alt="Projeto Eye Tracker CK²" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Projeto</span>
+                                <time datetime="2026-07-20">20 jul. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Eye Tracker CK² — Atualização</h3>
+                            <p class="post-card__summary">Registro do desenvolvimento do sistema de controle por movimentos oculares e gestos faciais.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 04 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/sistemas-embarcados.jpg" alt="Projeto Sistemas Embarcados" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Projeto</span>
+                                <time datetime="2026-06-15">15 jun. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Projetos de Sistemas Embarcados</h3>
+                            <p class="post-card__summary">Anotações sobre microcontroladores, sensores e integração hardware/software.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 05 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/instrumentacao.jpg" alt="Instrumentação Biomédica" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2026-05-10">10 mai. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Instrumentação Biomédica</h3>
+                            <p class="post-card__summary">Conceitos fundamentais de sensores, transdutores e condicionamento de sinais.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 06 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/tecnologia-saude.jpg" alt="Tecnologia Aplicada à Saúde" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2026-04-05">05 abr. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Tecnologia Aplicada à Saúde</h3>
+                            <p class="post-card__summary">Exploração de como a engenharia pode resolver problemas na área da saúde.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 07 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/oximetro.jpg" alt="Desenvolvimento do Oxímetro" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Projeto</span>
+                                <time datetime="2026-03-20">20 mar. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Desenvolvimento do Oxímetro</h3>
+                            <p class="post-card__summary">Registro do progresso no projeto de oximetria com foco em sensores e eletrônica.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 08 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/visao-computacional.jpg" alt="Visão Computacional" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2026-02-14">14 fev. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Visão Computacional</h3>
+                            <p class="post-card__summary">Notas sobre processamento de imagens e aplicações em interfaces.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 09 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/projetos-academicos.jpg" alt="Projetos Acadêmicos" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Acadêmico</span>
+                                <time datetime="2026-01-10">10 jan. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Projetos Acadêmicos</h3>
+                            <p class="post-card__summary">Resumo dos projetos desenvolvidos durante a formação técnica.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 10 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img src="images/posts/ia-saude.jpg" alt="Inteligência Artificial na Saúde" class="post-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2025-12-01">01 dez. 2025</time>
+                            </div>
+                            <h3 class="post-card__title">Inteligência Artificial na Saúde</h3>
+                            <p class="post-card__summary">Exploração de algoritmos de machine learning para auxílio em diagnóstico e monitoramento.</p>
+                            <a href="#" class="post-card__link">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!--
+                        ==================================================
+                        COMO ADICIONAR UMA NOVA PUBLICAÇÃO:
+
+                        1. Coloque a imagem na pasta images/posts/
+                           (ex: images/posts/minha-publicacao.jpg)
+
+                        2. Copie um bloco <article class="post-card">...</article> acima.
+
+                        3. Cole logo abaixo do último card, antes deste comentário.
+
+                        4. Altere:
+                           - src="images/posts/sua-imagem.jpg"
+                           - alt="Descrição da imagem"
+                           - Categoria
+                           - Data (datetime e texto)
+                           - Título
+                           - Resumo
+                           - Link
+
+                        5. Salve o arquivo.
+                        ==================================================
+                    -->
+                </div>
+
+                <!-- Controle "Ver mais" -->
+                <div class="publicacoes__actions">
+                    <button class="btn btn--primary" id="btn-ver-mais" aria-controls="publicacoes-grid">Ver mais</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
+                <a href="#" class="footer__link" id="linkedin-link">LinkedIn</a>
+                <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="footer__link" id="email-link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

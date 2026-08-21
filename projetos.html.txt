@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Projetos de Kelvin Saldanha Mateus — Eye Tracker CK², Oxímetro, Sistemas Embarcados e outros projetos que conectam tecnologia, engenharia e saúde.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projetos | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Projetos de Kelvin Saldanha Mateus — Eye Tracker CK², Oxímetro, Sistemas Embarcados e outros projetos que conectam tecnologia, engenharia e saúde.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/projetos.html">
+    <meta property="og:image" content="images/projects/eye-tracker.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <p class="hero__overline">Projetos</p>
+                <h1 class="hero__title" id="projetos-titulo" style="font-size: clamp(2rem, 5vw, 3rem);">Projetos</h1>
+                <p class="hero__subtitle">Projetos que conectam tecnologia, engenharia, software, hardware e saúde.</p>
+            </div>
+        </section>
+
+        <!-- LISTA DE PROJETOS -->
+        <section class="section" id="lista-projetos" aria-labelledby="lista-projetos-titulo">
+            <div class="container">
+                <div class="projetos-grid">
+                    <!-- PROJETO 01 - EYE TRACKER CK² -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img src="images/projects/eye-tracker.jpg" alt="Projeto Eye Tracker CK²" class="projeto-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="projeto-card__content">
+                            <span class="projeto-card__number">01</span>
+                            <span class="projeto-card__category">Visão Computacional</span>
+                            <h3 class="projeto-card__title">Eye Tracker CK²</h3>
+                            <p class="projeto-card__description">
+                                Sistema de controle do computador por movimentos oculares e gestos faciais, desenvolvido com visão computacional, inteligência artificial e automação.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>Python</li>
+                                <li>OpenCV</li>
+                                <li>MediaPipe</li>
+                                <li>IA</li>
+                                <li>PyAutoGUI</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em desenvolvimento</span>
+                                <a href="https://github.com/Kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer" class="projeto-card__link">Ver no GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 02 - OXÍMETRO -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img src="images/projects/oximetro.jpg" alt="Projeto Oxímetro" class="projeto-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="projeto-card__content">
+                            <span class="projeto-card__number">02</span>
+                            <span class="projeto-card__category">Instrumentação Biomédica</span>
+                            <h3 class="projeto-card__title">Oxímetro</h3>
+                            <p class="projeto-card__description">
+                                Projeto de desenvolvimento de um sistema de oximetria envolvendo instrumentação biomédica, sensores, eletrônica e sistemas embarcados.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>Instrumentação</li>
+                                <li>Sensores</li>
+                                <li>Eletrônica</li>
+                                <li>Embarcados</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em desenvolvimento</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 03 - SISTEMAS EMBARCADOS -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img src="images/projects/sistemas-embarcados.jpg" alt="Projeto Sistemas Embarcados" class="projeto-card__image" loading="lazy" decoding="async">
+                        </div>
+                        <div class="projeto-card__content">
+                            <span class="projeto-card__number">03</span>
+                            <span class="projeto-card__category">Sistemas Embarcados</span>
+                            <h3 class="projeto-card__title">Sistemas Embarcados</h3>
+                            <p class="projeto-card__description">
+                                Projetos envolvendo microcontroladores, sensores, aquisição de sinais, controle e integração entre hardware e software.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>PIC</li>
+                                <li>ESP32</li>
+                                <li>Sensores</li>
+                                <li>Microcontroladores</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em andamento</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--
+                        ==================================================
+                        COMO ADICIONAR UM NOVO PROJETO:
+
+                        1. Coloque a imagem na pasta images/projects/
+                           (ex: images/projects/meu-projeto.jpg)
+
+                        2. Copie um bloco <article class="projeto-card">...</article> acima.
+
+                        3. Cole logo abaixo do último projeto, antes deste comentário.
+
+                        4. Altere:
+                           - src="images/projects/sua-imagem.jpg"
+                           - alt="Descrição da imagem"
+                           - Número (01, 02, 03...)
+                           - Categoria
+                           - Título
+                           - Descrição
+                           - Tecnologias (<li>)
+                           - Status
+                           - Link GitHub (se houver)
+
+                        5. Salve o arquivo.
+                        ==================================================
+                    -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
+                <a href="#" class="footer__link" id="linkedin-link">LinkedIn</a>
+                <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="footer__link" id="email-link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

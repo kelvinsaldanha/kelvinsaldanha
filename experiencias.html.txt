@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiências | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Experiências de Kelvin Saldanha Mateus — Formação prática em Equipamentos Biomédicos, participação em eventos e desenvolvimento de projetos.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Experiências | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Experiências de Kelvin Saldanha Mateus — Formação prática em Equipamentos Biomédicos, participação em eventos e desenvolvimento de projetos.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/experiencias.html">
+    <meta property="og:image" content="images/profile/kelvin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="experiencias-titulo">
+            <div class="container">
+                <p class="hero__overline">Experiências</p>
+                <h1 class="hero__title" id="experiencias-titulo" style="font-size: clamp(2rem, 5vw, 3rem);">Experiências</h1>
+                <p class="hero__subtitle">Formação prática e desenvolvimento de projetos.</p>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="section" id="timeline-experiencias" aria-labelledby="timeline-titulo">
+            <div class="container">
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Formação prática em Equipamentos Biomédicos</h3>
+                            <p>Contato com equipamentos e atividades práticas relacionadas à formação técnica.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Expo Hospital 2026</h3>
+                            <p>Participação no evento e contato com tecnologias e equipamentos da área da saúde.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Desenvolvimento de Projetos</h3>
+                            <p>Projetos envolvendo visão computacional, sistemas embarcados e tecnologia aplicada.</p>
+                        </div>
+                    </div>
+
+                    <!--
+                        ==================================================
+                        COMO ADICIONAR UMA NOVA EXPERIÊNCIA:
+
+                        1. Copie um bloco <div class="timeline__item">...</div> acima.
+                        2. Cole logo abaixo do último item, antes deste comentário.
+                        3. Altere o título e a descrição.
+                        4. Salve o arquivo.
+                        ==================================================
+                    -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
+                <a href="#" class="footer__link" id="linkedin-link">LinkedIn</a>
+                <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="footer__link" id="email-link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

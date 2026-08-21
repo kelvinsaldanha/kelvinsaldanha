@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Sobre Kelvin Saldanha Mateus — Estudante de Equipamentos Biomédicos no CEFET-MG, com foco em tecnologia, engenharia e saúde.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sobre | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Sobre Kelvin Saldanha Mateus — Estudante de Equipamentos Biomédicos no CEFET-MG, com foco em tecnologia, engenharia e saúde.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/sobre.html">
+    <meta property="og:image" content="images/profile/kelvin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <p class="hero__overline">Sobre</p>
+                <h1 class="hero__title" id="sobre-titulo" style="font-size: clamp(2rem, 5vw, 3rem);">Kelvin Saldanha Mateus</h1>
+                <p class="hero__subtitle">Equipamentos Biomédicos · Tecnologia · Sistemas Embarcados · IA</p>
+            </div>
+        </section>
+
+        <!-- SOBRE KELVIN -->
+        <section class="section" id="sobre-conteudo" aria-labelledby="sobre-conteudo-titulo">
+            <div class="container">
+                <div class="sobre-content">
+                    <h2 id="sobre-conteudo-titulo">Tecnologia aplicada a problemas reais.</h2>
+                    <p>
+                        Sou estudante de Equipamentos Biomédicos no CEFET-MG, com forte interesse por tecnologia, engenharia e saúde. Meu foco está em desenvolver soluções que unem software, hardware e inteligência artificial para melhorar processos e equipamentos da área da saúde.
+                    </p>
+                    <p>
+                        Atualmente, desenvolvo projetos envolvendo visão computacional, sistemas embarcados e automação, sempre com o objetivo de aplicar conhecimento teórico em problemas práticos.
+                    </p>
+                    <p>
+                        Busco constantemente aprender novas tecnologias e integrar conhecimentos de eletrônica, programação e instrumentação biomédica para criar ferramentas úteis e acessíveis.
+                    </p>
+
+                    <h2 style="margin-top: 2rem;">Interesses</h2>
+                    <div class="competencias-grid">
+                        <div class="competencia-item">
+                            <h3>Tecnologia Biomédica</h3>
+                            <p>Equipamentos, instrumentação e sistemas aplicados à saúde.</p>
+                        </div>
+                        <div class="competencia-item">
+                            <h3>Sistemas Embarcados</h3>
+                            <p>Microcontroladores, sensores e integração hardware/software.</p>
+                        </div>
+                        <div class="competencia-item">
+                            <h3>Programação</h3>
+                            <p>Desenvolvimento de soluções utilizando programação e automação.</p>
+                        </div>
+                        <div class="competencia-item">
+                            <h3>Visão Computacional</h3>
+                            <p>Processamento de imagens e interfaces baseadas em visão.</p>
+                        </div>
+                        <div class="competencia-item">
+                            <h3>Inteligência Artificial</h3>
+                            <p>Aplicação de IA em projetos tecnológicos.</p>
+                        </div>
+                        <div class="competencia-item">
+                            <h3>Eletrônica</h3>
+                            <p>Circuitos e componentes para dispositivos biomédicos.</p>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 2rem;">Princípios de trabalho e aprendizado</h2>
+                    <p>
+                        Acredito em aprendizado contínuo, documentação clara e desenvolvimento iterativo. Meus projetos são construídos com foco em resolução de problemas, integração de conhecimentos e aplicação prática.
+                    </p>
+                    <p>
+                        Valorizo a curiosidade técnica e a busca por soluções acessíveis, especialmente na interseção entre engenharia, tecnologia e saúde.
+                    </p>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="projetos.html" class="btn btn--primary">Conheça meus projetos</a>
+                        <a href="contato.html" class="btn btn--secondary" style="margin-left: 0.5rem;">Entre em contato</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
+                <a href="#" class="footer__link" id="linkedin-link">LinkedIn</a>
+                <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="footer__link" id="email-link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
