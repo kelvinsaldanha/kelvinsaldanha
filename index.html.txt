@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Saldanha Mateus | Equipamentos Biomédicos, Tecnologia e IA</title>
+    <meta name="description" content="Portfólio de Kelvin Saldanha Mateus — Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos na interseção entre tecnologia, engenharia e saúde.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kelvin Saldanha Mateus | Equipamentos Biomédicos, Tecnologia e IA">
+    <meta property="og:description" content="Portfólio pessoal de Kelvin Saldanha Mateus — Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos na interseção entre tecnologia, engenharia e saúde.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/">
+    <meta property="og:image" content="images/profile/kelvin.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip link para acessibilidade -->
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Header -->
+    <header class="header" id="topo">
+        <div class="container header__container">
+            <a href="#topo" class="header__logo" aria-label="Kelvin Saldanha - início">
+                Kelvin Saldanha
+            </a>
+
+            <nav class="nav" aria-label="Navegação principal">
+                <button
+                    class="nav__toggle"
+                    id="nav-toggle"
+                    aria-expanded="false"
+                    aria-controls="nav-menu"
+                    aria-label="Abrir menu"
+                >
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="#sobre" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="#projetos" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="#experiencias" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="#formacao" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="#publicacoes" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="#contato" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">
+                            <span class="darkmode-toggle__icon" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main id="conteudo-principal">
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <p class="hero__overline">Portfólio</p>
+                    <h1 class="hero__title" id="hero-titulo">Kelvin Saldanha Mateus</h1>
+                    <p class="hero__subtitle">Equipamentos Biomédicos · Tecnologia · Sistemas Embarcados · IA</p>
+                    <p class="hero__description">
+                        Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos na interseção entre tecnologia, engenharia e saúde.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+                        <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">GitHub</a>
+                    </div>
+                </div>
+                <div class="hero__image-wrapper">
+                    <!--
+                        FOTO DE PERFIL:
+                        Coloque sua foto em:
+                        images/profile/kelvin.jpg
+                    -->
+                    <img
+                        src="images/profile/kelvin.jpg"
+                        alt="Kelvin Saldanha Mateus"
+                        class="hero__image"
+                        loading="eager"
+                        decoding="async"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="section sobre" id="sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <h2 class="section__title" id="sobre-titulo">Tecnologia aplicada a problemas reais.</h2>
+                <div class="sobre__content">
+                    <p>
+                        Sou estudante de Equipamentos Biomédicos no CEFET-MG, com forte interesse por tecnologia, engenharia e saúde. Meu foco está em desenvolver soluções que unem software, hardware e inteligência artificial para melhorar processos e equipamentos da área da saúde.
+                    </p>
+                    <p>
+                        Atualmente, desenvolvo projetos envolvendo visão computacional, sistemas embarcados e automação, sempre com o objetivo de aplicar conhecimento teórico em problemas práticos.
+                    </p>
+                    <p>
+                        Busco constantemente aprender novas tecnologias e integrar conhecimentos de eletrônica, programação e instrumentação biomédica para criar ferramentas úteis e acessíveis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section class="section projetos" id="projetos" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <h2 class="section__title" id="projetos-titulo">Projetos em destaque</h2>
+                <p class="section__subtitle">Projetos que conectam software, hardware, inteligência artificial e tecnologia biomédica.</p>
+
+                <div class="projetos__grid">
+                    <!-- PROJETO 01 - EYE TRACKER CK² -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img
+                                src="images/projects/eye-tracker.jpg"
+                                alt="Projeto Eye Tracker CK²"
+                                class="projeto-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="projeto-card__content">
+                            <h3 class="projeto-card__title">Eye Tracker CK²</h3>
+                            <p class="projeto-card__description">
+                                Sistema de controle do computador por movimentos oculares e gestos faciais, desenvolvido com visão computacional, inteligência artificial e automação.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>Python</li>
+                                <li>OpenCV</li>
+                                <li>MediaPipe</li>
+                                <li>IA</li>
+                                <li>PyAutoGUI</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em desenvolvimento / projeto técnico</span>
+                                <a href="https://github.com/Kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer" class="projeto-card__link">Ver no GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 02 - OXÍMETRO -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img
+                                src="images/projects/oximetro.jpg"
+                                alt="Projeto Oxímetro"
+                                class="projeto-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="projeto-card__content">
+                            <h3 class="projeto-card__title">Oxímetro</h3>
+                            <p class="projeto-card__description">
+                                Projeto de desenvolvimento de um sistema de oximetria envolvendo instrumentação biomédica, sensores, eletrônica e sistemas embarcados.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>Instrumentação</li>
+                                <li>Sensores</li>
+                                <li>Eletrônica</li>
+                                <li>Embarcados</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em desenvolvimento</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 03 - SISTEMAS EMBARCADOS -->
+                    <article class="projeto-card">
+                        <div class="projeto-card__image-wrapper">
+                            <img
+                                src="images/projects/sistemas-embarcados.jpg"
+                                alt="Projeto Sistemas Embarcados"
+                                class="projeto-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="projeto-card__content">
+                            <h3 class="projeto-card__title">Sistemas Embarcados</h3>
+                            <p class="projeto-card__description">
+                                Projetos envolvendo microcontroladores, sensores, aquisição de sinais, controle e integração entre hardware e software.
+                            </p>
+                            <ul class="projeto-card__tech">
+                                <li>PIC</li>
+                                <li>ESP32</li>
+                                <li>Sensores</li>
+                                <li>Microcontroladores</li>
+                            </ul>
+                            <div class="projeto-card__footer">
+                                <span class="projeto-card__status">Em andamento</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--
+                        COMO ADICIONAR UM NOVO PROJETO:
+                        1. Copie um bloco <article class="projeto-card">...</article> acima.
+                        2. Cole logo abaixo do último card.
+                        3. Altere a imagem (src="images/projects/nome-da-imagem.jpg").
+                        4. Altere o título, descrição, tecnologias e links.
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE INTERESSE -->
+        <section class="section areas" id="areas" aria-labelledby="areas-titulo">
+            <div class="container">
+                <h2 class="section__title" id="areas-titulo">Áreas de interesse</h2>
+                <div class="areas__grid">
+                    <div class="area-card">
+                        <h3>Tecnologia Biomédica</h3>
+                        <p>Equipamentos, instrumentação e sistemas aplicados à saúde.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Sistemas Embarcados</h3>
+                        <p>Microcontroladores, sensores e integração hardware/software.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Programação</h3>
+                        <p>Desenvolvimento de soluções utilizando programação e automação.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Visão Computacional</h3>
+                        <p>Processamento de imagens e interfaces baseadas em visão.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Inteligência Artificial</h3>
+                        <p>Aplicação de IA em projetos tecnológicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIAS -->
+        <section class="section experiencias" id="experiencias" aria-labelledby="experiencias-titulo">
+            <div class="container">
+                <h2 class="section__title" id="experiencias-titulo">Experiências</h2>
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Equipamentos Biomédicos</h3>
+                            <p>Contato com equipamentos e atividades práticas relacionadas à formação técnica.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Expo Hospital 2026</h3>
+                            <p>Participação no evento e contato com tecnologias e equipamentos da área da saúde.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <h3>Desenvolvimento de Projetos</h3>
+                            <p>Projetos envolvendo visão computacional, sistemas embarcados e tecnologia aplicada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMAÇÃO -->
+        <section class="section formacao" id="formacao" aria-labelledby="formacao-titulo">
+            <div class="container">
+                <h2 class="section__title" id="formacao-titulo">Formação</h2>
+                <div class="formacao__card">
+                    <h3>CEFET-MG</h3>
+                    <p class="formacao__curso">Técnico em Equipamentos Biomédicos</p>
+                    <p class="formacao__areas">
+                        Instrumentação Biomédica · Equipamentos de Diagnóstico · Equipamentos de Terapia ·
+                        Diagnóstico por Imagem · Eletrônica · Sistemas Embarcados · Programação
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLICAÇÕES -->
+        <section class="section publicacoes" id="publicacoes" aria-labelledby="publicacoes-titulo">
+            <div class="container">
+                <h2 class="section__title" id="publicacoes-titulo">Publicações</h2>
+                <p class="section__subtitle">Acompanhe meus registros, estudos e participações em eventos.</p>
+
+                <div class="publicacoes__grid" id="publicacoes-grid">
+                    <!-- POST 01 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/expo-hospital-2026.jpg"
+                                alt="Participação na Expo Hospital 2026"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Evento</span>
+                                <time datetime="2026-08-12">12 ago. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Expo Hospital 2026</h3>
+                            <p class="post-card__summary">
+                                Experiência na Expo Hospital 2026, com contato direto com tecnologias e equipamentos da área da saúde.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Expo Hospital 2026">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 02 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/eye-tracker.jpg"
+                                alt="Projeto Eye Tracker CK²"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Projeto</span>
+                                <time datetime="2026-07-20">20 jul. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Eye Tracker CK² — Atualização</h3>
+                            <p class="post-card__summary">
+                                Registro do desenvolvimento do sistema de controle por movimentos oculares e gestos faciais.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Eye Tracker CK²">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 03 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/oximetro.jpg"
+                                alt="Projeto Oxímetro"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Projeto</span>
+                                <time datetime="2026-06-10">10 jun. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Oxímetro — Primeiros passos</h3>
+                            <p class="post-card__summary">
+                                Início do projeto de oximetria com foco em sensores, eletrônica e sistemas embarcados.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Oxímetro">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 04 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/sistemas-embarcados.jpg"
+                                alt="Projeto Sistemas Embarcados"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2026-05-15">15 mai. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Sistemas Embarcados na Saúde</h3>
+                            <p class="post-card__summary">
+                                Anotações sobre aplicações de microcontroladores e sensores em equipamentos biomédicos.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Sistemas Embarcados">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 05 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/esterilizador-plasma.jpg"
+                                alt="Esterilizador a plasma"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2026-04-01">01 abr. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Esterilização por Plasma</h3>
+                            <p class="post-card__summary">
+                                Estudo sobre tecnologias de esterilização e sua aplicação em equipamentos hospitalares.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Esterilização por Plasma">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 06 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/visao-computacional.jpg"
+                                alt="Visão Computacional"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2026-03-12">12 mar. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Visão Computacional com OpenCV</h3>
+                            <p class="post-card__summary">
+                                Notas sobre processamento de imagens e detecção de pontos faciais.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Visão Computacional">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 07 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/ia-saude.jpg"
+                                alt="Inteligência Artificial na Saúde"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2026-02-20">20 fev. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">IA Aplicada à Saúde</h3>
+                            <p class="post-card__summary">
+                                Exploração de algoritmos de machine learning para auxílio em diagnóstico e monitoramento.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre IA na Saúde">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 08 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/eletronica-biomedica.jpg"
+                                alt="Eletrônica Biomédica"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2026-01-15">15 jan. 2026</time>
+                            </div>
+                            <h3 class="post-card__title">Eletrônica em Equipamentos Médicos</h3>
+                            <p class="post-card__summary">
+                                Revisão de circuitos e componentes utilizados em dispositivos biomédicos.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Eletrônica Biomédica">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 09 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/robotica-reabilitacao.jpg"
+                                alt="Robótica em Reabilitação"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Pesquisa</span>
+                                <time datetime="2025-12-05">05 dez. 2025</time>
+                            </div>
+                            <h3 class="post-card__title">Robótica de Reabilitação</h3>
+                            <p class="post-card__summary">
+                                Levantamento sobre dispositivos robóticos para fisioterapia e assistência.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Robótica de Reabilitação">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!-- POST 10 -->
+                    <article class="post-card">
+                        <div class="post-card__image-wrapper">
+                            <img
+                                src="images/posts/instrumentacao.jpg"
+                                alt="Instrumentação Biomédica"
+                                class="post-card__image"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span class="post-card__category">Estudo</span>
+                                <time datetime="2025-11-10">10 nov. 2025</time>
+                            </div>
+                            <h3 class="post-card__title">Instrumentação Biomédica Básica</h3>
+                            <p class="post-card__summary">
+                                Conceitos fundamentais de sensores, transdutores e condicionamento de sinais.
+                            </p>
+                            <a href="#" class="post-card__link" aria-label="Ler publicação sobre Instrumentação Biomédica">Ler publicação</a>
+                        </div>
+                    </article>
+
+                    <!--
+                        COMO ADICIONAR UMA NOVA PUBLICAÇÃO:
+                        1. Copie um bloco <article class="post-card">...</article> acima.
+                        2. Cole logo abaixo do último card.
+                        3. Altere a imagem (src="images/posts/nome-da-imagem.jpg").
+                        4. Altere categoria, data, título, resumo e link.
+                    -->
+                </div>
+
+                <!-- Controle "Ver mais" -->
+                <div class="publicacoes__actions">
+                    <button class="btn btn--primary" id="btn-ver-mais" aria-controls="publicacoes-grid">
+                        Ver mais
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="section contato" id="contato" aria-labelledby="contato-titulo">
+            <div class="container contato__container">
+                <h2 class="section__title" id="contato-titulo">Vamos conversar?</h2>
+                <p class="contato__texto">
+                    Se você quiser conhecer meus projetos, acompanhar meu trabalho ou conversar sobre tecnologia, engenharia e inovação, entre em contato.
+                </p>
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    GitHub
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha Mateus</p>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+                <a href="#topo" class="footer__link">Voltar ao topo</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão voltar ao topo flutuante -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
