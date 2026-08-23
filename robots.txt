@@ -1,0 +1,6 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://kelvinsaldanha.github.io/portfolio/sitemap.xml
+
