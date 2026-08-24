@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquistas | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OBRL Ouro 2025, OBMEP Menção Honrosa 2023, Mandacaru Ouro, TANGRAM Ouro e OIMSF Diamante Nacional.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Conquistas | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OBRL Ouro 2025, OBMEP Menção Honrosa 2023, Mandacaru Ouro, TANGRAM Ouro e OIMSF Diamante Nacional.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/conquistas.html">
+    <meta property="og:image" content="images/profile/kelvin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos da página Conquistas */
+        .conquistas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .conquista-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conquista-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .conquista-card__imagem {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--color-surface-light);
+            border: 2px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .conquista-card__imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .conquista-card__title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .conquista-card__ano {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .conquista-card--ouro {
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2);
+        }
+
+        .conquista-card--ouro:hover {
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+        }
+
+        .conquista-card--diamante {
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+        }
+
+        .conquista-card--diamante:hover {
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.35);
+        }
+
+        .certificados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certificado-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .certificado-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .certificado-card__imagem {
+            aspect-ratio: 4 / 3;
+            background: var(--color-surface-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--color-text-muted);
+            overflow: hidden;
+        }
+
+        .certificado-card__imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificado-card__content {
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .certificado-card__title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .certificado-card__instituicao,
+        .certificado-card__ano {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 430px) {
+            .conquistas-grid {
+                grid-template-columns: 1fr;
+            }
+            .certificados-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="conquistas.html" class="nav__link">Conquistas</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="conquistas-titulo">
+            <div class="container">
+                <p class="hero__overline">Conquistas</p>
+                <h1 class="hero__title" id="conquistas-titulo">Conquistas</h1>
+                <p class="hero__subtitle">Minhas principais medalhas, reconhecimentos e certificados.</p>
+            </div>
+        </section>
+
+        <!-- MEDALHAS E RECONHECIMENTOS -->
+        <section class="section" aria-labelledby="medalhas-titulo">
+            <div class="container">
+                <h2 class="section__title" id="medalhas-titulo">Medalhas e Reconhecimentos</h2>
+                <div class="conquistas-grid">
+                    <!-- Card OBRL -->
+                    <article class="conquista-card conquista-card--ouro">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obrl-2025.jpeg" alt="Medalha OBRL Ouro 2025" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">OBRL — Ouro</h3>
+                        <p class="conquista-card__ano">2025</p>
+                    </article>
+
+                    <!-- Card OBMEP -->
+                    <article class="conquista-card">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obmep-2023.jpeg" alt="Menção Honrosa OBMEP 2023" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">OBMEP — Menção Honrosa</h3>
+                        <p class="conquista-card__ano">2023</p>
+                    </article>
+
+                    <!-- Card Mandacaru 2025 -->
+                    <article class="conquista-card conquista-card--ouro">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-mandacaru-2025.jpeg" alt="Medalha Mandacaru Ouro 2025" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">Mandacaru — Ouro</h3>
+                        <p class="conquista-card__ano">2025</p>
+                    </article>
+
+                    <!-- Card Mandacaru 2026 -->
+                    <article class="conquista-card conquista-card--ouro">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-mandacaru-2026.jpeg" alt="Medalha Mandacaru Ouro 2026" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">Mandacaru — Ouro</h3>
+                        <p class="conquista-card__ano">2026</p>
+                    </article>
+
+                    <!-- Card TANGRAM -->
+                    <article class="conquista-card conquista-card--ouro">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-tangram-2026.jpeg" alt="Medalha TANGRAM Ouro 2026" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">TANGRAM — Ouro</h3>
+                        <p class="conquista-card__ano">2026</p>
+                    </article>
+
+                    <!-- Card OIMSF -->
+                    <article class="conquista-card conquista-card--diamante">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-oimsf-2026.jpeg" alt="Medalha OIMSF Diamante Nacional e Ouro Regional 2026" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">OIMSF — Diamante Nacional e Ouro Regional</h3>
+                        <p class="conquista-card__ano">2026</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICADOS -->
+        <section class="section" aria-labelledby="certificados-titulo">
+            <div class="container">
+                <h2 class="section__title" id="certificados-titulo">Certificados</h2>
+                <div class="certificados-grid">
+                    <!-- Certificado 1 -->
+                    <article class="certificado-card">
+                        <div class="certificado-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-certificado-1.jpeg" alt="Certificado 1" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="certificado-card__content">
+                            <h3 class="certificado-card__title">Certificado 1</h3>
+                            <p class="certificado-card__instituicao">Instituição</p>
+                            <p class="certificado-card__ano">Ano</p>
+                        </div>
+                    </article>
+
+                    <!-- Certificado 2 -->
+                    <article class="certificado-card">
+                        <div class="certificado-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-certificado-2.jpeg" alt="Certificado 2" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="certificado-card__content">
+                            <h3 class="certificado-card__title">Certificado 2</h3>
+                            <p class="certificado-card__instituicao">Instituição</p>
+                            <p class="certificado-card__ano">Ano</p>
+                        </div>
+                    </article>
+
+                    <!-- Certificado 3 -->
+                    <article class="certificado-card">
+                        <div class="certificado-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-certificado-3.jpeg" alt="Certificado 3" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="certificado-card__content">
+                            <h3 class="certificado-card__title">Certificado 3</h3>
+                            <p class="certificado-card__instituicao">Instituição</p>
+                            <p class="certificado-card__ano">Ano</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kelvin-saldanha-mateus/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+                <a href="https://github.com/kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+                <a href="mailto:kelvinsaldanhaa@gmail.com" class="footer__link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
