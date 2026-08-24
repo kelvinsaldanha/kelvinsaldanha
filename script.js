@@ -5,8 +5,8 @@
 const SITE_CONFIG = {
     name: "Kelvin Saldanha Mateus",
     github: "https://github.com/Kelvinsaldanha",
-    linkedin: "", // Insira aqui a URL do LinkedIn (ex: "https://linkedin.com/in/seu-usuario")
-    email: "", // Insira aqui o e-mail (ex: "kelvin@email.com")
+    linkedin: "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+    email: "kelvinsaldanhaa@gmail.com",
     currentYear: 2026
 };
 
