@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conquistas | Kelvin Saldanha Mateus</title>
-    <meta name="description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OBRL Ouro 2025, OBMEP Menção Honrosa 2023, Mandacaru Ouro, TANGRAM Ouro e OIMSF Diamante Nacional.">
+    <meta name="description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OIMSF Diamante Nacional 2026, OIMSF Ouro Regional 2026, Mandacaru Ouro 2026, TANGRAM Ouro 2026, OBRL Ouro 2025, Mandacaru Ouro 2025 e OBMEP Menção Honrosa 2023.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0a0e1a">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Conquistas | Kelvin Saldanha Mateus">
-    <meta property="og:description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OBRL Ouro 2025, OBMEP Menção Honrosa 2023, Mandacaru Ouro, TANGRAM Ouro e OIMSF Diamante Nacional.">
+    <meta property="og:description" content="Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OIMSF Diamante Nacional 2026, OIMSF Ouro Regional 2026, Mandacaru Ouro 2026, TANGRAM Ouro 2026, OBRL Ouro 2025, Mandacaru Ouro 2025 e OBMEP Menção Honrosa 2023.">
     <meta property="og:url" content="https://kelvinsaldanha.github.io/conquistas.html">
     <meta property="og:image" content="images/profile/kelvin.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,17 +45,16 @@
         }
 
         .conquista-card__imagem {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 16 / 10;
             background: var(--color-surface-light);
-            border: 2px solid var(--color-border);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
             overflow: hidden;
+            margin-bottom: 1rem;
         }
 
         .conquista-card__imagem img {
@@ -76,6 +75,14 @@
             color: var(--color-text-muted);
             margin: 0;
             font-weight: 600;
+        }
+
+        .conquista-card__descricao {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin: 0;
+            line-height: 1.6;
+            flex: 1;
         }
 
         .conquista-card--ouro {
@@ -206,59 +213,84 @@
             <div class="container">
                 <h2 class="section__title" id="medalhas-titulo">Medalhas e Reconhecimentos</h2>
                 <div class="conquistas-grid">
-                    <!-- Card OBRL -->
+
+                    <!-- Card OIMSF Diamante Nacional 2026 -->
+                    <article class="conquista-card conquista-card--diamante">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-oimsf-diamante-nacional-2026.jpeg" alt="Medalha OIMSF Diamante Nacional 2026" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">OIMSF — Diamante Nacional</h3>
+                        <p class="conquista-card__ano">2026</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
+                    </article>
+
+                    <!-- Card OIMSF Ouro Regional 2026 -->
                     <article class="conquista-card conquista-card--ouro">
                         <div class="conquista-card__imagem">
-                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obrl-2025.jpeg" alt="Medalha OBRL Ouro 2025" onerror="this.parentElement.style.display='none'">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-oimsf-ouro-regional-2026.jpeg" alt="Medalha OIMSF Ouro Regional 2026" onerror="this.parentElement.style.display='none'">
                         </div>
-                        <h3 class="conquista-card__title">OBRL — Ouro</h3>
-                        <p class="conquista-card__ano">2025</p>
+                        <h3 class="conquista-card__title">OIMSF — Ouro Regional</h3>
+                        <p class="conquista-card__ano">2026</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
                     </article>
 
-                    <!-- Card OBMEP -->
-                    <article class="conquista-card">
-                        <div class="conquista-card__imagem">
-                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obmep-2023.jpeg" alt="Menção Honrosa OBMEP 2023" onerror="this.parentElement.style.display='none'">
-                        </div>
-                        <h3 class="conquista-card__title">OBMEP — Menção Honrosa</h3>
-                        <p class="conquista-card__ano">2023</p>
-                    </article>
-
-                    <!-- Card Mandacaru 2025 -->
-                    <article class="conquista-card conquista-card--ouro">
-                        <div class="conquista-card__imagem">
-                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-mandacaru-2025.jpeg" alt="Medalha Mandacaru Ouro 2025" onerror="this.parentElement.style.display='none'">
-                        </div>
-                        <h3 class="conquista-card__title">Mandacaru — Ouro</h3>
-                        <p class="conquista-card__ano">2025</p>
-                    </article>
-
-                    <!-- Card Mandacaru 2026 -->
+                    <!-- Card Mandacaru Ouro 2026 -->
                     <article class="conquista-card conquista-card--ouro">
                         <div class="conquista-card__imagem">
                             <img src="images/conquistas/kelvin-saldanha-mateus-medalha-mandacaru-2026.jpeg" alt="Medalha Mandacaru Ouro 2026" onerror="this.parentElement.style.display='none'">
                         </div>
                         <h3 class="conquista-card__title">Mandacaru — Ouro</h3>
                         <p class="conquista-card__ano">2026</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
                     </article>
 
-                    <!-- Card TANGRAM -->
+                    <!-- Card TANGRAM Ouro 2026 -->
                     <article class="conquista-card conquista-card--ouro">
                         <div class="conquista-card__imagem">
                             <img src="images/conquistas/kelvin-saldanha-mateus-medalha-tangram-2026.jpeg" alt="Medalha TANGRAM Ouro 2026" onerror="this.parentElement.style.display='none'">
                         </div>
                         <h3 class="conquista-card__title">TANGRAM — Ouro</h3>
                         <p class="conquista-card__ano">2026</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
                     </article>
 
-                    <!-- Card OIMSF -->
-                    <article class="conquista-card conquista-card--diamante">
+                    <!-- Card OBRL Ouro 2025 -->
+                    <article class="conquista-card conquista-card--ouro">
                         <div class="conquista-card__imagem">
-                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-oimsf-2026.jpeg" alt="Medalha OIMSF Diamante Nacional e Ouro Regional 2026" onerror="this.parentElement.style.display='none'">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obrl-2025.jpeg" alt="Medalha OBRL Ouro 2025" onerror="this.parentElement.style.display='none'">
                         </div>
-                        <h3 class="conquista-card__title">OIMSF — Diamante Nacional e Ouro Regional</h3>
-                        <p class="conquista-card__ano">2026</p>
+                        <h3 class="conquista-card__title">OBRL — Ouro</h3>
+                        <p class="conquista-card__ano">2025</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
                     </article>
+
+                    <!-- Card Mandacaru Ouro 2025 -->
+                    <article class="conquista-card conquista-card--ouro">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-mandacaru-2025.jpeg" alt="Medalha Mandacaru Ouro 2025" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">Mandacaru — Ouro</h3>
+                        <p class="conquista-card__ano">2025</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
+                    </article>
+
+                    <!-- Card OBMEP Menção Honrosa 2023 -->
+                    <article class="conquista-card">
+                        <div class="conquista-card__imagem">
+                            <img src="images/conquistas/kelvin-saldanha-mateus-medalha-obmep-2023.jpeg" alt="Menção Honrosa OBMEP 2023" onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <h3 class="conquista-card__title">OBMEP — Menção Honrosa</h3>
+                        <p class="conquista-card__ano">2023</p>
+                        <!-- Adicione aqui uma descrição opcional -->
+                        <p class="conquista-card__descricao"></p>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -268,6 +300,7 @@
             <div class="container">
                 <h2 class="section__title" id="certificados-titulo">Certificados</h2>
                 <div class="certificados-grid">
+
                     <!-- Certificado 1 -->
                     <article class="certificado-card">
                         <div class="certificado-card__imagem">
@@ -303,6 +336,7 @@
                             <p class="certificado-card__ano">Ano</p>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
