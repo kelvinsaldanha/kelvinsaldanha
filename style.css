@@ -1,6 +1,7 @@
 /* =============================================
-   1. Reset
+   1. RESET
    ============================================= */
+
 *,
 *::before,
 *::after {
@@ -9,9 +10,11 @@
     box-sizing: border-box;
 }
 
+
 /* =============================================
-   2. Variáveis
+   2. VARIÁVEIS
    ============================================= */
+
 :root {
     --color-background: #0a0e1a;
     --color-surface: #111827;
@@ -24,17 +27,26 @@
     --color-success: #10b981;
 
     --font-family: "Inter", Arial, sans-serif;
+
     --transition: 0.3s ease;
     --transition-slow: 0.5s ease;
+
     --border-radius: 0.5rem;
     --border-radius-lg: 0.75rem;
+
     --max-width: 1200px;
     --header-height: 70px;
     --section-padding: 4rem 0;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
-    --shadow-lg: 0 10px 40px rgba(0,0,0,0.5);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
+
+
+/* =============================================
+   3. TEMA CLARO
+   ============================================= */
 
 [data-theme="light"] {
     --color-background: #ffffff;
@@ -45,15 +57,25 @@
     --color-primary: #2563eb;
     --color-secondary: #7c3aed;
     --color-border: #e2e8f0;
-    --color-shadow: rgba(0,0,0,0.05);
+    --color-success: #059669;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.10);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 
+
 /* =============================================
-   3. Base
+   4. BASE
    ============================================= */
+
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+}
+
+[id] {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 body {
@@ -62,9 +84,13 @@ body {
     color: var(--color-text);
     line-height: 1.7;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
-    transition: background-color var(--transition-slow), color var(--transition-slow);
+
+    transition:
+        background-color var(--transition-slow),
+        color var(--transition-slow);
 }
 
 main {
@@ -81,6 +107,7 @@ a {
     color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition);
+    overflow-wrap: anywhere;
 }
 
 a:hover {
@@ -99,10 +126,17 @@ ol {
     list-style: none;
 }
 
+
 /* =============================================
-   4. Tipografia
+   5. TIPOGRAFIA
    ============================================= */
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.3;
     font-weight: 700;
     color: var(--color-text);
@@ -130,9 +164,11 @@ p {
     color: var(--color-text-muted);
 }
 
+
 /* =============================================
-   5. Layout
+   6. LAYOUT
    ============================================= */
+
 .container {
     width: min(100% - 2rem, var(--max-width));
     margin-inline: auto;
@@ -157,17 +193,28 @@ p {
     font-size: 1.1rem;
 }
 
+
 /* =============================================
-   6. Botões
+   7. BOTÕES
    ============================================= */
+
 .btn {
     display: inline-block;
+
     padding: 0.8rem 1.8rem;
+
     border-radius: 2rem;
+
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
-    transition: background-color var(--transition), color var(--transition), transform var(--transition), border-color var(--transition);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
+
     border: 2px solid transparent;
     cursor: pointer;
 }
@@ -208,17 +255,23 @@ p {
     color: var(--color-primary);
 }
 
+
 /* =============================================
-   7. Navbar
+   8. NAVBAR
    ============================================= */
+
 .header {
     position: sticky;
     top: 0;
     z-index: 100;
+
     background: rgba(10, 14, 26, 0.85);
+
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+
     border-bottom: 1px solid var(--color-border);
+
     transition: background var(--transition-slow);
 }
 
@@ -230,13 +283,16 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     height: var(--header-height);
 }
 
 .header__logo {
     font-size: 1.25rem;
     font-weight: 700;
+
     color: var(--color-text);
+
     letter-spacing: -0.01em;
     text-decoration: none;
 }
@@ -252,31 +308,46 @@ p {
 
 .nav__toggle {
     display: none;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     gap: 5px;
+
     width: 40px;
     height: 40px;
+
     border-radius: var(--border-radius);
+
     background: transparent;
+
     cursor: pointer;
+
     z-index: 200;
 }
 
 .nav__toggle-bar {
     display: block;
+
     width: 24px;
     height: 2px;
+
     background-color: var(--color-text);
-    transition: transform var(--transition), opacity var(--transition);
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+
     border-radius: 2px;
 }
 
 .nav__menu {
     display: flex;
     align-items: center;
+
     list-style: none;
+
     gap: 1.5rem;
 }
 
@@ -286,12 +357,17 @@ p {
 
 .nav__link {
     display: block;
+
     padding: 0.5rem 0;
+
     color: var(--color-text-muted);
+
     font-weight: 500;
-    text-decoration: none;
-    transition: color var(--transition);
     font-size: 0.95rem;
+
+    text-decoration: none;
+
+    transition: color var(--transition);
 }
 
 .nav__link:hover {
@@ -305,12 +381,17 @@ p {
 
 .nav__link.active::after {
     content: "";
+
     position: absolute;
+
     bottom: -2px;
     left: 0;
+
     width: 100%;
     height: 2px;
+
     background: var(--color-primary);
+
     border-radius: 2px;
 }
 
@@ -321,14 +402,23 @@ p {
 .darkmode-toggle {
     width: 40px;
     height: 40px;
+
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
-    transition: background var(--transition), border-color var(--transition);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+
     color: var(--color-text);
+
     font-size: 1.1rem;
 }
 
@@ -336,18 +426,29 @@ p {
     border-color: var(--color-primary);
 }
 
-/* Overlay para menu mobile */
+
+/* =============================================
+   9. OVERLAY MENU MOBILE
+   ============================================= */
+
 .nav::after {
     content: "";
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background: rgba(0, 0, 0, 0.5);
+
     opacity: 0;
     pointer-events: none;
+
     transition: opacity var(--transition);
+
     z-index: 140;
 }
 
@@ -356,27 +457,47 @@ p {
     pointer-events: auto;
 }
 
-/* Menu mobile */
+
+/* =============================================
+   10. MENU MOBILE
+   ============================================= */
+
 @media (max-width: 768px) {
+
     .nav__toggle {
         display: flex;
     }
 
     .nav__menu {
         position: fixed;
+
         top: 0;
         right: -100%;
+
         width: min(320px, 80vw);
         height: 100vh;
+
         background: var(--color-background);
+
         border-left: 1px solid var(--color-border);
+
         flex-direction: column;
         align-items: flex-start;
-        padding: calc(var(--header-height) + 1rem) 1.5rem 2rem;
+
+        padding:
+            calc(var(--header-height) + 1rem)
+            1.5rem
+            2rem;
+
         gap: 0.5rem;
+
         transition: right var(--transition-slow);
+
         z-index: 150;
-        box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+
+        overflow-y: auto;
     }
 
     .nav__menu.active {
@@ -402,17 +523,26 @@ p {
     }
 }
 
+
 /* =============================================
-   8. Hero (comum e home)
+   11. HERO
    ============================================= */
+
 .hero {
     padding: 3rem 0 4rem;
-    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--color-surface) 0%,
+            var(--color-background) 100%
+        );
 }
 
 .hero__container {
     display: flex;
     align-items: center;
+
     gap: 3rem;
 }
 
@@ -422,10 +552,14 @@ p {
 
 .hero__overline {
     text-transform: uppercase;
+
     letter-spacing: 0.1em;
+
     font-size: 0.85rem;
     font-weight: 600;
+
     color: var(--color-primary);
+
     margin-bottom: 0.5rem;
 }
 
@@ -436,47 +570,64 @@ p {
 .hero__subtitle {
     font-size: 1.2rem;
     font-weight: 500;
+
     color: var(--color-text);
+
     margin-bottom: 1.5rem;
+
     line-height: 1.4;
 }
 
 .hero__description {
     font-size: 1.1rem;
+
     max-width: 600px;
+
     color: var(--color-text-muted);
+
     margin-bottom: 2rem;
 }
 
 .hero__actions {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 1rem;
 }
 
 .hero__image-wrapper {
     flex: 0 0 300px;
+
     width: 300px;
     height: 300px;
+
     border-radius: 50%;
+
     overflow: hidden;
+
     border: 4px solid var(--color-primary);
+
     background: var(--color-surface-light);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     box-shadow: var(--shadow-lg);
+
     position: relative;
 }
 
 .hero__image {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
-/* Fallback para imagem quebrada */
 .hero__image-wrapper.img-error {
     background: var(--color-surface-light);
     position: relative;
@@ -484,16 +635,27 @@ p {
 
 .hero__image-wrapper.img-error::before {
     content: "Foto de perfil";
+
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     color: var(--color-text-muted);
+
     font-size: 1rem;
     font-weight: 500;
 }
 
+
+/* =============================================
+   12. HERO RESPONSIVO
+   ============================================= */
+
 @media (max-width: 768px) {
+
     .hero__container {
         flex-direction: column-reverse;
         text-align: center;
@@ -509,8 +671,10 @@ p {
 
     .hero__image-wrapper {
         flex: 0 0 200px;
+
         width: 200px;
         height: 200px;
+
         margin: 0 auto;
     }
 
@@ -520,19 +684,28 @@ p {
     }
 }
 
+
 /* =============================================
-   9. Cards
+   13. CARDS
    ============================================= */
+
 .card {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius-lg);
+
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .card:hover {
     transform: translateY(-5px);
+
     box-shadow: var(--shadow-md);
 }
 
@@ -540,130 +713,185 @@ p {
     padding: 1.5rem;
 }
 
+
 /* =============================================
-   10. Página Home
+   14. HOME
    ============================================= */
+
 .home-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
     gap: 2rem;
 }
 
 .home-areas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
     gap: 1.5rem;
 }
 
 .area-card {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius-lg);
+
     padding: 1.5rem;
+
     text-align: center;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .area-card:hover {
     transform: translateY(-3px);
+
     box-shadow: var(--shadow-md);
 }
 
 .area-card h3 {
     color: var(--color-text);
+
     margin-bottom: 0.5rem;
+
     font-size: 1.1rem;
 }
 
 .area-card p {
     color: var(--color-text-muted);
+
     font-size: 0.9rem;
+
     margin-bottom: 0;
 }
 
 .home-experiencias {
     max-width: 700px;
+
     margin: 0 auto;
 }
 
 .home-publicacoes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
     gap: 2rem;
 }
 
+
 /* =============================================
-   11. Página Sobre
+   15. SOBRE
    ============================================= */
+
 .sobre-content {
     max-width: 800px;
+
     margin: 0 auto;
 }
 
 .sobre-content p {
     margin-bottom: 1.5rem;
+
     font-size: 1.1rem;
 }
 
 .competencias-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
     gap: 1.5rem;
+
     margin-top: 2rem;
 }
 
 .competencia-item {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius);
+
     padding: 1.25rem;
+
     text-align: center;
 }
 
 .competencia-item h3 {
     font-size: 1rem;
+
     margin-bottom: 0.25rem;
 }
 
 .competencia-item p {
     font-size: 0.9rem;
+
     margin-bottom: 0;
 }
 
+
 /* =============================================
-   12. Página Projetos
+   16. PROJETOS
    ============================================= */
+
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
     gap: 2rem;
 }
 
 .projeto-card {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius-lg);
+
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
     display: flex;
     flex-direction: column;
 }
 
 .projeto-card:hover {
     transform: translateY(-5px);
+
     box-shadow: var(--shadow-md);
 }
 
 .projeto-card__image-wrapper {
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
+
     background: var(--color-surface-light);
 }
 
 .projeto-card__image {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition: transform var(--transition-slow);
 }
 
@@ -673,30 +901,46 @@ p {
 
 .projeto-card__content {
     padding: 1.5rem;
+
     flex: 1;
+
     display: flex;
     flex-direction: column;
 }
 
 .projeto-card__number {
     font-size: 0.85rem;
+
     font-weight: 700;
+
     color: var(--color-primary);
+
     text-transform: uppercase;
+
     letter-spacing: 0.05em;
+
     margin-bottom: 0.5rem;
 }
 
 .projeto-card__category {
     display: inline-block;
+
     background: var(--color-surface-light);
+
     border: 1px solid var(--color-border);
+
     border-radius: 1rem;
+
     padding: 0.25rem 0.8rem;
+
     font-size: 0.8rem;
+
     font-weight: 600;
+
     color: var(--color-text);
+
     margin-bottom: 0.75rem;
+
     align-self: flex-start;
 }
 
@@ -706,91 +950,132 @@ p {
 
 .projeto-card__description {
     color: var(--color-text-muted);
+
     margin-bottom: 1rem;
+
     flex: 1;
 }
 
 .projeto-card__tech {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 0.5rem;
+
     margin-bottom: 1rem;
 }
 
 .projeto-card__tech li {
     background: var(--color-surface-light);
+
     border: 1px solid var(--color-border);
+
     border-radius: 1rem;
+
     padding: 0.25rem 0.8rem;
+
     font-size: 0.85rem;
+
     font-weight: 500;
+
     color: var(--color-text);
 }
 
 .projeto-card__footer {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     flex-wrap: wrap;
+
     gap: 0.5rem;
+
     border-top: 1px solid var(--color-border);
+
     padding-top: 1rem;
+
     margin-top: auto;
 }
 
 .projeto-card__status {
     font-size: 0.85rem;
+
     font-weight: 600;
+
     color: var(--color-success);
 }
 
 .projeto-card__link {
     font-weight: 600;
+
     font-size: 0.9rem;
 }
 
+
 /* =============================================
-   13. Página Experiências
+   17. EXPERIÊNCIAS
    ============================================= */
+
 .timeline {
     position: relative;
+
     max-width: 700px;
+
     margin: 0 auto;
+
     padding-left: 2rem;
 }
 
 .timeline::before {
     content: "";
+
     position: absolute;
+
     left: 0;
     top: 0;
     bottom: 0;
+
     width: 2px;
+
     background: var(--color-border);
 }
 
 .timeline__item {
     position: relative;
+
     margin-bottom: 2rem;
 }
 
 .timeline__marker {
     position: absolute;
+
     left: -2.4rem;
     top: 0.5rem;
+
     width: 12px;
     height: 12px;
+
     border-radius: 50%;
+
     background: var(--color-primary);
+
     border: 2px solid var(--color-background);
-    box-shadow: 0 0 0 2px var(--color-primary);
+
+    box-shadow:
+        0 0 0 2px var(--color-primary);
 }
 
 .timeline__content {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius);
+
     padding: 1.5rem;
+
     transition: box-shadow var(--transition);
 }
 
@@ -804,101 +1089,132 @@ p {
 
 .timeline__content p {
     color: var(--color-text-muted);
+
     margin-bottom: 0;
 }
 
-@media (max-width: 768px) {
-    .timeline {
-        padding-left: 1.5rem;
-    }
-
-    .timeline__marker {
-        left: -1.9rem;
-    }
-}
 
 /* =============================================
-   14. Página Formação
+   18. FORMAÇÃO
    ============================================= */
+
 .formacao-card {
     max-width: 700px;
+
     margin: 0 auto;
+
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius-lg);
+
     padding: 2rem;
 }
 
 .formacao-card h3 {
     font-size: 1.5rem;
+
     margin-bottom: 0.25rem;
 }
 
 .formacao-card__curso {
     font-size: 1.2rem;
+
     font-weight: 600;
+
     color: var(--color-text);
+
     margin-bottom: 0.75rem;
 }
 
 .formacao-card__areas {
     color: var(--color-text-muted);
+
     font-size: 0.95rem;
+
     margin-bottom: 0;
 }
 
 .formacao-tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 0.5rem;
+
     margin-top: 1.5rem;
+
     justify-content: center;
 }
 
 .formacao-tags span {
     background: var(--color-surface-light);
+
     border: 1px solid var(--color-border);
+
     border-radius: 1rem;
+
     padding: 0.25rem 0.8rem;
+
     font-size: 0.85rem;
+
     color: var(--color-text);
 }
 
+
 /* =============================================
-   15. Página Publicações
+   19. PUBLICAÇÕES
    ============================================= */
+
 .publicacoes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
     gap: 2rem;
+
     margin-bottom: 2rem;
 }
 
 .post-card {
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius-lg);
+
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
     display: flex;
     flex-direction: column;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
+
     box-shadow: var(--shadow-md);
 }
 
 .post-card__image-wrapper {
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
+
     background: var(--color-surface-light);
 }
 
 .post-card__image {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition: transform var(--transition-slow);
 }
 
@@ -908,50 +1224,70 @@ p {
 
 .post-card__content {
     padding: 1.5rem;
+
     flex: 1;
+
     display: flex;
     flex-direction: column;
 }
 
 .post-card__meta {
     display: flex;
+
     align-items: center;
+
     gap: 0.75rem;
+
     margin-bottom: 0.75rem;
+
     flex-wrap: wrap;
 }
 
 .post-card__category {
     background: var(--color-primary);
+
     color: #fff;
+
     font-size: 0.75rem;
+
     font-weight: 700;
+
     text-transform: uppercase;
+
     letter-spacing: 0.05em;
+
     padding: 0.25rem 0.75rem;
+
     border-radius: 1rem;
 }
 
 .post-card__meta time {
     font-size: 0.85rem;
+
     color: var(--color-text-muted);
 }
 
 .post-card__title {
     margin-bottom: 0.5rem;
+
     font-size: 1.2rem;
 }
 
 .post-card__summary {
     color: var(--color-text-muted);
+
     font-size: 0.95rem;
+
     margin-bottom: 1rem;
+
     flex: 1;
 }
 
 .post-card__link {
     font-weight: 600;
+
     font-size: 0.9rem;
+
     align-self: flex-start;
 }
 
@@ -963,92 +1299,343 @@ p {
     display: none;
 }
 
+
 /* =============================================
-   16. Página Contato
+   20. CONTATO
    ============================================= */
+
 .contato-container {
     max-width: 600px;
+
     margin: 0 auto;
+
     text-align: center;
 }
 
 .contato-canais {
     display: flex;
+
     flex-direction: column;
+
     gap: 1rem;
+
     margin-top: 2rem;
 }
 
 .contato-canal {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     background: var(--color-surface);
+
     border: 1px solid var(--color-border);
+
     border-radius: var(--border-radius);
+
     padding: 1rem 1.5rem;
-    transition: border-color var(--transition), transform var(--transition);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
 }
 
 .contato-canal:hover {
     border-color: var(--color-primary);
+
     transform: translateY(-2px);
 }
 
 .contato-canal__label {
     font-weight: 600;
+
     color: var(--color-text);
 }
 
 .contato-canal__link {
     color: var(--color-primary);
+
     font-weight: 500;
-    word-break: break-all;
+
+    word-break: break-word;
 }
 
+
 /* =============================================
-   17. Footer
+   21. CONQUISTAS
    ============================================= */
+
+.conquistas-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 1.5rem;
+}
+
+.conquista-card {
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--border-radius-lg);
+
+    padding: 2rem 1.5rem;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.conquista-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.conquista-card__imagem {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    background: var(--color-surface-light);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--border-radius);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 1rem;
+}
+
+.conquista-card__imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.conquista-card__title {
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    color: var(--color-text);
+
+    margin: 0;
+}
+
+.conquista-card__ano {
+    font-size: 1rem;
+
+    color: var(--color-text-muted);
+
+    margin: 0;
+
+    font-weight: 600;
+}
+
+.conquista-card__descricao {
+    font-size: 0.95rem;
+
+    color: var(--color-text-muted);
+
+    margin: 0;
+
+    line-height: 1.6;
+
+    flex: 1;
+}
+
+.conquista-card--ouro {
+    border-color: #f59e0b;
+
+    box-shadow:
+        0 0 0 1px rgba(245, 158, 11, 0.15);
+}
+
+.conquista-card--ouro:hover {
+    box-shadow:
+        0 8px 24px rgba(245, 158, 11, 0.20);
+}
+
+.conquista-card--diamante {
+    border-color: var(--color-secondary);
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.18);
+}
+
+.conquista-card--diamante:hover {
+    box-shadow:
+        0 8px 30px rgba(139, 92, 246, 0.25);
+}
+
+
+/* =============================================
+   22. CERTIFICADOS
+   ============================================= */
+
+.certificados-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(240px, 1fr));
+
+    gap: 1.5rem;
+}
+
+.certificado-card {
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--border-radius-lg);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.certificado-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.certificado-card__imagem {
+    aspect-ratio: 4 / 3;
+
+    background: var(--color-surface-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 3rem;
+
+    color: var(--color-text-muted);
+
+    overflow: hidden;
+}
+
+.certificado-card__imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.certificado-card__content {
+    padding: 1.25rem;
+
+    text-align: center;
+}
+
+.certificado-card__title {
+    font-size: 1.05rem;
+
+    font-weight: 700;
+
+    color: var(--color-text);
+
+    margin-bottom: 0.25rem;
+}
+
+.certificado-card__instituicao,
+.certificado-card__ano {
+    font-size: 0.9rem;
+
+    color: var(--color-text-muted);
+
+    margin: 0;
+}
+
+
+/* =============================================
+   23. FOOTER
+   ============================================= */
+
 .footer {
     background: var(--color-surface);
+
     border-top: 1px solid var(--color-border);
+
     padding: 2rem 0;
+
     margin-top: auto;
 }
 
 .footer__container {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     gap: 0.5rem;
 }
 
 .footer__name {
     font-weight: 700;
+
     color: var(--color-text);
+
     font-size: 1.1rem;
 }
 
 .footer__desc {
     color: var(--color-text-muted);
+
     font-size: 0.9rem;
+
     margin-bottom: 0.25rem;
 }
 
 .footer__links {
     display: flex;
+
     gap: 1.5rem;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     margin: 0.5rem 0 0.75rem;
 }
 
 .footer__link {
     color: var(--color-text-muted);
+
     font-size: 0.9rem;
+
     font-weight: 500;
+
     text-decoration: none;
+
     transition: color var(--transition);
 }
 
@@ -1058,37 +1645,59 @@ p {
 
 .footer__copyright {
     color: var(--color-text-muted);
+
     font-size: 0.85rem;
+
     margin-bottom: 0;
 }
 
+
 /* =============================================
-   18. Botão voltar ao topo
+   24. BOTÃO VOLTAR AO TOPO
    ============================================= */
+
 .back-to-top {
     position: fixed;
+
     bottom: 2rem;
     right: 2rem;
+
     width: 45px;
     height: 45px;
+
     border-radius: 50%;
+
     background: var(--color-primary);
+
     color: #fff;
+
     font-size: 1.2rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(20px);
-    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+
     z-index: 90;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top.visible {
     opacity: 1;
+
     visibility: visible;
+
     transform: translateY(0);
 }
 
@@ -1096,71 +1705,112 @@ p {
     background: var(--color-secondary);
 }
 
+
 /* =============================================
-   19. Animações (IntersectionObserver)
+   25. ANIMAÇÕES
    ============================================= */
+
 .fade-in {
     opacity: 0;
+
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
+
     transform: translateY(0);
 }
 
+
 /* =============================================
-   20. Acessibilidade
+   26. ACESSIBILIDADE
    ============================================= */
+
 .skip-link {
     position: absolute;
+
     top: -100%;
     left: 0;
+
     background: var(--color-primary);
+
     color: #fff;
+
     padding: 0.8rem 1.5rem;
+
     z-index: 1000;
+
     transition: top var(--transition);
-    border-radius: 0 0 var(--border-radius) 0;
+
+    border-radius:
+        0 0
+        var(--border-radius)
+        0;
 }
 
 .skip-link:focus {
     top: 0;
+
     color: #fff;
 }
 
 :focus-visible {
     outline: 2px solid var(--color-primary);
+
     outline-offset: 2px;
 }
 
+
+/* =============================================
+   27. REDUÇÃO DE MOVIMENTO
+   ============================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
+
         scroll-behavior: auto !important;
     }
 }
 
+
 /* =============================================
-   21. Responsividade adicional
+   28. RESPONSIVIDADE — TABLET
    ============================================= */
+
 @media (max-width: 1024px) {
+
     .hero__container {
         gap: 2rem;
     }
+
     .hero__image-wrapper {
         flex: 0 0 250px;
+
         width: 250px;
         height: 250px;
     }
 }
 
+
+/* =============================================
+   29. RESPONSIVIDADE — MOBILE
+   ============================================= */
+
 @media (max-width: 768px) {
+
     :root {
         --header-height: 60px;
         --section-padding: 3rem 0;
@@ -1173,17 +1823,54 @@ p {
     .competencias-grid {
         grid-template-columns: 1fr;
     }
+
+    .conquistas-grid,
+    .certificados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-canal {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0.5rem;
+    }
 }
 
+
+/* =============================================
+   30. RESPONSIVIDADE — CELULAR PEQUENO
+   ============================================= */
+
 @media (max-width: 430px) {
+
     .hero__image-wrapper {
         flex: 0 0 160px;
+
         width: 160px;
         height: 160px;
     }
 
     .btn {
         padding: 0.7rem 1.2rem;
+
         font-size: 0.9rem;
+    }
+
+    .conquista-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .formacao-card {
+        padding: 1.5rem;
+    }
+
+    .back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+
+        width: 42px;
+        height: 42px;
     }
 }
