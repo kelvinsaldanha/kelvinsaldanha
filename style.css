@@ -2225,3 +2225,57 @@ p {
         padding: 1rem;
     }
 }
+
+/* =============================================
+   Botão de download (currículo)
+   ============================================= */
+.btn--download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn--download svg {
+    flex-shrink: 0;
+}
+
+/* =============================================
+   Seção Habilidades Técnicas
+   ============================================= */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.habilidade-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+    text-align: center;
+}
+
+.habilidade-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.habilidade-card i {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.habilidade-card span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
