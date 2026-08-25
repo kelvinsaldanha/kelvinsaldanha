@@ -1876,134 +1876,352 @@ p {
 }
 
 /* =============================================
-   31. PÁGINA 404
+   22. Página 404
    ============================================= */
 
 .error-page {
-    min-height: 100vh;
-
+    min-height: calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
     text-align: center;
 
     background:
         radial-gradient(
             circle at center,
             var(--color-surface) 0%,
-            var(--color-background) 60%
+            var(--color-background) 65%
+        );
+}
+
+/* Efeito visual sutil no fundo */
+
+.error-page::before {
+    content: "";
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.08) 0%,
+            rgba(139, 92, 246, 0.04) 35%,
+            transparent 70%
         );
 
-    padding: 3rem 1rem;
+    pointer-events: none;
 }
 
-.error-page__container {
-    max-width: 700px;
+/* Conteúdo */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.error-page__content {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 800px);
+
+    margin: 0 auto;
+
+    text-align: center;
 }
+
+/* Número 404 */
 
 .error-page__code {
-    font-size: clamp(6rem, 20vw, 10rem);
+    margin: 0 0 1.25rem;
 
-    line-height: 0.9;
+    font-size: clamp(7rem, 20vw, 13rem);
+    line-height: 0.85;
 
     font-weight: 800;
+    letter-spacing: -0.08em;
 
-    letter-spacing: -0.06em;
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    user-select: none;
+}
+
+/* Linha decorativa */
+
+.error-page__divider {
+    width: 60px;
+    height: 3px;
+
+    margin: 0 auto 1.5rem;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+}
+
+/* Texto acima do título */
+
+.error-page__overline {
+    margin-bottom: 0.75rem;
 
     color: var(--color-primary);
 
-    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
+
+/* Título */
 
 .error-page__title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    max-width: 700px;
 
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+
+    letter-spacing: -0.02em;
 }
 
-.error-page__description {
-    max-width: 550px;
+/* Descrição */
 
-    font-size: 1.1rem;
+.error-page__description {
+    max-width: 620px;
+
+    margin: 0 auto 2rem;
 
     color: var(--color-text-muted);
 
-    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
+
+/* Botões */
 
 .error-page__actions {
     display: flex;
 
     justify-content: center;
+    align-items: center;
 
     flex-wrap: wrap;
 
     gap: 1rem;
-
-    margin-bottom: 2.5rem;
-}
-
-.error-page__links {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 1.25rem;
-}
-
-.error-page__links a {
-    color: var(--color-text-muted);
-
-    font-size: 0.9rem;
-
-    font-weight: 500;
-
-    transition: color var(--transition);
-}
-
-.error-page__links a:hover {
-    color: var(--color-primary);
 }
 
 
 /* =============================================
-   32. PÁGINA 404 — MOBILE
+   Links úteis
    ============================================= */
 
-@media (max-width: 430px) {
+.error-links {
+    border-top: 1px solid var(--color-border);
+
+    background: var(--color-surface);
+
+    padding: 3rem 0;
+}
+
+.error-links__grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+/* Card */
+
+.error-link-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.25rem;
+
+    background: var(--color-background);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--border-radius-lg);
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.error-link-card:hover {
+    color: var(--color-text);
+
+    transform: translateY(-3px);
+
+    border-color: var(--color-primary);
+
+    box-shadow: var(--shadow-md);
+}
+
+/* Ícone */
+
+.error-link-card__icon {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-surface-light);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--border-radius);
+
+    font-size: 1.25rem;
+}
+
+/* Conteúdo */
+
+.error-link-card__content {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+
+    text-align: left;
+}
+
+.error-link-card__content strong {
+    margin-bottom: 0.2rem;
+
+    color: var(--color-text);
+
+    font-size: 1rem;
+}
+
+.error-link-card__content small {
+    color: var(--color-text-muted);
+
+    font-size: 0.85rem;
+
+    line-height: 1.4;
+}
+
+/* Seta */
+
+.error-link-card__arrow {
+    color: var(--color-primary);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    transition: transform var(--transition);
+}
+
+.error-link-card:hover .error-link-card__arrow {
+    transform: translateX(4px);
+}
+
+
+/* =============================================
+   Página 404 — Mobile
+   ============================================= */
+
+@media (max-width: 768px) {
 
     .error-page {
-        padding: 2rem 1rem;
+        min-height: auto;
+
+        padding: 5rem 0 4rem;
     }
 
     .error-page__code {
-        margin-bottom: 1rem;
+        font-size: clamp(6rem, 28vw, 9rem);
+    }
+
+    .error-page__title {
+        font-size: 1.8rem;
     }
 
     .error-page__description {
         font-size: 1rem;
     }
 
+    .error-links__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .error-page {
+        padding: 4rem 0 3rem;
+    }
+
+    .error-page__code {
+        font-size: 6rem;
+    }
+
+    .error-page__title {
+        font-size: 1.55rem;
+    }
+
+    .error-page__description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
     .error-page__actions {
         flex-direction: column;
 
         width: 100%;
-
-        max-width: 300px;
     }
 
     .error-page__actions .btn {
         width: 100%;
+        max-width: 300px;
     }
 
-    .error-page__links {
-        gap: 0.75rem 1rem;
+    .error-link-card {
+        padding: 1rem;
     }
 }
