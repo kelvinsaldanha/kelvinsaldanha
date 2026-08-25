@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades Técnicas | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Habilidades técnicas de Kelvin Saldanha Mateus — Tecnologias como HTML5, CSS3, JavaScript, Git, GitHub e Python.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Habilidades Técnicas | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Habilidades técnicas de Kelvin Saldanha Mateus — Tecnologias como HTML5, CSS3, JavaScript, Git, GitHub e Python.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/habilidades.html">
+    <meta property="og:image" content="images/profile/kelvin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Devicon - ícones de tecnologias -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+        /* Estilos específicos da página Habilidades */
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .habilidade-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: 1.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+            text-align: center;
+        }
+
+        .habilidade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .habilidade-card i {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .habilidade-card span {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .habilidade-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 430px) {
+            .habilidades-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .habilidade-card i {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="conquistas.html" class="nav__link">Conquistas</a></li>
+                    <li class="nav__item"><a href="habilidades.html" class="nav__link">Habilidades</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="habilidades-titulo">
+            <div class="container">
+                <p class="hero__overline">Habilidades</p>
+                <h1 class="hero__title" id="habilidades-titulo">Habilidades Técnicas</h1>
+                <p class="hero__subtitle">Tecnologias e ferramentas que utilizo nos meus projetos.</p>
+            </div>
+        </section>
+
+        <!-- GRID DE HABILIDADES -->
+        <section class="section" aria-labelledby="habilidades-titulo">
+            <div class="container">
+                <div class="habilidades-grid">
+                    <!-- Card HTML5 -->
+                    <div class="habilidade-card">
+                        <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+                        <span>HTML5</span>
+                        <p>Estruturação semântica de páginas web.</p>
+                    </div>
+                    <!-- Card CSS3 -->
+                    <div class="habilidade-card">
+                        <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+                        <span>CSS3</span>
+                        <p>Estilização e design responsivo.</p>
+                    </div>
+                    <!-- Card JavaScript -->
+                    <div class="habilidade-card">
+                        <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+                        <span>JavaScript</span>
+                        <p>Interatividade e lógica no front-end.</p>
+                    </div>
+                    <!-- Card Git -->
+                    <div class="habilidade-card">
+                        <i class="devicon-git-plain colored" aria-hidden="true"></i>
+                        <span>Git</span>
+                        <p>Controle de versão de código.</p>
+                    </div>
+                    <!-- Card GitHub -->
+                    <div class="habilidade-card">
+                        <i class="devicon-github-original colored" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                        <p>Hospedagem e colaboração em projetos.</p>
+                    </div>
+                    <!-- Card Python -->
+                    <div class="habilidade-card">
+                        <i class="devicon-python-plain colored" aria-hidden="true"></i>
+                        <span>Python</span>
+                        <p>Automação e desenvolvimento de scripts.</p>
+                    </div>
+
+                    <!--
+                        ==================================================
+                        COMO ADICIONAR UMA NOVA HABILIDADE:
+
+                        1. Copie um bloco <div class="habilidade-card">...</div> acima.
+                        2. Cole logo abaixo do último card, antes deste comentário.
+                        3. Altere a classe do ícone, o texto do <span> e a descrição no <p>.
+                        4. Salve o arquivo.
+                        ==================================================
+                    -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kelvin-saldanha-mateus/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+                <a href="https://github.com/kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+                <a href="mailto:kelvinsaldanhaa@gmail.com" class="footer__link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
