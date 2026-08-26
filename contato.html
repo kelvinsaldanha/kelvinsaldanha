@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ============================================================
+     HEAD
+     ============================================================ -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    
+    <!-- Título e SEO básico -->
     <title>Contato | Kelvin Saldanha Mateus</title>
     <meta name="description" content="Entre em contato com Kelvin Saldanha Mateus — GitHub, LinkedIn e e-mail para conversas sobre tecnologia, engenharia e inovação.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0a0e1a">
+    
+    <!-- Open Graph (compartilhamento em redes sociais) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contato | Kelvin Saldanha Mateus">
     <meta property="og:description" content="Entre em contato com Kelvin Saldanha Mateus — GitHub, LinkedIn e e-mail para conversas sobre tecnologia, engenharia e inovação.">
     <meta property="og:url" content="https://kelvinsaldanha.github.io/contato.html">
     <meta property="og:image" content="images/profile/kelvin.jpg">
+    
+    <!-- JSON-LD (Dados Estruturados) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contato | Kelvin Saldanha Mateus",
+      "description": "Entre em contato com Kelvin Saldanha Mateus — GitHub, LinkedIn e e-mail para conversas sobre tecnologia, engenharia e inovação.",
+      "url": "https://kelvinsaldanha.github.io/contato.html",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Kelvin Saldanha Mateus",
+        "url": "https://kelvinsaldanha.github.io/"
+      },
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kelvin Saldanha Mateus",
+        "alternateName": "Kelvin Saldanha",
+        "url": "https://kelvinsaldanha.github.io/",
+        "image": "https://kelvinsaldanha.github.io/images/profile/kelvin.jpg",
+        "jobTitle": "Estudante de Equipamentos Biomédicos",
+        "description": "Estudante de Equipamentos Biomédicos no CEFET-MG, com interesse em tecnologia, engenharia e inovação.",
+        "email": "kelvinsaldanhaa@gmail.com",
+        "sameAs": [
+          "https://github.com/Kelvinsaldanha",
+          "https://www.linkedin.com/in/kelvin-saldanha-mateus/"
+        ],
+        "knowsAbout": [
+          "Equipamentos Biomédicos",
+          "Engenharia Biomédica",
+          "Sistemas Embarcados",
+          "Programação",
+          "Inteligência Artificial"
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Fontes e CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- ============================================================
+     BODY
+     ============================================================ -->
 <body>
+
+    <!-- Link de acessibilidade (skip link) -->
     <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
+    <!-- ========================================================
+         HEADER / NAVEGAÇÃO
+         ======================================================== -->
     <header class="header">
         <div class="container header__container">
+            
+            <!-- Logo -->
             <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            
+            <!-- Menu de navegação -->
             <nav class="nav" aria-label="Navegação principal">
+                
+                <!-- Botão do menu mobile -->
                 <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
                     <span class="nav__toggle-bar"></span>
                     <span class="nav__toggle-bar"></span>
                     <span class="nav__toggle-bar"></span>
                 </button>
+                
+                <!-- Lista de links do menu -->
                 <ul class="nav__menu" id="nav-menu">
                     <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
@@ -39,6 +106,8 @@
                     <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
                     <li class="nav__item"><a href="conquistas.html" class="nav__link">Conquistas</a></li>
                     <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    
+                    <!-- Botão de modo escuro -->
                     <li class="nav__item nav__item--darkmode">
                         <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
                     </li>
@@ -47,9 +116,14 @@
         </div>
     </header>
 
+    <!-- ========================================================
+         CONTEÚDO PRINCIPAL
+         ======================================================== -->
     <main id="conteudo-principal">
 
-        <!-- HERO INTERNO -->
+        <!-- ----------------------------------------------------
+             HERO (título da página)
+             ---------------------------------------------------- -->
         <section class="hero" aria-labelledby="contato-titulo">
             <div class="container">
                 <p class="hero__overline">Contato</p>
@@ -58,51 +132,64 @@
             </div>
         </section>
 
-        <!-- CANAIS DE CONTATO -->
+        <!-- ----------------------------------------------------
+             CANAIS DE CONTATO
+             ---------------------------------------------------- -->
         <section class="section" id="canais-contato" aria-labelledby="canais-titulo">
             <div class="container contato-container">
                 <div class="contato-canais">
+
+                    <!-- GitHub -->
                     <div class="contato-canal">
                         <span class="contato-canal__label">GitHub</span>
                         <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="contato-canal__link">github.com/Kelvinsaldanha</a>
                     </div>
+
+                    <!-- LinkedIn -->
                     <div class="contato-canal">
                         <span class="contato-canal__label">LinkedIn</span>
-                        <!--
-                            INSERIR LINK DO LINKEDIN AQUI.
-                            Substitua o href abaixo pela URL real do LinkedIn.
-                        -->
-                        <a href="INSIRA-SEU-LINKEDIN-AQUI" class="contato-canal__link" id="contato-linkedin">linkedin.com/in/kelvin-saldanha-mateus/</a>
+                        <a href="https://www.linkedin.com/in/kelvin-saldanha-mateus/" class="contato-canal__link" id="contato-linkedin">linkedin.com/in/kelvin-saldanha-mateus/</a>
                     </div>
+
+                    <!-- E-mail -->
                     <div class="contato-canal">
                         <span class="contato-canal__label">E-mail</span>
-                        <!--
-                            INSERIR E-MAIL AQUI.
-                            Substitua o href abaixo pelo e-mail real.
-                        -->
-                        <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="contato-canal__link" id="contato-email">kelvinsaldanhaa@gmail.com</a>
+                        <a href="mailto:kelvinsaldanhaa@gmail.com" class="contato-canal__link" id="contato-email">kelvinsaldanhaa@gmail.com</a>
                     </div>
+
                 </div>
             </div>
         </section>
 
     </main>
 
+    <!-- ========================================================
+         FOOTER
+         ======================================================== -->
     <footer class="footer">
         <div class="container footer__container">
+            
+            <!-- Nome e descrição -->
             <span class="footer__name">Kelvin Saldanha</span>
             <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            
+            <!-- Links do rodapé -->
             <div class="footer__links">
-                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
-                <a href="#" class="footer__link" id="linkedin-link">LinkedIn</a>
-                <a href="mailto:INSIRA-SEU-EMAIL-AQUI" class="footer__link" id="email-link">E-mail</a>
+                <a href="https://github.com/kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link" id="footer-github-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/kelvin-saldanha-mateus/" class="footer__link" id="linkedin-link">LinkedIn</a>
+                <a href="mailto:kelvinsaldanhaa@gmail.com" class="footer__link" id="email-link">E-mail</a>
             </div>
+            
+            <!-- Copyright -->
             <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
         </div>
     </footer>
 
+    <!-- Botão voltar ao topo -->
     <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
 
+    <!-- Script principal -->
     <script src="script.js"></script>
+
 </body>
 </html>
