@@ -164,6 +164,9 @@
             color: var(--color-text-muted);
         }
 
+        /* ============================================================
+           GALERIA (grid de figuras)
+           ============================================================ */
         .galeria-figuras {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -175,6 +178,12 @@
             border: 1px solid var(--color-border);
             border-radius: var(--border-radius-lg);
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .figura-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
         .figura-card__imagem {
             width: 100%;
@@ -189,6 +198,10 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .figura-card:hover .figura-card__imagem img {
+            transform: scale(1.02);
         }
         .figura-card__legenda {
             padding: 0.9rem 1.1rem;
@@ -201,6 +214,166 @@
             color: var(--color-text);
         }
 
+        /* ============================================================
+           LIGHTBOX (modal de ampliação)
+           ============================================================ */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            display: none;          /* oculto por padrão */
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox--ativo {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox__container {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox__imagem-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+        }
+
+        .lightbox__imagem {
+            max-width: 85vw;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            background: #111;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox__legenda {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #ddd;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 999px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 80vw;
+        }
+        .lightbox__legenda strong {
+            color: #fff;
+        }
+
+        /* Botões de navegação */
+        .lightbox__nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            transition: background 0.2s, transform 0.2s;
+            z-index: 10;
+            user-select: none;
+        }
+        .lightbox__nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .lightbox__nav--esquerda {
+            left: 10px;
+        }
+        .lightbox__nav--direita {
+            right: 10px;
+        }
+
+        .lightbox__fechar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.8rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.2s;
+            z-index: 20;
+            line-height: 1;
+        }
+        .lightbox__fechar:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* Indicador de progresso */
+        .lightbox__contador {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.2rem 0.8rem;
+            border-radius: 999px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .projeto-secao__titulo {
+                font-size: 1.3rem;
+            }
+            .lightbox__nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+            .lightbox__fechar {
+                top: 10px;
+                right: 15px;
+                font-size: 2rem;
+            }
+            .lightbox__imagem {
+                max-width: 95vw;
+                max-height: 70vh;
+            }
+            .lightbox__legenda {
+                font-size: 0.85rem;
+                max-width: 90vw;
+            }
+        }
+
+        /* ============================================================
+           CÓDIGO (já existente)
+           ============================================================ */
         .codigo-box {
             background: #0d1117;
             border: 1px solid var(--color-border);
@@ -247,18 +420,6 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .projeto-secao__titulo {
-                font-size: 1.3rem;
-            }
-            .codigo-box {
-                padding: 1rem;
-            }
-            .codigo-box pre {
-                font-size: 0.78rem;
-            }
         }
     </style>
 </head>
@@ -567,56 +728,46 @@ void loop() {
                     </div>
                 </div>
 
-                <!-- GALERIA -->
+                <!-- GALERIA DE FIGURAS (com lightbox) -->
                 <div class="projeto-secao">
                     <h2 class="projeto-secao__titulo">Circuitos e Gráficos</h2>
-                    <div class="galeria-figuras">
-                        <div class="figura-card">
+                    <div class="galeria-figuras" id="galeria-figuras">
+                        <!-- Figura 1 -->
+                        <div class="figura-card" data-index="0">
                             <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-1.jpg" alt="Gráfico do sinal pletismográfico filtrado e do sinal do Schmitt trigger" onerror="this.parentElement.parentElement.style.display='none'">
+                                <img src="images/projects/guia-respiracao/figura-1.jpg" alt="Sinal pletismográfico filtrado e sinal do Schmitt trigger" loading="lazy">
                             </div>
                             <div class="figura-card__legenda"><strong>Figura 1</strong> — Sinal pletismográfico filtrado e sinal do Schmitt trigger</div>
                         </div>
-                        <div class="figura-card">
+                        <!-- Figura 2 -->
+                        <div class="figura-card" data-index="1">
                             <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-2.jpg" alt="Gráfico do sinal pletismográfico gerado pelo Schmitt trigger" onerror="this.parentElement.parentElement.style.display='none'">
+                                <img src="images/projects/guia-respiracao/figura-2.jpg" alt="Sinal pletismográfico gerado pelo Schmitt trigger" loading="lazy">
                             </div>
                             <div class="figura-card__legenda"><strong>Figura 2</strong> — Sinal pletismográfico gerado pelo Schmitt trigger</div>
                         </div>
-                        <div class="figura-card">
+                        <!-- Figura 3 -->
+                        <div class="figura-card" data-index="2">
                             <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-3.jpg" alt="Esquemático do circuito" onerror="this.parentElement.parentElement.style.display='none'">
+                                <img src="images/projects/guia-respiracao/figura-3.jpg" alt="Esquemático do circuito" loading="lazy">
                             </div>
                             <div class="figura-card__legenda"><strong>Figura 3</strong> — Esquemático do circuito</div>
                         </div>
-                        <div class="figura-card">
+                        <!-- Figura 4 -->
+                        <div class="figura-card" data-index="3">
                             <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-4.jpg" alt="Circuito final montado no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
+                                <img src="images/projects/guia-respiracao/figura-4.jpg" alt="Circuito final montado no TinkerCad" loading="lazy">
                             </div>
                             <div class="figura-card__legenda"><strong>Figura 4</strong> — Circuito final no TinkerCad</div>
                         </div>
-                        <div class="figura-card">
+                        <!-- Figura 5 (antiga figura 7) -->
+                        <div class="figura-card" data-index="4">
                             <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-5.jpg" alt="Esquemático final no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
-                            </div>
-                            <div class="figura-card__legenda"><strong>Figura 5</strong> — Esquemático final no TinkerCad</div>
-                        </div>
-                        <div class="figura-card">
-                            <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-6.jpg" alt="Continuação do esquemático final no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
-                            </div>
-                            <div class="figura-card__legenda"><strong>Figura 6</strong> — Continuação do esquemático no TinkerCad</div>
-                        </div>
-                        <div class="figura-card">
-                            <div class="figura-card__imagem">
-                                <img src="images/projects/guia-respiracao/figura-7.jpg" alt="Circuito de teste no TinkerCad para validar o funcionamento do código" onerror="this.parentElement.parentElement.style.display='none'">
+                                <img src="images/projects/guia-respiracao/figura-7.jpg" alt="Circuito de teste no TinkerCad para validar o código" loading="lazy">
                             </div>
                             <div class="figura-card__legenda"><strong>Figura 5</strong> — Circuito de teste no TinkerCad para validar o código</div>
                         </div>
                     </div>
-                   <!-- <div class="nota-box">  
-                        <strong>Nota:</strong> substitua os arquivos em <code>images/projects/guia-respiracao/</code> pelas imagens reais dos gráficos e esquemáticos extraídos do relatório. Os cards sem imagem correspondente são ocultados automaticamente.
-                    </div> -->
                 </div>
 
                 <!-- RESULTADOS -->
@@ -677,6 +828,21 @@ void loop() {
 
     </main>
 
+    <!-- ========== LIGHTBOX (modal) ========== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Ampliação de imagem">
+        <button class="lightbox__fechar" id="lightbox-fechar" aria-label="Fechar">&times;</button>
+
+        <div class="lightbox__container">
+            <div class="lightbox__imagem-wrapper">
+                <button class="lightbox__nav lightbox__nav--esquerda" id="lightbox-anterior" aria-label="Imagem anterior">&#10094;</button>
+                <img class="lightbox__imagem" id="lightbox-imagem" src="" alt="">
+                <button class="lightbox__nav lightbox__nav--direita" id="lightbox-proximo" aria-label="Próxima imagem">&#10095;</button>
+            </div>
+            <div class="lightbox__legenda" id="lightbox-legenda"></div>
+            <div class="lightbox__contador" id="lightbox-contador"></div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container footer__container">
             <span class="footer__name">Kelvin Saldanha</span>
@@ -693,5 +859,108 @@ void loop() {
     <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
 
     <script src="script.js"></script>
+
+    <!-- Script do Lightbox -->
+    <script>
+        (function() {
+            const galeria = document.getElementById('galeria-figuras');
+            const cards = galeria ? Array.from(galeria.querySelectorAll('.figura-card')) : [];
+
+            // Filtra apenas cards que têm imagem (evita quebra)
+            const itens = cards.filter(card => {
+                const img = card.querySelector('img');
+                return img && img.src && !img.src.includes('undefined');
+            });
+
+            if (itens.length === 0) return;
+
+            // Elementos do lightbox
+            const lightbox = document.getElementById('lightbox');
+            const imagem = document.getElementById('lightbox-imagem');
+            const legenda = document.getElementById('lightbox-legenda');
+            const contador = document.getElementById('lightbox-contador');
+            const fechar = document.getElementById('lightbox-fechar');
+            const anterior = document.getElementById('lightbox-anterior');
+            const proximo = document.getElementById('lightbox-proximo');
+
+            let indiceAtual = 0;
+
+            // Função para abrir o lightbox com um índice específico
+            function abrirLightbox(index) {
+                if (index < 0) index = itens.length - 1;
+                if (index >= itens.length) index = 0;
+                indiceAtual = index;
+
+                const card = itens[indiceAtual];
+                const img = card.querySelector('img');
+                const leg = card.querySelector('.figura-card__legenda');
+
+                imagem.src = img.src;
+                imagem.alt = img.alt || '';
+                legenda.innerHTML = leg ? leg.innerHTML : '';
+                contador.textContent = `${indiceAtual + 1} / ${itens.length}`;
+
+                lightbox.classList.add('lightbox--ativo');
+                document.body.style.overflow = 'hidden'; // evita rolagem
+            }
+
+            function fecharLightbox() {
+                lightbox.classList.remove('lightbox--ativo');
+                document.body.style.overflow = '';
+            }
+
+            function navegar(delta) {
+                abrirLightbox(indiceAtual + delta);
+            }
+
+            // Eventos de clique nos cards
+            itens.forEach((card, idx) => {
+                card.addEventListener('click', function(e) {
+                    // Se clicou na legenda ou dentro, abre
+                    abrirLightbox(idx);
+                });
+            });
+
+            // Eventos dos botões do lightbox
+            fechar.addEventListener('click', fecharLightbox);
+            anterior.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navegar(-1);
+            });
+            proximo.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navegar(1);
+            });
+
+            // Fechar ao clicar fora da imagem (no fundo)
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    fecharLightbox();
+                }
+            });
+
+            // Teclado
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('lightbox--ativo')) return;
+                if (e.key === 'Escape') {
+                    fecharLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    navegar(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navegar(1);
+                }
+            });
+
+            // Previne scroll com teclas de seta quando o modal está aberto
+            window.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('lightbox--ativo') &&
+                    (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+        })();
+    </script>
+
 </body>
 </html>
