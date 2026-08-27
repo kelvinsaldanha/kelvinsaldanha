@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://kelvinsaldanha.github.io/portfolio/conquistas.html" />
     <meta property="og:image" content="https://kelvinsaldanha.github.io/portfolio/images/profile/kelvin.png" />
 
-     <!-- JSON-LD -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,7 +107,7 @@
           "item": {
             "@type": "Achievement",
             "name": "OBRL — Ouro",
-            "description": "Olimpíada Brasileira de Raciocínio Lógico ",
+            "description": "Olimpíada Brasileira de Raciocínio Lógico",
             "dateReceived": "2025",
             "recipient": { "@id": "https://kelvinsaldanha.github.io/#pessoa" },
             "image": "https://kelvinsaldanha.github.io/portfolio/images/conquistas/kelvin-saldanha-mateus-medalha-obrl-2025.jpeg"
@@ -154,7 +154,7 @@
   ]
 }
 </script>
-    
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -165,17 +165,19 @@
 
     <style>
         /* ============================================================
-                   VARIÁVEIS DE COR — EXTENSÕES
+                   VARIÁVEIS DE COR — EXTENSÕES (CORES REVISADAS)
                    ============================================================ */
         :root {
-            --color-gold: #f59e0b;
-            --color-gold-light: rgba(245, 158, 11, 0.15);
-            --color-silver: #b0b8c5;
-            --color-silver-light: rgba(176, 184, 197, 0.20);
-            --color-bronze: #cd7f32;
-            --color-bronze-light: rgba(205, 127, 50, 0.20);
-            --color-honor: #4a9eff;
-            --color-honor-light: rgba(74, 158, 255, 0.15);
+            --color-gold: #fbbf24;          /* ouro mais vibrante */
+            --color-gold-light: rgba(251, 191, 36, 0.20);
+            --color-silver: #9ca3af;        /* prata nítida */
+            --color-silver-light: rgba(156, 163, 175, 0.20);
+            --color-bronze: #b45309;        /* bronze acobreado escuro */
+            --color-bronze-light: rgba(180, 83, 9, 0.25);
+            --color-diamond: #8b5cf6;       /* roxo intenso para diamante */
+            --color-diamond-light: rgba(139, 92, 246, 0.30);
+            --color-honor: #3b82f6;         /* azul forte para menção honrosa */
+            --color-honor-light: rgba(59, 130, 246, 0.20);
         }
 
         /* ============================================================
@@ -249,21 +251,21 @@
             max-width: 90%;
         }
 
-        /* ---------- VARIANTES POR TIPO DE MEDALHA ---------- */
+        /* ---------- VARIANTES POR TIPO DE MEDALHA (CORES REVISADAS) ---------- */
         .conquista-card--ouro {
             border-color: var(--color-gold);
             box-shadow: 0 0 0 1px var(--color-gold-light);
         }
         .conquista-card--ouro:hover {
-            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+            box-shadow: 0 8px 24px rgba(251, 191, 36, 0.35);
         }
 
         .conquista-card--diamante {
-            border-color: var(--color-secondary);
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+            border-color: var(--color-diamond);
+            box-shadow: 0 0 0 1px var(--color-diamond-light);
         }
         .conquista-card--diamante:hover {
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.35);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.45);
         }
 
         .conquista-card--prata {
@@ -271,7 +273,7 @@
             box-shadow: 0 0 0 1px var(--color-silver-light);
         }
         .conquista-card--prata:hover {
-            box-shadow: 0 8px 24px rgba(176, 184, 197, 0.30);
+            box-shadow: 0 8px 24px rgba(156, 163, 175, 0.30);
         }
 
         .conquista-card--bronze {
@@ -279,7 +281,7 @@
             box-shadow: 0 0 0 1px var(--color-bronze-light);
         }
         .conquista-card--bronze:hover {
-            box-shadow: 0 8px 24px rgba(205, 127, 50, 0.30);
+            box-shadow: 0 8px 24px rgba(180, 83, 9, 0.35);
         }
 
         .conquista-card--honra {
@@ -287,7 +289,7 @@
             box-shadow: 0 0 0 1px var(--color-honor-light);
         }
         .conquista-card--honra:hover {
-            box-shadow: 0 8px 24px rgba(74, 158, 255, 0.25);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.30);
         }
 
         /* ============================================================
@@ -492,7 +494,7 @@
                         <h3 class="conquista-card__title">OBRL — Ouro</h3>
                         <p class="conquista-card__ano">2025</p>
                         <p class="conquista-card__descricao">
-                            Olimpíada Brasileira de Raciocinio Logico
+                            Olimpíada Brasileira de Raciocínio Lógico
                         </p>
                     </article>
 
@@ -510,7 +512,7 @@
                         </p>
                     </article>
 
-                    <!-- 7 — OCE Bronze 2026 (NOVA) -->
+                    <!-- 7 — OCE Bronze 2026 -->
                     <article class="conquista-card conquista-card--bronze">
                         <div class="conquista-card__imagem">
                             <img src="images/conquistas/kelvin-saldanha-mateus-medalha-oce-bronze-2026.jpeg"
