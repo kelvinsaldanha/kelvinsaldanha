@@ -214,8 +214,8 @@
             color: var(--color-text);
         }
 
-        /* ============================================================
-           LIGHTBOX (modal de ampliação)
+               /* ============================================================
+           LIGHTBOX (modal de ampliação) - VERSÃO ATUALIZADA
            ============================================================ */
         .lightbox {
             position: fixed;
@@ -223,9 +223,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(6px);
-            display: none;          /* oculto por padrão */
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            display: none;
             align-items: center;
             justify-content: center;
             z-index: 9999;
@@ -239,8 +239,8 @@
 
         .lightbox__container {
             position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
+            max-width: 98vw;
+            max-height: 98vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -254,32 +254,54 @@
             justify-content: center;
             width: 100%;
             height: auto;
+            max-height: 94vh; /* wrapper quase do tamanho da tela */
         }
 
         .lightbox__imagem {
-            max-width: 85vw;
-            max-height: 75vh;
+            max-width: 96vw;
+            max-height: 92vh; /* imagem ocupa quase a tela inteira */
             object-fit: contain;
             border-radius: var(--border-radius-lg);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
             background: #111;
             transition: opacity 0.25s ease;
         }
 
+        /* Legenda continua abaixo da imagem, fora do wrapper */
         .lightbox__legenda {
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             font-size: 1rem;
-            color: #ddd;
+            color: #eee;
             text-align: center;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 999px;
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             max-width: 80vw;
+            position: relative;
+            z-index: 5;
         }
         .lightbox__legenda strong {
             color: #fff;
+        }
+
+        /* CONTADOR movido para o canto superior direito da imagem */
+        .lightbox__contador {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.25rem 0.9rem;
+            border-radius: 999px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 15;
+            pointer-events: none; /* não atrapalha cliques */
+            letter-spacing: 0.3px;
         }
 
         /* Botões de navegação */
@@ -290,17 +312,17 @@
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #fff;
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             cursor: pointer;
             backdrop-filter: blur(4px);
             transition: background 0.2s, transform 0.2s;
-            z-index: 10;
+            z-index: 15;
             user-select: none;
         }
         .lightbox__nav:hover {
@@ -308,15 +330,16 @@
             transform: translateY(-50%) scale(1.05);
         }
         .lightbox__nav--esquerda {
-            left: 10px;
+            left: 12px;
         }
         .lightbox__nav--direita {
-            right: 10px;
+            right: 12px;
         }
 
+        /* Botão fechar (✕) */
         .lightbox__fechar {
             position: absolute;
-            top: 20px;
+            top: 16px;
             right: 30px;
             font-size: 2.8rem;
             color: #fff;
@@ -326,31 +349,15 @@
             transition: transform 0.2s;
             z-index: 20;
             line-height: 1;
+            opacity: 0.9;
         }
         .lightbox__fechar:hover {
             transform: rotate(90deg) scale(1.1);
-        }
-
-        /* Indicador de progresso */
-        .lightbox__contador {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 0.2rem 0.8rem;
-            border-radius: 999px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 1;
         }
 
         /* Responsividade */
         @media (max-width: 600px) {
-            .projeto-secao__titulo {
-                font-size: 1.3rem;
-            }
             .lightbox__nav {
                 width: 40px;
                 height: 40px;
@@ -359,15 +366,22 @@
             .lightbox__fechar {
                 top: 10px;
                 right: 15px;
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .lightbox__imagem {
-                max-width: 95vw;
-                max-height: 70vh;
+                max-width: 98vw;
+                max-height: 85vh;
             }
             .lightbox__legenda {
                 font-size: 0.85rem;
-                max-width: 90vw;
+                max-width: 92vw;
+                margin-top: 0.8rem;
+            }
+            .lightbox__contador {
+                top: 10px;
+                right: 10px;
+                font-size: 0.75rem;
+                padding: 0.15rem 0.6rem;
             }
         }
 
@@ -837,9 +851,13 @@ void loop() {
                 <button class="lightbox__nav lightbox__nav--esquerda" id="lightbox-anterior" aria-label="Imagem anterior">&#10094;</button>
                 <img class="lightbox__imagem" id="lightbox-imagem" src="" alt="">
                 <button class="lightbox__nav lightbox__nav--direita" id="lightbox-proximo" aria-label="Próxima imagem">&#10095;</button>
+                
+                <!-- CONTADOR AGORA FICA DENTRO DO WRAPPER (SOBRE A IMAGEM) -->
+                <div class="lightbox__contador" id="lightbox-contador"></div>
             </div>
+            
+            <!-- LEGENDA FICA ABAIXO, FORA DO WRAPPER -->
             <div class="lightbox__legenda" id="lightbox-legenda"></div>
-            <div class="lightbox__contador" id="lightbox-contador"></div>
         </div>
     </div>
 
