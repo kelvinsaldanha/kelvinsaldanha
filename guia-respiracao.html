@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Guia de Respiração | Kelvin Saldanha Mateus</title>
+    <meta name="description" content="Guia de Respiração — dispositivo biomédico que capta o sinal pletismográfico do usuário e guia visualmente sua respiração com base na frequência cardíaca, usando eletrônica analógica, filtros ativos, Schmitt trigger e Arduino Nano.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Guia de Respiração | Kelvin Saldanha Mateus">
+    <meta property="og:description" content="Dispositivo biomédico que capta o sinal pletismográfico do usuário e guia visualmente sua respiração com base na frequência cardíaca.">
+    <meta property="og:url" content="https://kelvinsaldanha.github.io/portfolio/guia-respiracao.html">
+    <meta property="og:image" content="https://kelvinsaldanha.github.io/portfolio/images/projects/guia-respiracao.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ============================================================
+           PÁGINA DE PROJETO DETALHADO
+           ============================================================ */
+        .projeto-detalhe {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .projeto-detalhe__voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: color var(--transition);
+        }
+        .projeto-detalhe__voltar:hover {
+            color: var(--color-primary);
+        }
+
+        .projeto-detalhe__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+        .projeto-detalhe__badge {
+            display: inline-block;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            background: var(--color-surface);
+        }
+        .projeto-detalhe__badge--status {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .projeto-detalhe__hero-imagem {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            margin: 1.5rem 0 2.5rem;
+            background: var(--color-surface-light);
+        }
+        .projeto-detalhe__hero-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .projeto-detalhe__integrantes {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .projeto-detalhe__integrantes strong {
+            color: var(--color-text);
+        }
+
+        .projeto-secao {
+            margin-bottom: 3rem;
+        }
+        .projeto-secao__titulo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        .projeto-secao__subtitulo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 1.75rem 0 0.75rem;
+        }
+        .projeto-secao p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+        .projeto-secao ul {
+            margin: 0 0 1rem 1.25rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+        }
+        .projeto-secao ul li {
+            margin-bottom: 0.35rem;
+        }
+
+        .formula-box {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 3px solid var(--color-primary);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            overflow-x: auto;
+            line-height: 1.9;
+        }
+
+        .nota-box {
+            background: var(--color-surface-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.92rem;
+            color: var(--color-text-muted);
+        }
+        .nota-box strong {
+            color: var(--color-text);
+        }
+
+        .materiais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.6rem;
+            margin: 1rem 0 1.5rem;
+        }
+        .materiais-grid__item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 0.65rem 0.9rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .galeria-figuras {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .figura-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        .figura-card__imagem {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: var(--color-surface-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .figura-card__imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .figura-card__legenda {
+            padding: 0.9rem 1.1rem;
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+        .figura-card__legenda strong {
+            color: var(--color-text);
+        }
+
+        .codigo-box {
+            background: #0d1117;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .codigo-box pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            line-height: 1.65;
+            color: #c9d1d9;
+            white-space: pre;
+        }
+
+        .referencias-lista {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .referencias-lista li {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+        .referencias-lista li:last-child {
+            border-bottom: none;
+        }
+        .referencias-lista a {
+            color: var(--color-primary);
+            text-decoration: none;
+            word-break: break-word;
+        }
+        .referencias-lista a:hover {
+            text-decoration: underline;
+        }
+
+        .projeto-detalhe__cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .projeto-secao__titulo {
+                font-size: 1.3rem;
+            }
+            .codigo-box {
+                padding: 1rem;
+            }
+            .codigo-box pre {
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo" aria-label="Kelvin Saldanha - Início">Kelvin Saldanha</a>
+            <nav class="nav" aria-label="Navegação principal">
+                <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link" aria-current="page">Projetos</a></li>
+                    <li class="nav__item"><a href="experiencias.html" class="nav__link">Experiências</a></li>
+                    <li class="nav__item"><a href="formacao.html" class="nav__link">Formação</a></li>
+                    <li class="nav__item"><a href="publicacoes.html" class="nav__link">Publicações</a></li>
+                    <li class="nav__item"><a href="conquistas.html" class="nav__link">Conquistas</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                    <li class="nav__item nav__item--darkmode">
+                        <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Alternar modo escuro">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- HERO INTERNO -->
+        <section class="hero" aria-labelledby="projeto-titulo">
+            <div class="container">
+                <p class="hero__overline">Projeto · Instrumentação Biomédica</p>
+                <h1 class="hero__title" id="projeto-titulo">Guia de Respiração</h1>
+                <p class="hero__subtitle">Dispositivo que capta o sinal pletismográfico do usuário e guia visualmente sua respiração com base na frequência cardíaca.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container projeto-detalhe">
+
+                <a href="projetos.html" class="projeto-detalhe__voltar">&larr; Voltar para Projetos</a>
+
+                <div class="projeto-detalhe__meta">
+                    <span class="projeto-detalhe__badge projeto-detalhe__badge--status">Concluído — 2025</span>
+                    <span class="projeto-detalhe__badge">Eletrônica Analógica</span>
+                    <span class="projeto-detalhe__badge">Eletrônica Digital</span>
+                    <span class="projeto-detalhe__badge">Sensores e Transdutores</span>
+                    <span class="projeto-detalhe__badge">Arduino</span>
+                </div>
+
+                <div class="projeto-detalhe__hero-imagem">
+                    <img src="images/projects/guia-respiracao.jpg" alt="Guia de Respiração — protótipo do circuito" onerror="this.parentElement.style.display='none'">
+                </div>
+
+                <p class="projeto-detalhe__integrantes">
+                    <strong>Projeto Final</strong> — Disciplinas de Eletrônica Analógica, Eletrônica Digital, Sensores e Transdutores<br>
+                    <strong>Instituição:</strong> CEFET-MG, Belo Horizonte<br>
+                    <strong>Integrantes:</strong> Júlia Lima Gróia Fernandes, Kauan Kerlon Costa de Jesus, Kelvin Saldanha Mateus, Laura Battaglia Neves<br>
+                    <strong>Ano:</strong> 2025
+                </p>
+
+                <!-- INTRODUÇÃO -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Introdução</h2>
+                    <p>
+                        A estabilidade da respiração é fundamental para o bem-estar físico e emocional, sendo diretamente influenciada por fatores como estresse, ansiedade, fadiga e condições clínicas diversas. Pensando nisso, foi desenvolvido o <strong>Guia de Respiração</strong>, um dispositivo capaz de auxiliar usuários a regular seu padrão respiratório por meio de estímulos visuais sincronizados com sua frequência cardíaca.
+                    </p>
+                    <p>
+                        O sistema utiliza o sinal pletismográfico obtido por um par óptico sensor–emissor, responsável por captar variações no fluxo sanguíneo associadas aos batimentos cardíacos. Esse sinal, naturalmente de baixa amplitude e suscetível a ruídos, é processado por um conjunto de circuitos analógicos composto por filtros ativos, amplificação e um circuito Schmitt trigger, garantindo a extração limpa e estável das informações fisiológicas.
+                    </p>
+                    <p>
+                        Após o tratamento analógico, o sinal é enviado a um Arduino Nano, que interpreta os batimentos por meio de uma onda digital e, a partir dessa leitura, controla o acionamento de LEDs. Esses LEDs funcionam como um guia visual de respiração, sugerindo ao usuário o ritmo adequado de inspiração e expiração de acordo com sua condição fisiológica atual.
+                    </p>
+                    <p>
+                        O projeto integra conceitos de eletrônica analógica, eletrônica digital, sensores e transdutores, demonstrando na prática a aplicação de filtros, condicionamento de sinais biomédicos e interface com microcontroladores. O resultado é um dispositivo simples, acessível e funcional, com potencial para auxiliar no relaxamento, no controle respiratório e no monitoramento básico do estado fisiológico do usuário.
+                    </p>
+                </div>
+
+                <!-- METODOLOGIA -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Metodologia</h2>
+
+                    <h3 class="projeto-secao__subtitulo">Materiais utilizados</h3>
+                    <div class="materiais-grid">
+                        <div class="materiais-grid__item">1x Arduino Nano</div>
+                        <div class="materiais-grid__item">3x AmpOp OP07</div>
+                        <div class="materiais-grid__item">2x Capacitores 680nF</div>
+                        <div class="materiais-grid__item">2x Resistores 120Ω</div>
+                        <div class="materiais-grid__item">1x Resistor 180Ω</div>
+                        <div class="materiais-grid__item">3x Resistores 220Ω</div>
+                        <div class="materiais-grid__item">1x Resistor 1,8kΩ</div>
+                        <div class="materiais-grid__item">1x Resistor 6,8kΩ</div>
+                        <div class="materiais-grid__item">2x Resistores 12kΩ</div>
+                        <div class="materiais-grid__item">1x Resistor 33kΩ</div>
+                        <div class="materiais-grid__item">1x Resistor 560kΩ</div>
+                        <div class="materiais-grid__item">1x Diodo de sinal 1N4148</div>
+                        <div class="materiais-grid__item">1x Fonte simétrica 5V</div>
+                        <div class="materiais-grid__item">1x Protoboard 480 pinos</div>
+                        <div class="materiais-grid__item">3x LEDs de cores variadas</div>
+                        <div class="materiais-grid__item">1x Par óptico sensor-emissor</div>
+                        <div class="materiais-grid__item">Fios diversos</div>
+                    </div>
+
+                    <h3 class="projeto-secao__subtitulo">Divisor de tensão do par óptico</h3>
+                    <p>
+                        O primeiro passo foi calcular os resistores dos divisores de tensão do par óptico. Para o resistor do emissor, aplicou-se a Lei de Ohm, considerando corrente máxima de 20mA no LED, tensão de 1,6V sobre o emissor (conforme datasheet) e tensão de fonte de 5V:
+                    </p>
+                    <div class="formula-box">
+                        R1 = (Vcc − Vf) / Imax = (5V − 1,6V) / 20mA = 170Ω<br>
+                        → Valor comercial escolhido: <strong>180Ω</strong> (um valor menor ultrapassaria os 20mA)
+                    </div>
+                    <p>
+                        Para o resistor do receptor (R2), foram feitos testes práticos com valores diferentes até que a tensão no receptor atingisse 2,5V ao captar o sinal pletismográfico. O valor obtido experimentalmente foi <strong>33kΩ</strong>.
+                    </p>
+
+                    <h3 class="projeto-secao__subtitulo">Projeto do filtro</h3>
+                    <p>
+                        O sinal de interesse possui amplitude entre 5 e 10mV, numa faixa de frequência entre 0,5Hz e 10Hz. A componente CC de 2,5V não é de interesse, e há ruídos da rede elétrica e sinais eletromagnéticos a serem eliminados.
+                    </p>
+                    <p>
+                        Inicialmente, foi calculado um filtro passa-faixa (PF) ativo de primeira ordem com fl = 0,4Hz, fh = 30,4Hz e G = 100:
+                    </p>
+                    <div class="formula-box">
+                        fo = √(fh × fl) = √(0,4 × 30,4) = 2,86Hz<br>
+                        BW = fh − fl = 20Hz<br>
+                        Q = fo / BW = 2,86 / 20 = 0,143
+                    </div>
+                    <div class="nota-box">
+                        <strong>Problema encontrado:</strong> a condição G &lt; 2Q² não foi satisfeita (2 × 0,143² = 0,04), tornando esse ganho impossível para um filtro ativo de primeira ordem (ganho mínimo = 1). A solução foi projetar separadamente um filtro passa-baixa (G=100) e um passa-alta (G=1), ambos de primeira ordem, ligados em série para formar o passa-faixa.
+                    </div>
+
+                    <h3 class="projeto-secao__subtitulo">Filtro passa-alta (fc = 0,4Hz)</h3>
+                    <p>
+                        Como a frequência de corte é muito baixa, a regra prática de C ≈ 10/fc não pôde ser aplicada (resultaria em um capacitor grande demais). Optou-se por fixar o maior capacitor disponível, 680nF, e calcular o resistor:
+                    </p>
+                    <div class="formula-box">
+                        R = 1 / (2π × fc × C) = 1 / (2π × 0,4 × 680nF) ≈ 585kΩ<br>
+                        → Valor comercial escolhido: <strong>560kΩ</strong>
+                    </div>
+                    <p>Como o ganho desse estágio é 1, o AmpOp funciona apenas como buffer — não há mais resistores a calcular.</p>
+
+                    <h3 class="projeto-secao__subtitulo">Filtro passa-baixa (fc = 20Hz)</h3>
+                    <p>Pelo mesmo motivo, foi usado outro capacitor de 680nF:</p>
+                    <div class="formula-box">
+                        R = 1 / (2π × fc × C) = 1 / (2π × 20 × 680nF) ≈ 11,7kΩ<br>
+                        → Valor comercial escolhido: <strong>12kΩ</strong><br><br>
+                        Ganho: Rf/Ri + 1 = 12000/120 + 1 = 101 ≈ 100 (ganho desejado)
+                    </div>
+                    <p>Na prática, o sinal alcançou uma amplitude de 2,5V após esse condicionamento.</p>
+
+                    <h3 class="projeto-secao__subtitulo">Schmitt Trigger</h3>
+                    <p>
+                        Diante da grande variação nos picos do sinal pletismográfico — o que impedia a execução correta do código — decidiu-se usar um Schmitt Trigger para transformar o sinal em uma onda digital estável, mais fácil de ser lida pelo Arduino.
+                    </p>
+                    <p>Com alimentação do AmpOp em 5V e Vref inicial de 1V:</p>
+                    <div class="formula-box">
+                        Vref = Vcc × R2/(R1+R2)<br>
+                        1 = 5 × R2/(R1+R2) → R1 = 4×R2<br>
+                        → R1 = 12kΩ, R2 = 2,7kΩ (Vref calculado ≈ 0,918V)
+                    </div>
+                    <div class="nota-box">
+                        <strong>Ajuste necessário:</strong> durante a medição no osciloscópio, observou-se que alguns picos e vales não alcançavam o Vref definido, ficando fora da faixa de operação do Schmitt Trigger. Para corrigir, o novo Vref-alvo foi reduzido para 0,7V:
+                    </div>
+                    <div class="formula-box">
+                        0,7 = 5 × R2/(R1+R2) → R1 = 6,14 × R2<br>
+                        → R1 = 12kΩ, R2 = 1,8kΩ (Vref calculado ≈ 0,65V)
+                    </div>
+                    <p>
+                        Na saída do Schmitt Trigger, a onda quadrada variava de −5V a +5V. Para bloquear a tensão negativa e proteger o Arduino, foi adicionado um diodo de sinal 1N4148 em série com um resistor de 120Ω para limitar a corrente.
+                    </p>
+
+                    <h3 class="projeto-secao__subtitulo">Funcionamento do código</h3>
+                    <p>
+                        O Arduino Nano recebe na entrada digital um sinal já tratado externamente por filtro, comparador (trigger) e diodo — garantindo que somente pulsos limpos e sem tensões negativas cheguem ao microcontrolador. A cada leitura, o programa identifica um batimento quando ocorre a transição de LOW para HIGH na entrada. Essa contagem é feita durante aproximadamente 10 segundos; ao final, o BPM é calculado multiplicando o número de pulsos por seis.
+                    </p>
+                    <p>
+                        Com o BPM obtido, o sistema aciona diferentes LEDs de acordo com a faixa detectada: valores acima de 85 ativam uma sequência de respiração guiada (inspiração e expiração por 3 ciclos); valores entre 50 e 85 acendem apenas o LED de condição normal; valores abaixo de 50 mantêm todos os LEDs apagados, evitando leituras inválidas quando não há dedo no sensor.
+                    </p>
+
+                    <h3 class="projeto-secao__subtitulo">Escolha dos parâmetros</h3>
+                    <p>
+                        Foram realizadas medições dos batimentos cardíacos de dois integrantes do grupo com um relógio de monitoramento de BPM: um registrou cerca de 70 BPM e o outro aproximadamente 100 BPM. O valor de <strong>85 BPM</strong> foi escolhido como referência intermediária para os testes.
+                    </p>
+                    <p>
+                        A janela de leitura de <strong>10 segundos</strong> foi escolhida por facilitar o cálculo (BPM = batimentos × 6) sem perder picos por um intervalo curto demais. Para os ciclos de respiração guiada, optou-se por <strong>três ciclos fixos</strong> — um único ciclo seria insuficiente para avaliar o sistema, enquanto ciclos infinitos dificultariam os testes.
+                    </p>
+
+                    <h3 class="projeto-secao__subtitulo">Problemas e limitações encontrados</h3>
+                    <p>
+                        O principal desafio foi converter o sinal lido em um valor confiável de BPM, resolvido com a adição do Schmitt Trigger para estabilizar os pulsos. Também houve limitações no uso da função <code>delay()</code>: após o acionamento dos LEDs, o circuito fica cerca de 10 segundos sem realizar novas leituras. Isso também impediu o uso de uma estrutura <code>while</code> planejada para repetir os ciclos até nova medição — já que o <code>delay()</code> bloqueia toda a execução do programa. Como alternativa, optou-se por usar três ciclos fixos com <code>if()</code> no lugar do <code>while()</code>.
+                    </p>
+                    <div class="nota-box">
+                        Além disso, o protótipo inicial no TinkerCad não podia ser simulado diretamente, pois o sensor real utilizado não existia na plataforma. Foi necessário criar um circuito de teste com um gerador de função simulando a onda quadrada de saída do comparador, permitindo validar o código antes da implementação real no Arduino.
+                    </div>
+                </div>
+
+                <!-- CÓDIGO -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Código Final</h2>
+                    <div class="codigo-box">
+<pre>int sensor = 8;         // Entrada digital do comparador
+int ledInspira = 7;
+int ledExpira  = 6;
+int ledOk = 5;
+int batimentos = 0;
+int estadoAnterior = 0;
+int BPM, i, estado=0;
+
+
+void setup() {
+  pinMode(sensor, INPUT);
+  pinMode(ledInspira, OUTPUT);
+  pinMode(ledExpira, OUTPUT);
+  pinMode(ledOk, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  // Faz uma medição a cada 10 segundos
+  for (i = 0; i &lt; 2000; i++) {
+
+     estadoAnterior = estado;
+     estado = digitalRead(sensor);
+
+    // Detecta um pico quando o sinal sobe de LOW → HIGH
+    if ( estado != estadoAnterior && estado == HIGH ) {
+      batimentos++;
+    }
+    delay(5);  // tempo do ciclo
+
+  }
+
+  // Calcula BPM
+  BPM = batimentos * 6;
+  batimentos = 0;
+
+  Serial.print("BPM: ");
+  Serial.println(BPM);
+
+  // Se BPM alto, guiar respiração
+  if (BPM > 85) {
+    // Início do primeiro ciclo de respiração
+    // Inspiração (4s)
+    digitalWrite(ledInspira, HIGH);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, LOW);
+    delay(4000);
+
+    // Expiração (5s)
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, HIGH);
+    digitalWrite(ledOk, LOW);
+    delay(5000);
+
+    // Início do segundo ciclo
+    // Inspiração (4s)
+    digitalWrite(ledInspira, HIGH);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, LOW);
+    delay(4000);
+
+    // Expiração (5s)
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, HIGH);
+    digitalWrite(ledOk, LOW);
+    delay(5000);
+
+    // Início do terceiro ciclo de respiração
+    // Inspiração (4s)
+    digitalWrite(ledInspira, HIGH);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, LOW);
+    delay(4000);
+
+    // Expiração (5s)
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, HIGH);
+    digitalWrite(ledOk, LOW);
+    delay(5000);
+
+    // Apaga os LEDs depois de 3 ciclos
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, LOW);
+  }
+
+  if (BPM &lt;= 85 && BPM &gt; 50) { // Indica batimento estável
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, HIGH);
+  }
+
+  if (BPM &lt; 50) { // Evita leitura inválida sem dedo no sensor
+    digitalWrite(ledInspira, LOW);
+    digitalWrite(ledExpira, LOW);
+    digitalWrite(ledOk, LOW);
+  }
+}</pre>
+                    </div>
+                </div>
+
+                <!-- GALERIA -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Circuitos e Gráficos</h2>
+                    <div class="galeria-figuras">
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-1.jpg" alt="Gráfico do sinal pletismográfico filtrado e do sinal do Schmitt trigger" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 1</strong> — Sinal pletismográfico filtrado e sinal do Schmitt trigger</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-2.jpg" alt="Gráfico do sinal pletismográfico gerado pelo Schmitt trigger" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 2</strong> — Sinal pletismográfico gerado pelo Schmitt trigger</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-3.jpg" alt="Esquemático do circuito" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 3</strong> — Esquemático do circuito</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-4.jpg" alt="Circuito final montado no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 4</strong> — Circuito final no TinkerCad</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-5.jpg" alt="Esquemático final no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 5</strong> — Esquemático final no TinkerCad</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-6.jpg" alt="Continuação do esquemático final no TinkerCad" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 6</strong> — Continuação do esquemático no TinkerCad</div>
+                        </div>
+                        <div class="figura-card">
+                            <div class="figura-card__imagem">
+                                <img src="images/projects/guia-respiracao/figura-7.jpg" alt="Circuito de teste no TinkerCad para validar o funcionamento do código" onerror="this.parentElement.parentElement.style.display='none'">
+                            </div>
+                            <div class="figura-card__legenda"><strong>Figura 7</strong> — Circuito de teste no TinkerCad para validar o código</div>
+                        </div>
+                    </div>
+                    <div class="nota-box">
+                        <strong>Nota:</strong> substitua os arquivos em <code>images/projects/guia-respiracao/</code> pelas imagens reais dos gráficos e esquemáticos extraídos do relatório. Os cards sem imagem correspondente são ocultados automaticamente.
+                    </div>
+                </div>
+
+                <!-- RESULTADOS -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Resultados</h2>
+                    <p>
+                        Após a montagem e ajuste do circuito, foi possível obter o sinal pletismográfico amplificado e filtrado conforme esperado. O filtro passa-alta de 0,4Hz eliminou a componente DC do sinal, enquanto o filtro passa-baixa de 20Hz reduziu boa parte dos ruídos de alta frequência. Na prática, o sinal amplificado atingiu aproximadamente 2,5V de amplitude, valor adequado para o processamento posterior.
+                    </p>
+                    <p>
+                        Durante os testes no osciloscópio, observou-se que alguns picos do sinal não ultrapassavam o limiar inicial definido pelo Schmitt Trigger, impedindo a correta digitalização dos batimentos. A redução do Vref para aproximadamente 0,65V corrigiu esse problema, permitindo que praticamente todas as variações relevantes do sinal fossem convertidas em uma onda quadrada estável.
+                    </p>
+                    <p>
+                        Com a inclusão do diodo 1N4148 na saída do Schmitt Trigger, as tensões negativas foram efetivamente bloqueadas, garantindo compatibilidade elétrica com o Arduino Nano — que passou a ler corretamente o sinal digital correspondente aos batimentos cardíacos.
+                    </p>
+                    <p>
+                        O código final apresentou comportamento funcional: leu corretamente os batimentos cardíacos, obtendo valores muito próximos dos reais, e executou de forma consistente a alternância entre os estados de inspiração, expiração e o LED de estabilidade.
+                    </p>
+                    <p>
+                        Como limitação observada, as medições se tornaram imprecisas dependendo do posicionamento do dedo no sensor, o que compromete a praticidade do equipamento em uma aplicação externa. Além disso, devido ao uso de <code>delay()</code>, não foi possível manter uma alternância contínua entre os LEDs de inspiração e expiração — o que pode prejudicar a eficácia do guia em cenários de uso mais longos.
+                    </p>
+                </div>
+
+                <!-- CONCLUSÃO -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Conclusão</h2>
+                    <p>
+                        O desenvolvimento do "Guia de Respiração" permitiu integrar conceitos de eletrônica analógica, digital, sensores e processamento de sinais biomédicos em um projeto funcional. Os resultados demonstram que o sistema foi capaz de captar o sinal pletismográfico, filtrá-lo adequadamente e convertê-lo em uma forma digital compreensível pelo Arduino Nano, permitindo o acionamento correto dos LEDs.
+                    </p>
+                    <p>
+                        Apesar de dificuldades iniciais — como a definição do limiar adequado do Schmitt Trigger e a necessidade de filtrar ruídos de baixa e alta frequência — o circuito se mostrou eficiente após os ajustes. O dispositivo final cumpriu seu objetivo principal: guiar a respiração do usuário com base em seus batimentos cardíacos, oferecendo um feedback visual simples e eficaz.
+                    </p>
+                    <p>
+                        Como melhorias futuras, é possível otimizar o design do filtro para maior precisão, substituir o par óptico por sensores dedicados de fotopletismografia (PPG), reduzir ruídos externos com blindagem e desenvolver uma interface mais amigável, incluindo display ou comunicação sem fio.
+                    </p>
+                    <p>
+                        Em resumo, o projeto cumpriu plenamente o objetivo proposto: desenvolver um sistema capaz de captar batimentos cardíacos e utilizá-los como base para gerar um guia de respiração visual, consolidando o aprendizado prático em circuitos analógicos, condicionamento de sinais biomédicos e integração com microcontroladores.
+                    </p>
+                </div>
+
+                <!-- REFERÊNCIAS -->
+                <div class="projeto-secao">
+                    <h2 class="projeto-secao__titulo">Referências</h2>
+                    <ul class="referencias-lista">
+                        <li>AUTODESK. <em>Tinkercad Circuits</em>. Disponível em: <a href="https://www.tinkercad.com" target="_blank" rel="noopener noreferrer">tinkercad.com</a>.</li>
+                        <li>ÁVILA, David Mattos A. <em>Apostila de Eletrônica Analógica</em>. [Material didático]. CEFET-MG, 2025.</li>
+                        <li>HOSPITAL DA LUZ. <em>Pletismografia</em>. Disponível em: <a href="https://www.hospitaldaluz.pt/pt/dicionario-de-saude/pletismografia" target="_blank" rel="noopener noreferrer">hospitaldaluz.pt</a>.</li>
+                        <li>LABCENTER ELECTRONICS. <em>Proteus Design Suite v.8.15</em> [Software]. Disponível em: <a href="https://www.labcenter.com" target="_blank" rel="noopener noreferrer">labcenter.com</a>.</li>
+                        <li>TEXAS INSTRUMENTS. <em>OP07: Precision Operational Amplifier</em>. Disponível em: <a href="https://www.ti.com/lit/ds/symlink/op07.pdf" target="_blank" rel="noopener noreferrer">ti.com</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="projeto-detalhe__cta">
+                    <a href="projetos.html" class="projeto-detalhe__voltar">&larr; Voltar para Projetos</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <span class="footer__name">Kelvin Saldanha</span>
+            <span class="footer__desc">Equipamentos Biomédicos · Tecnologia · Projetos</span>
+            <div class="footer__links">
+                <a href="https://github.com/Kelvinsaldanha" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+                <a href="https://www.linkedin.com/in/kelvin-saldanha-mateus/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+                <a href="mailto:kelvinsaldanhaa@gmail.com" class="footer__link">E-mail</a>
+            </div>
+            <p class="footer__copyright">© <span id="ano-atual">2026</span> Kelvin Saldanha</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
