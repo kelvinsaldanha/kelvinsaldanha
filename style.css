@@ -2324,8 +2324,8 @@ p {
 }
 
 .lightbox__imagem {
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     max-width: 96vw;
     max-height: 92vh;
     object-fit: contain;
