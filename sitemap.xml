@@ -4,35 +4,63 @@
     <!-- Página inicial -->
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <!-- Páginas principais -->
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/sobre.html</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/habilidades.html</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/projetos.html</loc>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/guia-respiracao.html</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/experiencias.html</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/formacao.html</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/publicacoes.html</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/conquistas.html</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <url>
         <loc>https://kelvinsaldanha.github.io/portfolio/contato.html</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
 </urlset>
