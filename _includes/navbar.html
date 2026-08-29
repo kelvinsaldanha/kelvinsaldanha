@@ -1,7 +1,6 @@
 <header class="header" id="topo">
     <div class="container header__container">
 
-
     <a
         href="{{ '/' | relative_url }}"
         class="header__logo"
@@ -29,7 +28,7 @@
             <li class="nav__item">
                 <a
                     href="{{ '/' | relative_url }}"
-                    class="nav__link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}"
+                    class="nav__link {% if page.url == '/' %}active{% endif %}"
                 >
                     Home
                 </a>
@@ -37,8 +36,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/sobre.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/sobre.html' %}active{% endif %}"
+                    href="{{ '/sobre/' | relative_url }}"
+                    class="nav__link {% if page.url == '/sobre/' %}active{% endif %}"
                 >
                     Sobre
                 </a>
@@ -46,8 +45,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/habilidades.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/habilidades.html' %}active{% endif %}"
+                    href="{{ '/habilidades/' | relative_url }}"
+                    class="nav__link {% if page.url == '/habilidades/' %}active{% endif %}"
                 >
                     Habilidades
                 </a>
@@ -55,8 +54,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/projetos.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/projetos.html' %}active{% endif %}"
+                    href="{{ '/projetos/' | relative_url }}"
+                    class="nav__link {% if page.url == '/projetos/' %}active{% endif %}"
                 >
                     Projetos
                 </a>
@@ -64,8 +63,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/experiencias.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/experiencias.html' %}active{% endif %}"
+                    href="{{ '/experiencias/' | relative_url }}"
+                    class="nav__link {% if page.url == '/experiencias/' %}active{% endif %}"
                 >
                     Experiências
                 </a>
@@ -73,8 +72,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/formacao.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/formacao.html' %}active{% endif %}"
+                    href="{{ '/formacao/' | relative_url }}"
+                    class="nav__link {% if page.url == '/formacao/' %}active{% endif %}"
                 >
                     Formação
                 </a>
@@ -82,8 +81,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/publicacoes.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/publicacoes.html' %}active{% endif %}"
+                    href="{{ '/publicacoes/' | relative_url }}"
+                    class="nav__link {% if page.url == '/publicacoes/' %}active{% endif %}"
                 >
                     Publicações
                 </a>
@@ -91,8 +90,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/conquistas.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/conquistas.html' %}active{% endif %}"
+                    href="{{ '/conquistas/' | relative_url }}"
+                    class="nav__link {% if page.url == '/conquistas/' %}active{% endif %}"
                 >
                     Conquistas
                 </a>
@@ -100,8 +99,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/contato.html' | relative_url }}"
-                    class="nav__link {% if page.url == '/contato.html' %}active{% endif %}"
+                    href="{{ '/contato/' | relative_url }}"
+                    class="nav__link {% if page.url == '/contato/' %}active{% endif %}"
                 >
                     Contato
                 </a>
