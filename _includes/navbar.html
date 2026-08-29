@@ -36,8 +36,8 @@
 
             <li class="nav__item">
                 <a
-                    href="{{ '/sobre' | relative_url }}"
-                    class="nav__link {% if page.url == '/sobre' %}active{% endif %}"
+                   <a href="{{ '/sobre/' | absolute_url }}">
+                    class="nav__link {% if page.url == '/sobre/' %}active{% endif %}"
                 >
                     Sobre
                 </a>
