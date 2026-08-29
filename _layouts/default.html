@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'pt-BR' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+<title>{{ page.title | default: site.title }}</title>
+
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0e1a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
+<meta property="og:site_name" content="Kelvin Saldanha">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
+
+<!-- JSON-LD / Dados estruturados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kelvin Saldanha Mateus",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "image": "{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png",
+  "jobTitle": "Estudante de Equipamentos Biomédicos",
+  "description": "{{ site.description }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+    "https://github.com/kelvinsaldanha"
+  ],
+  "knowsAbout": [
+    "Equipamentos Biomédicos",
+    "Engenharia Biomédica",
+    "Sistemas Embarcados",
+    "Programação",
+    "Inteligência Artificial"
+  ]
+}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+
+<!-- Devicon - ícones de tecnologias -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+
+</head>
+
+<body>
+
+<a href="#conteudo-principal" class="skip-link">
+    Pular para o conteúdo principal
+</a>
+
+{% include navbar.html %}
+
+<main id="conteudo-principal">
+    {{ content }}
+</main>
+
+{% include footer.html %}
+
+<button
+    class="back-to-top"
+    id="back-to-top"
+    aria-label="Voltar ao topo"
+>
+    ↑
+</button>
+
+<script src="{{ '/script.js' | relative_url }}"></script>
+
+
+</body>
+</html>

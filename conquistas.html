@@ -1,0 +1,604 @@
+---
+layout: default
+title: "Conquistas | Kelvin Saldanha Mateus"
+description: "Conquistas de Kelvin Saldanha Mateus — Medalhas e reconhecimentos como OIMSF Diamante Nacional 2026, OIMSF Ouro Regional 2026, Mandacaru Ouro 2026, TANGRAM Ouro 2026, OBRL Ouro 2025, Mandacaru Ouro 2025, OBMEP Menção Honrosa 2023 e OCE Bronze 2026."
+permalink: /conquistas.html
+---
+
+<!-- ============================================================
+     JSON-LD
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "name": "Kelvin Saldanha Mateus"
+      },
+      "about": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa",
+      "name": "Kelvin Saldanha Mateus",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "sameAs": [
+        "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+        "https://github.com/kelvinsaldanha"
+      ],
+      "email": "mailto:kelvinsaldanhaa@gmail.com"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#medalhas",
+      "name": "Medalhas e Reconhecimentos",
+      "itemListElement": [
+        {% for item in site.data.conquistas %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "item": {
+            "@type": "Achievement",
+            "name": "{{ item.title }}",
+            "description": "{{ item.description }}",
+            "dateReceived": "{{ item.year }}",
+            "recipient": {
+              "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa"
+            },
+            "image": "{{ site.url }}{{ site.baseurl }}/images/conquistas/{{ item.image }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+
+    /* ============================================================
+       VARIÁVEIS DE COR — CONQUISTAS
+       ============================================================ */
+
+    :root {
+        --color-gold: #fbbf24;
+        --color-gold-light: rgba(251, 191, 36, 0.20);
+
+        --color-silver: #9ca3af;
+        --color-silver-light: rgba(156, 163, 175, 0.20);
+
+        --color-bronze: #b45309;
+        --color-bronze-light: rgba(180, 83, 9, 0.25);
+
+        --color-diamond: #8b5cf6;
+        --color-diamond-light: rgba(139, 92, 246, 0.30);
+
+        --color-honor: #3b82f6;
+        --color-honor-light: rgba(59, 130, 246, 0.20);
+    }
+
+
+    /* ============================================================
+       GRID — CONQUISTAS
+       ============================================================ */
+
+    .conquistas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+
+    /* ============================================================
+       CARD — CONQUISTA
+       ============================================================ */
+
+    .conquista-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+
+        padding: 2rem 1.5rem;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0.5rem;
+
+        transition:
+            transform var(--transition),
+            box-shadow var(--transition);
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .conquista-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+
+
+    /* ============================================================
+       IMAGEM — CONQUISTA
+       ============================================================ */
+
+    .conquista-card__imagem {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+
+        background: var(--color-surface-light);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        margin-bottom: 0.75rem;
+    }
+
+    .conquista-card__imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* ============================================================
+       QUANDO A IMAGEM NÃO EXISTIR
+       ============================================================ */
+
+    .conquista-card__imagem.imagem-inexistente {
+        display: none;
+    }
+
+
+    /* ============================================================
+       TEXTOS — CONQUISTA
+       ============================================================ */
+
+    .conquista-card__title {
+        font-size: 1.15rem;
+        font-weight: 700;
+
+        color: var(--color-text);
+
+        margin: 0;
+    }
+
+    .conquista-card__ano {
+        font-size: 1rem;
+        font-weight: 600;
+
+        color: var(--color-text-muted);
+
+        margin: 0;
+    }
+
+    .conquista-card__descricao {
+        font-size: 0.92rem;
+        line-height: 1.5;
+
+        color: var(--color-text-muted);
+
+        margin: 0;
+
+        max-width: 90%;
+        flex: 1;
+    }
+
+
+    /* ============================================================
+       VARIANTES — TIPO DE MEDALHA
+       ============================================================ */
+
+    .conquista-card--ouro {
+        border-color: var(--color-gold);
+        box-shadow: 0 0 0 1px var(--color-gold-light);
+    }
+
+    .conquista-card--ouro:hover {
+        box-shadow: 0 8px 24px rgba(251, 191, 36, 0.35);
+    }
+
+
+    .conquista-card--diamante {
+        border-color: var(--color-diamond);
+        box-shadow: 0 0 0 1px var(--color-diamond-light);
+    }
+
+    .conquista-card--diamante:hover {
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.45);
+    }
+
+
+    .conquista-card--prata {
+        border-color: var(--color-silver);
+        box-shadow: 0 0 0 1px var(--color-silver-light);
+    }
+
+    .conquista-card--prata:hover {
+        box-shadow: 0 8px 24px rgba(156, 163, 175, 0.30);
+    }
+
+
+    .conquista-card--bronze {
+        border-color: var(--color-bronze);
+        box-shadow: 0 0 0 1px var(--color-bronze-light);
+    }
+
+    .conquista-card--bronze:hover {
+        box-shadow: 0 8px 24px rgba(180, 83, 9, 0.35);
+    }
+
+
+    .conquista-card--honra {
+        border-color: var(--color-honor);
+        box-shadow: 0 0 0 1px var(--color-honor-light);
+    }
+
+    .conquista-card--honra:hover {
+        box-shadow: 0 8px 24px rgba(59, 130, 246, 0.30);
+    }
+
+
+    /* ============================================================
+       CERTIFICADOS
+       ============================================================ */
+
+    .certificados-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+
+
+    .certificado-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+
+        overflow: hidden;
+
+        transition:
+            transform var(--transition),
+            box-shadow var(--transition);
+    }
+
+    .certificado-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+
+
+    /* ============================================================
+       IMAGEM — CERTIFICADO
+       ============================================================ */
+
+    .certificado-card__imagem {
+        aspect-ratio: 4 / 3;
+
+        background: var(--color-surface-light);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 3rem;
+
+        color: var(--color-text-muted);
+
+        overflow: hidden;
+    }
+
+    .certificado-card__imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* ============================================================
+       QUANDO A IMAGEM DO CERTIFICADO NÃO EXISTIR
+       ============================================================ */
+
+    .certificado-card__imagem.imagem-inexistente {
+        display: none;
+    }
+
+
+    /* ============================================================
+       CONTEÚDO — CERTIFICADO
+       ============================================================ */
+
+    .certificado-card__content {
+        padding: 1.25rem;
+        text-align: center;
+    }
+
+    .certificado-card__title {
+        font-size: 1.05rem;
+        font-weight: 700;
+
+        color: var(--color-text);
+
+        margin-bottom: 0.25rem;
+    }
+
+    .certificado-card__instituicao,
+    .certificado-card__ano {
+        font-size: 0.9rem;
+
+        color: var(--color-text-muted);
+
+        margin: 0;
+    }
+
+
+    /* ============================================================
+       RESPONSIVO
+       ============================================================ */
+
+    @media (max-width: 430px) {
+
+        .conquistas-grid,
+        .certificados-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section class="hero" aria-labelledby="conquistas-titulo">
+
+
+<div class="container">
+
+    <p class="hero__overline">
+        Conquistas
+    </p>
+
+    <h1 class="hero__title" id="conquistas-titulo">
+        Conquistas
+    </h1>
+
+    <p class="hero__subtitle">
+        Minhas principais medalhas, reconhecimentos e certificados.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- ============================================================
+     MEDALHAS E RECONHECIMENTOS
+     ============================================================ -->
+
+<section class="section" aria-labelledby="medalhas-titulo">
+
+
+<div class="container">
+
+    <h2 class="section__title" id="medalhas-titulo">
+        Medalhas e Reconhecimentos
+    </h2>
+
+
+    <div class="conquistas-grid">
+
+        {% for item in site.data.conquistas %}
+
+        <article class="conquista-card conquista-card--{{ item.type }}">
+
+            <div class="conquista-card__imagem">
+
+                <img
+                    src="{{ '/images/conquistas/' | append: item.image | relative_url }}"
+                    alt="{{ item.title }} — {{ item.year }}"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="
+                        this.parentElement.classList.add('imagem-inexistente');
+                        this.remove();
+                    "
+                >
+
+            </div>
+
+
+            <h3 class="conquista-card__title">
+                {{ item.title }}
+            </h3>
+
+
+            <p class="conquista-card__ano">
+                {{ item.year }}
+            </p>
+
+
+            <p class="conquista-card__descricao">
+                {{ item.description }}
+            </p>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ============================================================
+     CERTIFICADOS
+     ============================================================ -->
+
+<section class="section" aria-labelledby="certificados-titulo">
+
+
+<div class="container">
+
+    <h2 class="section__title" id="certificados-titulo">
+        Certificados
+    </h2>
+
+
+    <div class="certificados-grid">
+
+
+        <!-- ==================================================
+             CERTIFICADO 1
+             ================================================== -->
+
+        <article class="certificado-card">
+
+            <div class="certificado-card__imagem">
+
+                <img
+                    src="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-1.jpeg' | relative_url }}"
+                    alt="Certificado 1"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="
+                        this.parentElement.classList.add('imagem-inexistente');
+                        this.remove();
+                    "
+                >
+
+            </div>
+
+
+            <div class="certificado-card__content">
+
+                <h3 class="certificado-card__title">
+                    Certificado 1
+                </h3>
+
+                <p class="certificado-card__instituicao">
+                    Instituição
+                </p>
+
+                <p class="certificado-card__ano">
+                    Ano
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ==================================================
+             CERTIFICADO 2
+             ================================================== -->
+
+        <article class="certificado-card">
+
+            <div class="certificado-card__imagem">
+
+                <img
+                    src="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-2.jpeg' | relative_url }}"
+                    alt="Certificado 2"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="
+                        this.parentElement.classList.add('imagem-inexistente');
+                        this.remove();
+                    "
+                >
+
+            </div>
+
+
+            <div class="certificado-card__content">
+
+                <h3 class="certificado-card__title">
+                    Certificado 2
+                </h3>
+
+                <p class="certificado-card__instituicao">
+                    Instituição
+                </p>
+
+                <p class="certificado-card__ano">
+                    Ano
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ==================================================
+             CERTIFICADO 3
+             ================================================== -->
+
+        <article class="certificado-card">
+
+            <div class="certificado-card__imagem">
+
+                <img
+                    src="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-3.jpeg' | relative_url }}"
+                    alt="Certificado 3"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="
+                        this.parentElement.classList.add('imagem-inexistente');
+                        this.remove();
+                    "
+                >
+
+            </div>
+
+
+            <div class="certificado-card__content">
+
+                <h3 class="certificado-card__title">
+                    Certificado 3
+                </h3>
+
+                <p class="certificado-card__instituicao">
+                    Instituição
+                </p>
+
+                <p class="certificado-card__ano">
+                    Ano
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+
+</section>

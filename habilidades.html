@@ -1,0 +1,191 @@
+---
+layout: default
+title: "Habilidades Técnicas | Kelvin Saldanha Mateus"
+description: "Habilidades técnicas de Kelvin Saldanha Mateus — Tecnologias como HTML5, CSS3, JavaScript, Git, GitHub e Python."
+---
+<!-- ESTILOS ESPECÍFICOS DA PÁGINA HABILIDADES -->
+
+<style>
+    .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .habilidade-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+        padding: 1.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform var(--transition), box-shadow var(--transition);
+        text-align: center;
+    }
+
+    .habilidade-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .habilidade-card i {
+        font-size: 3rem;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+
+    .habilidade-card span {
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+
+    .habilidade-card p {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 430px) {
+        .habilidades-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .habilidade-card i {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+
+<!-- HERO INTERNO -->
+
+<section class="hero" aria-labelledby="habilidades-titulo">
+    <div class="container">
+
+
+    <p class="hero__overline">
+        Habilidades
+    </p>
+
+    <h1 class="hero__title" id="habilidades-titulo">
+        Habilidades Técnicas
+    </h1>
+
+    <p class="hero__subtitle">
+        Tecnologias e ferramentas que utilizo nos meus projetos.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- GRID DE HABILIDADES -->
+
+<section class="section" aria-labelledby="habilidades-titulo">
+    <div class="container">
+
+
+    <div class="habilidades-grid">
+
+        <!-- HTML5 -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-html5-plain colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>HTML5</span>
+
+            <p>
+                Estruturação semântica de páginas web.
+            </p>
+        </div>
+
+
+        <!-- CSS3 -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-css3-plain colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>CSS3</span>
+
+            <p>
+                Estilização e design responsivo.
+            </p>
+        </div>
+
+
+        <!-- JavaScript -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-javascript-plain colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>JavaScript</span>
+
+            <p>
+                Interatividade e lógica no front-end.
+            </p>
+        </div>
+
+
+        <!-- Git -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-git-plain colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>Git</span>
+
+            <p>
+                Controle de versão de código.
+            </p>
+        </div>
+
+
+        <!-- GitHub -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-github-original colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>GitHub</span>
+
+            <p>
+                Hospedagem e colaboração em projetos.
+            </p>
+        </div>
+
+
+        <!-- Python -->
+        <div class="habilidade-card">
+            <i
+                class="devicon-python-plain colored"
+                aria-hidden="true"
+            ></i>
+
+            <span>Python</span>
+
+            <p>
+                Automação e desenvolvimento de scripts.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>

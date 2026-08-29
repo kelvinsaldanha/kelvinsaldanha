@@ -1,0 +1,47 @@
+- title: "OIMSF — Diamante Nacional"
+  year: 2026
+  type: "diamante"
+  description: "Olimpíada Internacional de Matemática Sem Fronteiras"
+  image: "oimsf-diamante-nacional-2026.jpeg"
+
+- title: "OIMSF — Ouro Regional"
+  year: 2026
+  type: "ouro"
+  description: "Olimpíada Internacional de Matemática Sem Fronteiras"
+  image: "oimsf-ouro-regional-2026.jpeg"
+
+- title: "Mandacaru — Ouro"
+  year: 2026
+  type: "ouro"
+  description: "Olimpíada Mandacaru de Matemática"
+  image: "mandacaru-ouro-2026.jpeg"
+
+- title: "TANGRAM — Ouro"
+  year: 2026
+  type: "ouro"
+  description: "Olimpíada TANGRAM de Matemática"
+  image: "tangram-ouro-2026.jpeg"
+
+- title: "OCE — Bronze"
+  year: 2026
+  type: "bronze"
+  description: "Olimpíada do Conhecimento do Sistema Etapa"
+  image: "oce-bronze-2026.jpeg"
+
+- title: "OBRL — Ouro"
+  year: 2025
+  type: "ouro"
+  description: "Olimpíada Brasileira de Raciocínio Lógico"
+  image: "obrl-ouro-2025.jpeg"
+
+- title: "Mandacaru — Ouro"
+  year: 2025
+  type: "ouro"
+  description: "Olimpíada Mandacaru de Matemática"
+  image: "mandacaru-ouro-2025.jpeg"
+
+- title: "OBMEP — Menção Honrosa"
+  year: 2023
+  type: "honra"
+  description: "Olimpíada Brasileira de Matemática das Escolas Públicas"
+  image: "obmep-mencao-honrosa-2023.jpeg"

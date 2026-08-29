@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Página inicial -->
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/</loc>
+    </url>
+
+    <!-- Páginas principais -->
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/sobre.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/projetos.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/experiencias.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/formacao.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/publicacoes.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/conquistas.html</loc>
+    </url>
+
+    <url>
+        <loc>https://kelvinsaldanha.github.io/portfolio/contato.html</loc>
+    </url>
+
+</urlset>

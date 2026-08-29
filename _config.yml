@@ -1,0 +1,123 @@
+# ================================================================
+# IDENTIDADE DO SITE
+# ================================================================
+
+title: "Kelvin Saldanha | Portfólio"
+
+description: >-
+  Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no
+  CEFET-MG, com projetos em tecnologia, engenharia, instrumentação biomédica,
+  eletrônica e programação.
+
+author:
+  name: "Kelvin Saldanha"
+  email: "kelvinsaldanhaa@gmail.com"
+  github: "kelvinsaldanha"
+  linkedin: "kelvin-saldanha-mateus"
+
+lang: "pt-BR"
+
+
+# ================================================================
+# URL DO SITE
+# ================================================================
+
+url: "https://kelvinsaldanha.github.io"
+baseurl: "/portfolio"
+
+
+# ================================================================
+# MARKDOWN / JEKYLL
+# ================================================================
+
+markdown: kramdown
+
+
+# ================================================================
+# PLUGINS
+# ================================================================
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+
+# ================================================================
+# PERMALINKS
+# ================================================================
+
+permalink: /:title/
+
+
+# ================================================================
+# VALORES PADRÃO DAS PÁGINAS
+# ================================================================
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      author: "Kelvin Saldanha"
+      lang: "pt-BR"
+
+  - scope:
+      type: "pages"
+    values:
+      layout: "default"
+      permalink: /:basename/
+
+
+# ================================================================
+# FEED
+# ================================================================
+
+feed:
+  path: "feed.xml"
+  limit: 10
+  categories: false
+  tags: false
+
+
+# ================================================================
+# SASS / CSS
+# ================================================================
+
+sass:
+  style: compressed
+
+
+# ================================================================
+# ARQUIVOS EXCLUÍDOS DA BUILD
+# ================================================================
+
+exclude:
+  - .git/
+  - .github/
+  - .jekyll-cache/
+  - .vscode/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - README.md
+  - LICENSE
+  - CNAME
+  - "*.log"
+  - "*.sh"
+  - "*.bat"
+
+
+# ================================================================
+# ARQUIVOS QUE DEVEM SER PRESERVADOS
+# ================================================================
+
+keep_files:
+  - robots.txt
+
+
+# ================================================================
+# AMBIENTE
+# ================================================================
+
+production: true
