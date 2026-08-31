@@ -31,26 +31,87 @@
 <meta name="twitter:description" content="{{ page.description | default: site.description }}">
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
 
-<!-- JSON-LD / Dados estruturados -->
+
+
+<!-- JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Kelvin Saldanha Mateus",
-  "url": "{{ site.url }}{{ site.baseurl }}",
-  "image": "{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png",
-  "jobTitle": "Estudante de Equipamentos Biomédicos",
-  "description": "{{ site.description }}",
-  "sameAs": [
-    "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
-    "https://github.com/kelvinsaldanha"
-  ],
-  "knowsAbout": [
-    "Equipamentos Biomédicos",
-    "Engenharia Biomédica",
-    "Sistemas Embarcados",
-    "Programação",
-    "Inteligência Artificial"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": "Kelvin Saldanha Mateus",
+      "alternateName": "Kelvin Saldanha",
+      "description": "Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos em tecnologia, engenharia e saúde. Especialista em instrumentação biomédica, sistemas embarcados, visão computacional e IA.",
+      "image": "{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "email": "mailto:kelvinsaldanhaa@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+        "https://github.com/kelvinsaldanha"
+      ],
+      "jobTitle": "Estudante de Equipamentos Biomédicos",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CEFET-MG",
+        "url": "https://www.cefetmg.br"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Centro Federal de Educação Tecnológica de Minas Gerais",
+        "url": "https://www.cefetmg.br"
+      },
+      "hasCredential": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student"
+      },
+      "knowsAbout": [
+        "Equipamentos Biomédicos",
+        "Engenharia Biomédica",
+        "Instrumentação Biomédica",
+        "Sistemas Embarcados",
+        "Microcontroladores",
+        "Programação Python",
+        "Visão Computacional",
+        "Inteligência Artificial",
+        "Processamento de Sinais",
+        "Eletrônica Analógica e Digital",
+        "Automação",
+        "IoT"
+      ],
+      "award": [
+        "OIMSF Diamante Nacional 2026",
+        "OIMSF Ouro Regional 2026",
+        "Mandacaru Ouro 2026",
+        "TANGRAM Ouro 2026",
+        "OCE Bronze 2026",
+        "OBRL Ouro 2025",
+        "Mandacaru Ouro 2025",
+        "OBMEP Menção Honrosa 2023"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "name": "Kelvin Saldanha — Portfólio",
+      "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG, com projetos em tecnologia, engenharia e saúde.",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#profilepage",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "name": "Kelvin Saldanha — Portfólio",
+      "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG. Projetos, experiências, publicações e conquistas.",
+      "mainEntity": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      }
+    }
   ]
 }
 </script>
