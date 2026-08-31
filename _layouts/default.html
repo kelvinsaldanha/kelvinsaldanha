@@ -68,31 +68,84 @@
 
 
 </head>
-
+    
 <body>
-
 <a href="#conteudo-principal" class="skip-link">
-    Pular para o conteúdo principal
-</a>
+        Pular para o conteúdo principal
+    </a>
 
-{% include navbar.html %}
+    {% include navbar.html %}
 
-<main id="conteudo-principal">
-    {{ content }}
-</main>
+    <main id="conteudo-principal">
+        {{ content }}
+    </main>
 
-{% include footer.html %}
+    {% include footer.html %}
 
-<button
-    class="back-to-top"
-    id="back-to-top"
-    aria-label="Voltar ao topo"
->
-    ↑
-</button>
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
 
-<script src="{{ '/script.js' | relative_url }}"></script>
+    <!-- ==========================================
+         LIGHTBOX (modal de ampliação)
+         ========================================== -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Ampliação de imagem"
+    >
 
+        <button
+            class="lightbox__fechar"
+            id="lightbox-fechar"
+            aria-label="Fechar">
+            &times;
+        </button>
+
+        <div class="lightbox__container">
+
+            <div class="lightbox__imagem-wrapper">
+
+                <button
+                    class="lightbox__nav lightbox__nav--esquerda"
+                    id="lightbox-anterior"
+                    aria-label="Imagem anterior">
+                    &#10094;
+                </button>
+
+                <img
+                    class="lightbox__imagem"
+                    id="lightbox-imagem"
+                    src=""
+                    alt=""
+                >
+
+                <button
+                    class="lightbox__nav lightbox__nav--direita"
+                    id="lightbox-proximo"
+                    aria-label="Próxima imagem">
+                    &#10095;
+                </button>
+
+                <div
+                    class="lightbox__contador"
+                    id="lightbox-contador">
+                </div>
+
+            </div>
+
+            <div
+                class="lightbox__legenda"
+                id="lightbox-legenda">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ '/script.js' | relative_url }}"></script>
 
 </body>
 </html>
