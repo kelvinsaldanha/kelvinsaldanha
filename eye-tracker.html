@@ -1,0 +1,641 @@
+---
+layout: default
+title: "Eye Tracker CK² | Kelvin Saldanha Mateus"
+description: "Eye Tracker CK² — Sistema de controle de computador por movimentos oculares e gestos faciais, utilizando visão computacional, inteligência artificial e automação para acessibilidade."
+permalink: /eye-tracker/
+---
+
+<!-- ============================================================
+     JSON-LD
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "name": "Kelvin Saldanha Mateus"
+      },
+      "about": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa",
+      "name": "Kelvin Saldanha Mateus",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "sameAs": [
+        "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+        "https://github.com/kelvinsaldanha"
+      ],
+      "email": "mailto:kelvinsaldanhaa@gmail.com"
+    }
+  ]
+}
+</script>
+
+<style>
+
+/* ============================================================
+   PÁGINA DE PROJETO DETALHADO
+   ============================================================ */
+
+.projeto-detalhe {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.projeto-detalhe__voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: color var(--transition);
+}
+
+.projeto-detalhe__voltar:hover {
+    color: var(--color-primary);
+}
+
+.projeto-detalhe__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.projeto-detalhe__badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+}
+
+.projeto-detalhe__badge--status {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.projeto-detalhe__hero-imagem {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    margin: 1.5rem 0 2.5rem;
+    background: var(--color-surface-light);
+}
+
+.projeto-detalhe__hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projeto-detalhe__integrantes {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.projeto-detalhe__integrantes strong {
+    color: var(--color-text);
+}
+
+.projeto-secao {
+    margin-bottom: 3rem;
+}
+
+.projeto-secao__titulo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.projeto-secao__subtitulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.projeto-secao p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.projeto-secao ul {
+    margin: 0 0 1rem 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.projeto-secao ul li {
+    margin-bottom: 0.35rem;
+}
+
+.projeto-secao ul li strong {
+    color: var(--color-text);
+}
+
+.tabela-gestos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.tabela-gestos th {
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.tabela-gestos td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.tabela-gestos tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-gestos td:first-child {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.nota-box {
+    background: var(--color-surface-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+}
+
+.nota-box strong {
+    color: var(--color-text);
+}
+
+.referencias-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.referencias-lista li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.referencias-lista li:last-child {
+    border-bottom: none;
+}
+
+.referencias-lista a {
+    color: var(--color-primary);
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.referencias-lista a:hover {
+    text-decoration: underline;
+}
+
+.projeto-detalhe__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+</style>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section class="hero" aria-labelledby="projeto-titulo">
+
+<div class="container">
+
+    <p class="hero__overline">
+        Projeto · Visão Computacional & IA
+    </p>
+
+    <h1 class="hero__title" id="projeto-titulo">
+        Eye Tracker CK²
+    </h1>
+
+    <p class="hero__subtitle">
+        Sistema de controle do computador por movimentos oculares e gestos faciais, utilizando visão computacional, inteligência artificial e automação.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ============================================================
+     CONTEÚDO
+     ============================================================ -->
+
+<main>
+
+<section class="section">
+
+<div class="container projeto-detalhe">
+
+<a href="{{ '/projetos/' | relative_url }}" class="projeto-detalhe__voltar">
+    &larr; Voltar para Projetos
+</a>
+
+<div class="projeto-detalhe__meta">
+
+    <span class="projeto-detalhe__badge projeto-detalhe__badge--status">
+        Em desenvolvimento — 2026
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        Python
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        OpenCV
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        MediaPipe
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        Inteligência Artificial
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        Acessibilidade
+    </span>
+
+</div>
+
+<div class="projeto-detalhe__hero-imagem">
+
+    <img
+        src="{{ '/images/projects/eye-tracker.jpg' | relative_url }}"
+        alt="Eye Tracker CK² — sistema de rastreamento ocular"
+        onerror="this.parentElement.style.display='none'"
+    >
+
+</div>
+
+<p class="projeto-detalhe__integrantes">
+
+    <strong>Projeto META</strong> — Trabalho de conclusão do curso técnico em Equipamentos Biomédicos<br>
+
+    <strong>Instituição:</strong>
+    CEFET-MG, Belo Horizonte<br>
+
+    <strong>Integrantes:</strong>
+    Carlos Eduardo Ferreira da Silva,
+    Kauan Kerlon Costa de Jesus,
+    Kelvin Saldanha Mateus<br>
+
+    <strong>Orientador:</strong>
+    Prof. Alexandre Rodrigues Farias<br>
+
+    <strong>Co-orientadora:</strong>
+    Prof.ª Tálita Saemi Payossim Sono<br>
+
+    <strong>Ano:</strong> 2026
+
+</p>
+
+<!-- ========================================================
+     INTRODUÇÃO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Introdução
+    </h2>
+
+    <p>
+        A tetraplegia é uma condição que afeta a mobilidade dos membros superiores e inferiores, frequentemente resultante de lesões na medula espinhal ou doenças neuromusculares. Pessoas com essa condição enfrentam desafios significativos para interagir com computadores e dispositivos eletrônicos, o que pode limitar sua independência, produtividade e qualidade de vida.
+    </p>
+
+    <p>
+        O <strong>Eye Tracker CK²</strong> é um sistema de controle de cursor baseado em rastreamento ocular e reconhecimento de gestos faciais, desenvolvido para permitir que pessoas com limitações motoras severas utilizem o computador de forma autônoma. Diferentemente de soluções comerciais que exigem hardware especializado (como rastreadores infravermelhos da Tobii), nosso sistema utiliza uma <strong>webcam convencional</strong> e algoritmos de visão computacional, tornando a tecnologia mais acessível e de baixo custo.
+    </p>
+
+    <p>
+        O projeto integra técnicas de <strong>visão computacional</strong>, <strong>processamento de sinais</strong> (filtros de Kalman, EMA) e <strong>inteligência artificial</strong> (modelos de regressão para refinar a posição do olhar), além de um robusto sistema de reconhecimento de gestos faciais que permite executar comandos como clique, duplo clique, arrastar, rolagem e atalhos de teclado.
+    </p>
+
+    <p>
+        O trabalho foi desenvolvido no âmbito da <strong>META</strong> (Modelo de Ensino com Ênfase em Tecnologia e Aprendizagem) do CEFET-MG e também participou do <strong>Desafio CIIA Saúde 2026</strong>, promovido pela UFMG, reforçando seu potencial de impacto social e inovação tecnológica.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     METODOLOGIA
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Metodologia
+    </h2>
+
+    <p>
+        O desenvolvimento do Eye Tracker CK² seguiu uma abordagem iterativa, com evolução contínua baseada em testes práticos, feedback do orientador e análise de trabalhos acadêmicos da área. A arquitetura final do sistema é composta por módulos independentes, organizados em um pipeline de processamento em tempo real.
+    </p>
+
+    <h3 class="projeto-secao__subtitulo">
+        Tecnologias Utilizadas
+    </h3>
+
+    <ul>
+        <li><strong>Python 3</strong> — linguagem principal de desenvolvimento;</li>
+        <li><strong>OpenCV</strong> — captura de vídeo e processamento de imagens;</li>
+        <li><strong>MediaPipe</strong> — extração da malha facial (468 landmarks) e rastreamento da íris;</li>
+        <li><strong>PyAutoGUI</strong> — controle do mouse e teclado;</li>
+        <li><strong>Scikit-learn</strong> — modelos de IA (Random Forest, SVR, MLP) para refinamento do olhar;</li>
+        <li><strong>NumPy</strong> — cálculos matriciais e processamento numérico;</li>
+        <li><strong>Joblib</strong> — serialização e carregamento dos modelos de IA treinados.</li>
+    </ul>
+
+    <h3 class="projeto-secao__subtitulo">
+        Pipeline de Processamento
+    </h3>
+
+    <p>
+        O sistema processa cada frame da webcam em tempo real, seguindo as etapas:
+    </p>
+
+    <ol style="color: var(--color-text-muted); line-height: 1.8; margin-left: 1.25rem;">
+        <li><strong>Detecção Facial</strong> — identificação da face utilizando o MediaPipe Face Detection;</li>
+        <li><strong>Extração de Landmarks</strong> — obtenção dos 468 pontos da malha facial, com ênfase nos olhos, íris, sobrancelhas e boca;</li>
+        <li><strong>Estimativa de Pose (Head Pose)</strong> — cálculo dos ângulos Yaw, Pitch e Roll usando <code>cv2.solvePnP()</code> para compensar movimentos da cabeça;</li>
+        <li><strong>Cálculo do EAR (Eye Aspect Ratio)</strong> — métrica utilizada para detectar piscadas e estado dos olhos;</li>
+        <li><strong>Rastreamento da Íris</strong> — determinação do centro da pupila a partir dos landmarks da íris;</li>
+        <li><strong>Filtragem e Suavização</strong> — aplicação de Filtro de Kalman (6 estados), EMA adaptativa e zona morta dinâmica;</li>
+        <li><strong>Mapeamento do Olhar</strong> — conversão das coordenadas da íris em posição do cursor, utilizando homografia ou modelo de IA;</li>
+        <li><strong>Reconhecimento de Gestos</strong> — identificação de piscadas, sobrancelhas, sorrisos e gestos compostos;</li>
+        <li><strong>Execução de Comandos</strong> — envio de ações para o sistema operacional via PyAutoGUI;</li>
+        <li><strong>Sistema de Confiança</strong> — avaliação da qualidade de cada frame antes de movimentar o cursor.</li>
+    </ol>
+
+    <h3 class="projeto-secao__subtitulo">
+        Calibração e Inteligência Artificial
+    </h3>
+
+    <p>
+        O sistema possui um módulo de calibração que coleta amostras do olhar do usuário enquanto ele fixa pontos em uma grade na tela (3x3, 5x5 ou 7x7). As amostras incluem as coordenadas da íris, ângulos da cabeça e a posição real observada. Esses dados são utilizados para treinar modelos de IA (Random Forest, SVR ou MLP) que aprendem a mapear com precisão o olhar para coordenadas da tela, compensando diferenças individuais e condições de iluminação.
+    </p>
+
+    <div class="nota-box">
+        <strong>Diferencial:</strong> O modelo treinado é salvo em um arquivo <code>.joblib</code> e carregado pelo script principal, permitindo previsões instantâneas e calibração personalizada por usuário.
+    </div>
+
+    <h3 class="projeto-secao__subtitulo">
+        Gestos e Comandos
+    </h3>
+
+    <p>
+        O sistema reconhece uma variedade de gestos faciais e os converte em ações do mouse e teclado. A tabela abaixo resume os comandos implementados:
+    </p>
+
+    <table class="tabela-gestos">
+        <thead>
+            <tr>
+                <th>Gesto</th>
+                <th>Comando</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Piscada do olho direito</td>
+                <td>Clique esquerdo</td>
+            </tr>
+            <tr>
+                <td>Piscada do olho esquerdo</td>
+                <td>Clique direito</td>
+            </tr>
+            <tr>
+                <td>Duas piscadas consecutivas (olho direito)</td>
+                <td>Duplo clique</td>
+            </tr>
+            <tr>
+                <td>Sobrancelhas levantadas</td>
+                <td>Modo arrastar (drag)</td>
+            </tr>
+            <tr>
+                <td>Boca aberta</td>
+                <td>Modo rolagem (scroll)</td>
+            </tr>
+            <tr>
+                <td>Sorriso</td>
+                <td>Abrir/fechar menu principal</td>
+            </tr>
+            <tr>
+                <td>Sobrancelhas levantadas + olho direito fechado</td>
+                <td>Ctrl+C (copiar)</td>
+            </tr>
+            <tr>
+                <td>Sobrancelhas levantadas + olho esquerdo fechado</td>
+                <td>Ctrl+V (colar)</td>
+            </tr>
+            <tr>
+                <td>Olhos fechados por 2 segundos</td>
+                <td>Pausar/retomar rastreamento</td>
+            </tr>
+            <tr>
+                <td>Sorriso + sobrancelhas levantadas</td>
+                <td>Congelar/descongelar cursor</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Para evitar conflitos entre gestos semelhantes, foi implementada uma <strong>lógica temporal com janela de reconhecimento</strong> (aproximadamente 700 ms) para gestos compostos, além de mecanismos de debounce, histerese e máquinas de estado para cada gesto.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     RESULTADOS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Resultados
+    </h2>
+
+    <p>
+        O Eye Tracker CK² demonstrou capacidade de rastrear o olhar e executar comandos de forma funcional, utilizando apenas uma webcam convencional. Os principais resultados observados incluem:
+    </p>
+
+    <ul>
+        <li><strong>Precisão do cursor</strong> — com a calibração por IA, o erro médio foi reduzido significativamente em relação aos métodos matemáticos tradicionais;</li>
+        <li><strong>Estabilidade</strong> — a combinação do Filtro de Kalman com EMA adaptativa reduziu drasticamente o jitter (tremor do cursor);</li>
+        <li><strong>Reconhecimento de gestos</strong> — a máquina de estados e os filtros temporais aumentaram a taxa de acertos na detecção de piscadas e comandos;</li>
+        <li><strong>Portabilidade</strong> — o sistema foi testado em diferentes computadores e condições de iluminação, apresentando bom desempenho;</li>
+        <li><strong>Acessibilidade</strong> — o sistema permite que usuários com limitações motoras realizem tarefas básicas no computador (navegação, digitação, leitura) sem necessidade de hardware especializado.</li>
+    </ul>
+
+    <p>
+        O projeto foi apresentado ao orientador e à comissão da META em múltiplas reuniões, recebendo feedbacks positivos sobre a robustez e o potencial de aplicação prática.
+    </p>
+
+    <div class="nota-box">
+        <strong>Desafios superados:</strong> A principal dificuldade foi a detecção precisa de piscadas do olho esquerdo, que foi corrigida com ajustes nos limiares, histerese e filtragem temporal. O conflito entre gestos compostos (ex: arrastar vs. Ctrl+C) foi resolvido com a janela temporal de reconhecimento.
+    </div>
+
+</div>
+
+<!-- ========================================================
+     CONCLUSÃO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Conclusão
+    </h2>
+
+    <p>
+        O Eye Tracker CK² representa uma contribuição significativa para o campo da tecnologia assistiva, oferecendo uma alternativa acessível e de baixo custo para pessoas com tetraplegia e outras limitações motoras severas. O sistema integra com sucesso técnicas de visão computacional, inteligência artificial e reconhecimento de gestos para proporcionar uma interação natural e eficiente com o computador.
+    </p>
+
+    <p>
+        A modularidade da arquitetura desenvolvida permite futuras expansões, incluindo:
+    </p>
+
+    <ul>
+        <li><strong>Controle de dispositivos IoT</strong> — automação residencial via Wi-Fi/Bluetooth;</li>
+        <li><strong>Teclado virtual adaptativo</strong> — com predição de texto baseada em Modelos de Markov;</li>
+        <li><strong>Treinamento oculomotor</strong> — programas para melhorar o controle dos olhos e reduzir fadiga;</li>
+        <li><strong>Interface web</strong> — para configuração remota e monitoramento;</li>
+        <li><strong>Versão executável (.exe)</strong> — para facilitar a instalação por usuários finais.</li>
+    </ul>
+
+    <p>
+        O projeto reforça o compromisso do grupo com a inovação tecnológica e a inclusão social, demonstrando que soluções de alto impacto podem ser desenvolvidas com hardware acessível e software bem projetado.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     REFERÊNCIAS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Referências
+    </h2>
+
+    <ul class="referencias-lista">
+
+        <li>
+            SILVA, Rafael Augusto da.
+            <em>Teclado virtual baseado na técnica Eye-Swipe utilizando rastreamento ocular.</em>
+            Tese de Doutorado, Universidade Federal de Uberlândia, 2021.
+        </li>
+
+        <li>
+            MOTA, Suzana Viana.
+            <em>Joyface — sistema de interação assistiva baseado em expressões faciais.</em>
+            Dissertação de Mestrado, UNICAMP, 2019.
+        </li>
+
+        <li>
+            PERERA, Shamilka.
+            <em>Real-time Eye Tracking using MediaPipe and OpenCV.</em>
+            Disponível em:
+            <a href="https://shamilkaperera.github.io/" target="_blank" rel="noopener noreferrer">
+                shamilkaperera.github.io
+            </a>
+        </li>
+
+        <li>
+            GOOGLE.
+            <em>MediaPipe Face Mesh.</em>
+            Disponível em:
+            <a href="https://developers.google.com/mediapipe/solutions/vision/face_landmarker" target="_blank" rel="noopener noreferrer">
+                developers.google.com
+            </a>
+        </li>
+
+        <li>
+            SILVA, Carlos Eduardo Ferreira da; JESUS, Kauan Kerlon Costa de; MATEUS, Kelvin Saldanha.
+            <em>Eye Tracker CK² — Código-fonte.</em>
+            GitHub.
+            Disponível em:
+            <a href="https://github.com/kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer">
+                github.com/kelvinsaldanha/Eye-tracker-CKK
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="projeto-detalhe__cta">
+
+    <a href="{{ '/projetos/' | relative_url }}" class="projeto-detalhe__voltar">
+        &larr; Voltar para Projetos
+    </a>
+
+    <a href="https://github.com/Kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+        Ver no GitHub
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
