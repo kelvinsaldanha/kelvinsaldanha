@@ -1,0 +1,686 @@
+---
+layout: default
+title: "Monitor Multiparamétrico Simplificado | Kelvin Saldanha Mateus"
+description: "Monitor Multiparamétrico Simplificado baseado no PIC24FJ256GB106, capaz de medir BPM, SpO₂ e temperatura corporal, com display LCD e alarmes."
+permalink: /monitor-multiparametrico/
+---
+
+<!-- ============================================================
+     JSON-LD
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "name": "Kelvin Saldanha Mateus"
+      },
+      "about": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa",
+      "name": "Kelvin Saldanha Mateus",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "sameAs": [
+        "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+        "https://github.com/kelvinsaldanha"
+      ],
+      "email": "mailto:kelvinsaldanhaa@gmail.com"
+    }
+  ]
+}
+</script>
+
+<style>
+
+/* ============================================================
+   PÁGINA DE PROJETO DETALHADO
+   ============================================================ */
+
+.projeto-detalhe {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.projeto-detalhe__voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: color var(--transition);
+}
+
+.projeto-detalhe__voltar:hover {
+    color: var(--color-primary);
+}
+
+.projeto-detalhe__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.projeto-detalhe__badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+}
+
+.projeto-detalhe__badge--status {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.projeto-detalhe__hero-imagem {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    margin: 1.5rem 0 2.5rem;
+    background: var(--color-surface-light);
+}
+
+.projeto-detalhe__hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projeto-detalhe__integrantes {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.projeto-detalhe__integrantes strong {
+    color: var(--color-text);
+}
+
+.projeto-secao {
+    margin-bottom: 3rem;
+}
+
+.projeto-secao__titulo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.projeto-secao__subtitulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.projeto-secao p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.projeto-secao ul {
+    margin: 0 0 1rem 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.projeto-secao ul li {
+    margin-bottom: 0.35rem;
+}
+
+.projeto-secao ul li strong {
+    color: var(--color-text);
+}
+
+.tabela-alarmes, .tabela-componentes {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.tabela-alarmes th, .tabela-componentes th {
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.tabela-alarmes td, .tabela-componentes td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.tabela-alarmes tr:last-child td,
+.tabela-componentes tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-alarmes td:first-child,
+.tabela-componentes td:first-child {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.tabela-componentes td:last-child {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.nota-box {
+    background: var(--color-surface-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+}
+
+.nota-box strong {
+    color: var(--color-text);
+}
+
+.referencias-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.referencias-lista li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.referencias-lista li:last-child {
+    border-bottom: none;
+}
+
+.referencias-lista a {
+    color: var(--color-primary);
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.referencias-lista a:hover {
+    text-decoration: underline;
+}
+
+.projeto-detalhe__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+</style>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section class="hero" aria-labelledby="projeto-titulo">
+
+<div class="container">
+
+    <p class="hero__overline">
+        Projeto · Instrumentação Biomédica & Sistemas Embarcados
+    </p>
+
+    <h1 class="hero__title" id="projeto-titulo">
+        Monitor Multiparamétrico Simplificado
+    </h1>
+
+    <p class="hero__subtitle">
+        Monitor de sinais vitais baseado no PIC24FJ256GB106, capaz de medir frequência cardíaca (BPM), saturação de oxigênio (SpO₂) e temperatura corporal.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ============================================================
+     CONTEÚDO
+     ============================================================ -->
+
+<main>
+
+<section class="section">
+
+<div class="container projeto-detalhe">
+
+<a href="{{ '/projetos/' | relative_url }}" class="projeto-detalhe__voltar">
+    &larr; Voltar para Projetos
+</a>
+
+<div class="projeto-detalhe__meta">
+
+    <span class="projeto-detalhe__badge projeto-detalhe__badge--status">
+        Em desenvolvimento — 2026
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        PIC24FJ256GB106
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        C
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        MPLAB X
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        I2C / 1-Wire
+    </span>
+
+    <span class="projeto-detalhe__badge">
+        Instrumentação
+    </span>
+
+</div>
+
+<div class="projeto-detalhe__hero-imagem">
+
+    <img
+        src="{{ '/images/projects/monitor-multiparametrico.jpg' | relative_url }}"
+        alt="Monitor Multiparamétrico Simplificado — protótipo com PIC"
+        onerror="this.parentElement.style.display='none'"
+    >
+
+</div>
+
+<p class="projeto-detalhe__integrantes">
+
+    <strong>Projeto Final</strong> — Trabalho de conclusão do curso técnico em Equipamentos Biomédicos<br>
+
+    <strong>Instituição:</strong>
+    CEFET-MG, Belo Horizonte<br>
+
+    <strong>Integrantes:</strong>
+    Carlos Eduardo Ferreira da Silva,
+    Kauan Kerlon Costa de Jesus,
+    Kelvin Saldanha Mateus<br>
+
+    <strong>Orientador:</strong>
+    Prof. Alexandre Rodrigues Farias<br>
+
+    <strong>Co-orientadora:</strong>
+    Prof.ª Tálita Saemi Payossim Sono<br>
+
+    <strong>Ano:</strong> 2026
+
+</p>
+
+<!-- ========================================================
+     INTRODUÇÃO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Introdução
+    </h2>
+
+    <p>
+        A monitorização contínua de sinais vitais é fundamental para a avaliação do estado clínico de pacientes em ambientes hospitalares, ambulatoriais e domiciliares. Equipamentos multiparamétricos comerciais são amplamente utilizados para acompanhar parâmetros como frequência cardíaca, saturação de oxigênio (SpO₂) e temperatura corporal. Entretanto, esses equipamentos geralmente apresentam elevado custo de aquisição e manutenção, o que dificulta seu acesso em instituições de ensino e em projetos acadêmicos voltados à formação técnica.
+    </p>
+
+    <p>
+        Diante desse cenário, surgiu a proposta de desenvolver um <strong>Monitor Multiparamétrico Simplificado</strong> baseado no microcontrolador <strong>PIC24FJ256GB106</strong>, capaz de adquirir, processar e exibir parâmetros fisiológicos essenciais utilizando componentes eletrônicos de baixo custo. O projeto permite aplicar, de forma prática, conceitos de instrumentação biomédica, processamento digital de sinais, sistemas embarcados e monitorização clínica.
+    </p>
+
+    <p>
+        Este projeto foi definido como <strong>Projeto Final do Curso Técnico em Equipamentos Biomédicos</strong> de forma paralela ao projeto <strong>Eye Tracker CK²</strong>, desenvolvido pela mesma equipe no contexto da META. O Projeto Final exige que o microcontrolador PIC atue como elemento central de aquisição, processamento e controle — condição que o Eye Tracker CK² não atende, já que seu processamento principal ocorre via visão computacional em um computador. Por esse motivo, os dois projetos seguem caminhos técnicos distintos, cada um atendendo aos requisitos de seu próprio contexto.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     OBJETIVOS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Objetivos
+    </h2>
+
+    <h3 class="projeto-secao__subtitulo">
+        Objetivo Geral
+    </h3>
+
+    <p>
+        Desenvolver um monitor multiparamétrico simplificado baseado no microcontrolador PIC24FJ256GB106, capaz de monitorar parâmetros fisiológicos básicos e apresentar as informações em tempo real ao usuário.
+    </p>
+
+    <h3 class="projeto-secao__subtitulo">
+        Objetivos Específicos
+    </h3>
+
+    <ul>
+        <li>Medir a saturação periférica de oxigênio (SpO₂);</li>
+        <li>Medir a frequência cardíaca (BPM);</li>
+        <li>Medir a temperatura corporal;</li>
+        <li>Processar os sinais biomédicos utilizando o PIC24FJ256GB106;</li>
+        <li>Exibir os parâmetros fisiológicos em um display LCD;</li>
+        <li>Implementar alarmes visuais e sonoros para condições críticas;</li>
+        <li>Validar o funcionamento do sistema por meio de testes experimentais.</li>
+    </ul>
+
+</div>
+
+<!-- ========================================================
+     METODOLOGIA E DECISÕES TÉCNICAS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Metodologia e Decisões Técnicas
+    </h2>
+
+    <h3 class="projeto-secao__subtitulo">
+        Funcionamento do Sistema — Fluxo do Sinal
+    </h3>
+
+    <p>
+        De forma resumida, o sistema funciona em quatro etapas: <strong>aquisição</strong>, <strong>processamento</strong>, <strong>exibição</strong> e <strong>alarme</strong>. Os sensores <strong>MAX30102</strong> (SpO₂/BPM) e <strong>DS18B20</strong> (temperatura) capturam grandezas físicas do paciente e as convertem em sinais digitais, transmitidos ao PIC24FJ256GB106 pelos barramentos I2C e 1-Wire, respectivamente.
+    </p>
+
+    <p>
+        O microcontrolador então processa esses sinais — calcula o BPM a partir dos picos do sinal PPG, estima a SpO₂ pela razão de absorção entre os LEDs vermelho e infravermelho, e lê a temperatura já convertida digitalmente pelo DS18B20. Em seguida, o PIC compara os valores calculados com os limiares clínicos definidos e decide se deve ou não acionar os alarmes. Os resultados são enviados simultaneamente ao display LCD (via I2C) para visualização local.
+    </p>
+
+    <h3 class="projeto-secao__subtitulo">
+        Escolha do Display: LCD Paralelo x LCD com Módulo I2C
+    </h3>
+
+    <p>
+        Uma das primeiras decisões técnicas do grupo foi a forma de conexão do display LCD 16x2 ao microcontrolador. Optou-se pelo <strong>módulo I2C</strong>, priorizando a economia de pinos do PIC24FJ256GB106 (apenas 2 pinos SDA/SCL) e a simplificação da montagem em protoboard, em vez da conexão paralela que ocuparia de 6 a 8 pinos.
+    </p>
+
+    <h3 class="projeto-secao__subtitulo">
+        Princípio de Funcionamento dos Sensores
+    </h3>
+
+    <p>
+        <strong>MAX30102 (SpO₂ e frequência cardíaca)</strong> — opera com base na técnica de fotopletismografia (PPG): dois LEDs internos (vermelho, ~660 nm, e infravermelho, ~880 nm) emitem luz que é parcialmente absorvida pelo sangue arterial pulsátil. Um fotodetector mede a luz refletida, e as variações periódicas correspondem aos batimentos cardíacos. A razão entre a absorção do vermelho e do infravermelho é utilizada para estimar a saturação de oxigênio (SpO₂).
+    </p>
+
+    <p>
+        <strong>DS18B20 (temperatura)</strong> — termômetro digital que converte a temperatura diretamente em sinal digital, dispensando conversores analógico-digitais externos. Sua comunicação com o microcontrolador ocorre pelo protocolo 1-Wire, utilizando uma única linha de dados. A versão escolhida é a <strong>sonda à prova d'água</strong>, adequada para contato direto e prolongado com a pele do paciente.
+    </p>
+
+    <h3 class="projeto-secao__subtitulo">
+        Condições de Alarme Definidas
+    </h3>
+
+    <table class="tabela-alarmes">
+        <thead>
+            <tr>
+                <th>Parâmetro</th>
+                <th>Condição de risco</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Frequência cardíaca (BPM)</td>
+                <td>Acima de 100 BPM (taquicardia)</td>
+                <td>LED vermelho + buzzer</td>
+            </tr>
+            <tr>
+                <td>Frequência cardíaca (BPM)</td>
+                <td>Abaixo de 60 BPM (bradicardia)</td>
+                <td>LED vermelho + buzzer</td>
+            </tr>
+            <tr>
+                <td>Saturação de O₂ (SpO₂)</td>
+                <td>Abaixo de 90%</td>
+                <td>LED vermelho + buzzer</td>
+            </tr>
+            <tr>
+                <td>Temperatura corporal</td>
+                <td>Acima de 38 °C</td>
+                <td>LED vermelho + buzzer</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="projeto-secao__subtitulo">
+        Levantamento de Componentes e Custos
+    </h3>
+
+    <table class="tabela-componentes">
+        <thead>
+            <tr>
+                <th>Componente</th>
+                <th>Fornecedor</th>
+                <th>Preço unit.</th>
+                <th>Total (com frete)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MAX30102 (módulo sensor)</td>
+                <td>Mercado Livre</td>
+                <td>R$ 26,00</td>
+                <td>R$ 36,00</td>
+            </tr>
+            <tr>
+                <td>DS18B20 (sonda à prova d'água)</td>
+                <td>Eletrogate</td>
+                <td>R$ 10,90</td>
+                <td>R$ 13,78 (frete)</td>
+            </tr>
+            <tr>
+                <td>Display LCD 16x2 + módulo I2C</td>
+                <td>Eletrogate</td>
+                <td>R$ 24,90</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>Buzzer ativo 5V (2 unid.)</td>
+                <td>Eletrogate</td>
+                <td>R$ 2,90</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>LEDs difusos (amarelo, verde, vermelho)</td>
+                <td>Eletrogate</td>
+                <td>R$ 0,45</td>
+                <td>—</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="nota-box">
+        <strong>Custo total estimado:</strong> aproximadamente <strong>R$ 92,73</strong> (sem contar o PIC24FJ256GB106, que já está disponível no laboratório do curso). Este valor é consideravelmente inferior ao de monitores multiparamétricos comerciais, validando o requisito de baixo custo.
+    </div>
+
+</div>
+
+<!-- ========================================================
+     DIÁRIO DE BORDO — REGISTRO DAS ATIVIDADES
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Diário de Bordo — Registro Cronológico
+    </h2>
+
+    <p>
+        Esta seção documenta, de forma cronológica, as atividades, decisões técnicas e etapas de desenvolvimento do projeto.
+    </p>
+
+    <p>
+        <strong>05/08 — Definição do escopo do Projeto Final</strong><br>
+        Foi identificado que o Projeto Final do Curso Técnico exige que o microcontrolador PIC atue como elemento central do sistema. Como o Eye Tracker CK² (proposto para a META) realiza seu processamento principal em um computador, o PIC teria apenas função secundária. Ficou definido que os dois projetos seguiriam caminhos distintos, dando origem ao <strong>Monitor Multiparamétrico Simplificado</strong>.
+    </p>
+
+    <p>
+        <strong>05/08 — Definição da arquitetura geral</strong><br>
+        Foi definida a composição do sistema: aquisição de SpO₂ (MAX30102), medição de temperatura (DS18B20), processamento pelo PIC24FJ256GB106, cálculo de BPM, exibição em display LCD, sistema de alarmes e comunicação serial (futura).
+    </p>
+
+    <p>
+        <strong>05/08 — Pesquisa bibliográfica e levantamento de componentes</strong><br>
+        Foi realizada pesquisa sobre os sensores MAX30102 (I2C) e DS18B20 (1-Wire), além do levantamento de preços em diferentes fornecedores (Mercado Livre e Eletrogate), resultando no orçamento apresentado na seção anterior.
+    </p>
+
+    <p>
+        <strong>05/08 — Decisão sobre a conexão do display LCD</strong><br>
+        Optou-se pelo módulo I2C para o display LCD 16x2, priorizando a economia de pinos do microcontrolador e a simplicidade da montagem.
+    </p>
+
+    <p>
+        <strong>19/08 — Compra dos componentes</strong><br>
+        Os componentes foram adquiridos nos fornecedores Mercado Livre e Eletrogate, conforme planejado.
+    </p>
+
+    <p>
+        <strong>20/08 — Chegada dos componentes</strong><br>
+        Os componentes comprados no Mercado Livre e na Eletrogate chegaram, permitindo o início da montagem física.
+    </p>
+
+    <p>
+        <strong>22/08 — Início do desenvolvimento do código</strong><br>
+        Começamos a mexer no código, especificamente na parte referente às bibliotecas. Para não criar uma biblioteca do zero, utilizamos um recurso do MPLAB X. Como a versão v5.3 não tinha suporte para o recurso, instalamos a versão <strong>MPLAB X v6.35</strong>. O computador de um dos integrantes não suportou o MCC (configurador de periféricos), então outro integrante ficará responsável pela programação do I2C.
+    </p>
+
+    <p>
+        <strong>23/08 — Planejamento para obtenção do protoboard</strong><br>
+        Ficou definido que, na segunda-feira (24/08), o grupo irá atrás de um protoboard emprestado, inicialmente no almoxarifado de EBM e, se necessário, em outros almoxarifados do CEFET.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     PRÓXIMOS PASSOS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Próximos Passos
+    </h2>
+
+    <ul>
+        <li><strong>Montagem do circuito</strong> — montar a primeira versão do circuito em protoboard, conectando o PIC24FJ256GB106 aos sensores, display e alarmes;</li>
+        <li><strong>Desenvolvimento do código</strong> — implementar a comunicação I2C com o MAX30102 e 1-Wire com o DS18B20;</li>
+        <li><strong>Testes individuais</strong> — validar a leitura de cada sensor separadamente;</li>
+        <li><strong>Integração e calibração</strong> — integrar os módulos e calibrar a medição de SpO₂ e BPM;</li>
+        <li><strong>Implementação dos alarmes</strong> — configurar os limiares e testar os alertas visuais e sonoros;</li>
+        <li><strong>Simulação em Proteus</strong> — elaborar o esquemático completo e validar o funcionamento em ambiente de simulação;</li>
+        <li><strong>Documentação</strong> — finalizar o relatório técnico com os resultados experimentais.</li>
+    </ul>
+
+</div>
+
+<!-- ========================================================
+     REFERÊNCIAS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Referências
+    </h2>
+
+    <ul class="referencias-lista">
+
+        <li>
+            MAXIM INTEGRATED.
+            <em>DS18B20 Programmable Resolution 1-Wire Digital Thermometer — Datasheet.</em>
+        </li>
+
+        <li>
+            MAXIM INTEGRATED.
+            <em>MAX30102 High-Sensitivity Pulse Oximeter and Heart-Rate Sensor for Wearable Health — Datasheet.</em>
+        </li>
+
+        <li>
+            MICROCHIP TECHNOLOGY.
+            <em>PIC24FJ256GB106 Family Data Sheet.</em>
+        </li>
+
+        <li>
+            ELETROGATE.
+            <em>Guia completo do sensor DS18B20 à prova d'água.</em>
+            Disponível em:
+            <a href="https://blog.eletrogate.com" target="_blank" rel="noopener noreferrer">
+                blog.eletrogate.com
+            </a>
+        </li>
+
+        <li>
+            LIBDRIVER.
+            <em>Biblioteca em C para o sensor MAX30102.</em>
+            Disponível em:
+            <a href="https://github.com/libdriver/max30102" target="_blank" rel="noopener noreferrer">
+                github.com/libdriver/max30102
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="projeto-detalhe__cta">
+
+    <a href="{{ '/projetos/' | relative_url }}" class="projeto-detalhe__voltar">
+        &larr; Voltar para Projetos
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
