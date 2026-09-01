@@ -14,7 +14,7 @@ permalink: /conquistas/
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfilePage",
+      "@type": "CollectionPage",
       "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#webpage",
       "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
       "name": "{{ page.title }}",
@@ -27,6 +27,9 @@ permalink: /conquistas/
       },
       "about": {
         "@id": "{{ site.url }}{{ site.baseurl }}/#pessoa"
+      },
+      "mainEntity": {
+        "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}#medalhas"
       }
     },
     {
