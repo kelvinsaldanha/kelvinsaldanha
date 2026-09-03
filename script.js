@@ -385,3 +385,84 @@ configurarLinksFooter();
     });
 
 })();
+
+// ============================================
+// EFEITO 3D TILT NOS CARDS DE PROJETO
+// ============================================
+document.querySelectorAll('.projeto-card').forEach((card) => {
+  card.addEventListener('mousemove', (e) => {
+    // Pega a posição exata do mouse dentro do card
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calcula o centro do card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Define a rotação (quanto mais longe do centro, mais vira)
+    const rotateX = ((y - centerY) / 20) * -1; // Inverte para ficar natural
+    const rotateY = (x - centerX) / 20;
+    
+    // Aplica a transformação 3D
+    card.style.transform = 
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    card.style.transition = 'transform 0.1s ease-out';
+  });
+
+  // Quando o mouse sai, volta ao normal com uma leve animação
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    card.style.transition = 'transform 0.4s ease-out';
+  });
+});
+
+// ============================================
+// PARALLAX SUTIL NO HERO
+// ============================================
+window.addEventListener('scroll', () => {
+  const heroImage = document.querySelector('.hero__image-wrapper');
+  if (!heroImage) return;
+  
+  const scrolled = window.pageYOffset;
+  // Move a imagem 15% mais devagar que a rolagem (multiplicador 0.15)
+  heroImage.style.transform = `translateY(${scrolled * 0.15}px)`;
+});
+
+// ============================================
+// TRANSIÇÃO SUAVE DE PÁGINA (FADE OUT/IN)
+// ============================================
+
+// 1. Ao carregar a página, aplica o fade-in
+document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.remove('is-loading');
+  document.documentElement.classList.add('is-loaded');
+});
+
+// 2. Intercepta cliques em links internos
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  
+  // Verifica se é um link interno (mesmo domínio, não tem target=_blank, não é âncora #)
+  if (!link) return;
+  if (link.target === '_blank') return;
+  if (link.href.startsWith('#')) return;
+  if (!link.href.startsWith(window.location.origin)) return;
+  
+  e.preventDefault(); // Impede o navegador de navegar imediatamente
+  
+  // Adiciona a classe de saída para esvainecer
+  document.body.classList.add('is-leaving');
+  
+  // Espera a animação de fade terminar (400ms) e redireciona
+  setTimeout(() => {
+    window.location.href = link.href;
+  }, 400);
+});
+
+// 3. Se o usuário usar o botão "Voltar" do navegador, a transição acontece do mesmo jeito
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('is-leaving');
+  document.documentElement.classList.remove('is-loading');
+  document.documentElement.classList.add('is-loaded');
+});
