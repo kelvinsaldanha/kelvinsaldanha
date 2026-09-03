@@ -387,32 +387,29 @@ configurarLinksFooter();
 })();
 
 // ============================================
-// EFEITO 3D TILT NOS CARDS DE PROJETO
+// EFEITO 3D TILT NOS CARDS DE PROJETO (SUAVIZADO)
 // ============================================
 document.querySelectorAll('.projeto-card').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
-    // Pega a posição exata do mouse dentro do card
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    // Calcula o centro do card
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    // Define a rotação (quanto mais longe do centro, mais vira)
-    const rotateX = ((y - centerY) / 20) * -1; // Inverte para ficar natural
-    const rotateY = (x - centerX) / 20;
+    // 🔽 AUMENTE o divisor para reduzir o movimento (ex: 40, 50 ou 60)
+    const rotateX = ((y - centerY) / 40) * -1; 
+    const rotateY = (x - centerX) / 40;
     
-    // Aplica a transformação 3D
+    // Removi o 'scale(1.02)' para evitar zoom indesejado, mas você pode manter se gostar
     card.style.transform = 
-      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     card.style.transition = 'transform 0.1s ease-out';
   });
 
-  // Quando o mouse sai, volta ao normal com uma leve animação
   card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     card.style.transition = 'transform 0.4s ease-out';
   });
 });
