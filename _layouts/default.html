@@ -5,133 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
 
-<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <title>{{ page.title | default: site.title }}</title>
 
-<title>{{ page.title | default: site.title }}</title>
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
-<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
 
-<meta name="description" content="{{ page.description | default: site.description }}">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a0e1a">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
+    <meta property="og:site_name" content="Kelvin Saldanha">
+    <meta property="og:locale" content="pt_BR">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ page.title | default: site.title }}">
-<meta property="og:description" content="{{ page.description | default: site.description }}">
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
-<meta property="og:site_name" content="Kelvin Saldanha">
-<meta property="og:locale" content="pt_BR">
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
 
-<!-- Twitter/X Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title | default: site.title }}">
-<meta name="twitter:description" content="{{ page.description | default: site.description }}">
-<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png">
-
-
-
-<!-- JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
     {
-      "@type": "Person",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
-      "name": "Kelvin Saldanha Mateus",
-      "alternateName": "Kelvin Saldanha",
-      "description": "Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos em tecnologia, engenharia e saúde. Especialista em instrumentação biomédica, sistemas embarcados, visão computacional e IA.",
-      "image": "{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png",
-      "url": "{{ site.url }}{{ site.baseurl }}/",
-      "email": "mailto:kelvinsaldanhaa@gmail.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
-        "https://github.com/kelvinsaldanha"
-      ],
-      "jobTitle": "Estudante de Equipamentos Biomédicos",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "CEFET-MG",
-        "url": "https://www.cefetmg.br"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Centro Federal de Educação Tecnológica de Minas Gerais",
-        "url": "https://www.cefetmg.br"
-      },
-      "hasCredential": {
-        "@type": "EducationalAudience",
-        "educationalRole": "student"
-      },
-      "knowsAbout": [
-        "Equipamentos Biomédicos",
-        "Engenharia Biomédica",
-        "Instrumentação Biomédica",
-        "Sistemas Embarcados",
-        "Microcontroladores",
-        "Programação Python",
-        "Visão Computacional",
-        "Inteligência Artificial",
-        "Processamento de Sinais",
-        "Eletrônica Analógica e Digital",
-        "Automação",
-        "IoT"
-      ],
-      "award": [
-        "OIMSF Diamante Nacional 2026",
-        "OIMSF Ouro Regional 2026",
-        "Mandacaru Ouro 2026",
-        "TANGRAM Ouro 2026",
-        "OCE Bronze 2026",
-        "OBRL Ouro 2025",
-        "Mandacaru Ouro 2025",
-        "OBMEP Menção Honrosa 2023"
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+          "name": "Kelvin Saldanha Mateus",
+          "alternateName": "Kelvin Saldanha",
+          "description": "Estudante de Equipamentos Biomédicos no CEFET-MG, desenvolvendo projetos em tecnologia, engenharia e saúde. Especialista em instrumentação biomédica, sistemas embarcados, visão computacional e IA.",
+          "image": "{{ site.url }}{{ site.baseurl }}/images/profile/kelvin.png",
+          "url": "{{ site.url }}{{ site.baseurl }}/",
+          "email": "mailto:kelvinsaldanhaa@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+            "https://github.com/kelvinsaldanha"
+          ],
+          "jobTitle": "Estudante de Equipamentos Biomédicos",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "CEFET-MG",
+            "url": "https://www.cefetmg.br"
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Centro Federal de Educação Tecnológica de Minas Gerais",
+            "url": "https://www.cefetmg.br"
+          },
+          "hasCredential": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student"
+          },
+          "knowsAbout": [
+            "Equipamentos Biomédicos",
+            "Engenharia Biomédica",
+            "Instrumentação Biomédica",
+            "Sistemas Embarcados",
+            "Microcontroladores",
+            "Programação Python",
+            "Visão Computacional",
+            "Inteligência Artificial",
+            "Processamento de Sinais",
+            "Eletrônica Analógica e Digital",
+            "Automação",
+            "IoT"
+          ],
+          "award": [
+            "OIMSF Diamante Nacional 2026",
+            "OIMSF Ouro Regional 2026",
+            "Mandacaru Ouro 2026",
+            "TANGRAM Ouro 2026",
+            "OCE Bronze 2026",
+            "OBRL Ouro 2025",
+            "Mandacaru Ouro 2025",
+            "OBMEP Menção Honrosa 2023"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+          "url": "{{ site.url }}{{ site.baseurl }}/",
+          "name": "Kelvin Saldanha — Portfólio",
+          "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG, com projetos em tecnologia, engenharia e saúde.",
+          "inLanguage": "pt-BR",
+          "author": {
+            "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "{{ site.url }}{{ site.baseurl }}/#profilepage",
+          "url": "{{ site.url }}{{ site.baseurl }}/",
+          "name": "Kelvin Saldanha — Portfólio",
+          "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG. Projetos, experiências, publicações e conquistas.",
+          "mainEntity": {
+            "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+          }
+        }
       ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
-      "url": "{{ site.url }}{{ site.baseurl }}/",
-      "name": "Kelvin Saldanha — Portfólio",
-      "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG, com projetos em tecnologia, engenharia e saúde.",
-      "inLanguage": "pt-BR",
-      "author": {
-        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
-      }
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#profilepage",
-      "url": "{{ site.url }}{{ site.baseurl }}/",
-      "name": "Kelvin Saldanha — Portfólio",
-      "description": "Portfólio de Kelvin Saldanha, estudante de Equipamentos Biomédicos no CEFET-MG. Projetos, experiências, publicações e conquistas.",
-      "mainEntity": {
-        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
-      }
     }
-  ]
-}
-</script>
+    </script>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- CSS -->
-<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <!-- Ícones: Devicon e Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Devicon - ícones de tecnologias -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 
 </head>
     
 <body>
-<a href="#conteudo-principal" class="skip-link">
+    <a href="#conteudo-principal" class="skip-link">
         Pular para o conteúdo principal
     </a>
 
