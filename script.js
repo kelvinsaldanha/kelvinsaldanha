@@ -463,3 +463,26 @@ window.addEventListener('pageshow', () => {
   document.documentElement.classList.remove('is-loading');
   document.documentElement.classList.add('is-loaded');
 });
+
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+(function() {
+    // Cria o elemento da barra
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    // Atualiza a largura conforme a rolagem
+    function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    }
+
+    // Atualiza ao rolar e também ao carregar a página
+    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('resize', updateProgress); // recalcula se a janela mudar
+    document.addEventListener('DOMContentLoaded', updateProgress);
+})();
