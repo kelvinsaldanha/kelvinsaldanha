@@ -355,6 +355,9 @@ p {
     position: relative;
 }
 
+/* =============================================
+   SUBLINHADO ANIMADO (hover e ativo)
+   ============================================= */
 .nav__link {
     display: block;
 
@@ -368,6 +371,33 @@ p {
     text-decoration: none;
 
     transition: color var(--transition);
+
+    /* Necessário para o pseudo-elemento */
+    position: relative;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Hover e foco (acessibilidade) */
+.nav__link:hover::after,
+.nav__link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* Página ativa: linha sempre visível */
+.nav__link.active::after {
+    transform: scaleX(1);
 }
 
 .nav__link:hover {
@@ -379,21 +409,9 @@ p {
     font-weight: 600;
 }
 
-.nav__link.active::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -2px;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--color-primary);
-
-    border-radius: 2px;
-}
+/* Remove a regra antiga que estava aqui:
+   .nav__link.active::after { ... } 
+   Agora ela está unificada acima. */
 
 .nav__item--darkmode {
     margin-left: 0.5rem;
