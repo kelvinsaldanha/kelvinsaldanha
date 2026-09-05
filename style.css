@@ -2520,3 +2520,32 @@ html.is-loaded body {
 
 /* Se quiser que a barra fique abaixo da navbar (header), use top: var(--header-height) */
 /* Mas recomendo sobre a navbar, como está acima */
+
+/* =============================================
+   EFEITO DE HOVER PARA TODOS OS CARDS
+   ============================================= */
+
+/* Lista de todos os cards que devem ter o efeito */
+.projeto-card,
+.post-card,
+.certificado-card,
+.area-card,
+.conquista-card,
+.competencia-item,
+.contato-canal,
+.habilidade-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform;
+}
+
+.projeto-card:hover,
+.post-card:hover,
+.certificado-card:hover,
+.area-card:hover,
+.conquista-card:hover,
+.competencia-item:hover,
+.contato-canal:hover,
+.habilidade-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md); /* ou um box-shadow personalizado */
+}
