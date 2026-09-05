@@ -2495,3 +2495,22 @@ html.is-loading body {
 html.is-loaded body {
   opacity: 1;
 }
+
+
+/* =============================================
+   SCROLL PROGRESS BAR
+   ============================================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--color-primary);
+    width: 0%;
+    z-index: 9999; /* fica acima de tudo */
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); /* brilho sutil */
+}
+
+/* Se quiser que a barra fique abaixo da navbar (header), use top: var(--header-height) */
+/* Mas recomendo sobre a navbar, como está acima */
