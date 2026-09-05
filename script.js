@@ -486,3 +486,28 @@ window.addEventListener('pageshow', () => {
     window.addEventListener('resize', updateProgress); // recalcula se a janela mudar
     document.addEventListener('DOMContentLoaded', updateProgress);
 })();
+
+// ============================================
+// STAGGER (efeito cascata) nas animações de entrada
+// ============================================
+
+// Lista de seletores onde aplicar o stagger
+const staggerSelectors = [
+  '.projeto-card',
+  '.post-card',
+  '.area-card',
+  '.certificado-card'
+];
+
+// Seleciona todos os elementos que têm a classe .fade-in
+const allFadeElements = document.querySelectorAll('.fade-in');
+
+// Para cada elemento, calculamos um atraso baseado no índice
+allFadeElements.forEach((el, index) => {
+  // Verifica se o elemento corresponde a algum seletor da lista
+  const isStagger = staggerSelectors.some(selector => el.matches(selector));
+  if (isStagger) {
+    // Atraso progressivo: 0.05s por item (ajuste: 0.03 ~ 0.08)
+    el.style.transitionDelay = (index * 0.05) + 's';
+  }
+});
