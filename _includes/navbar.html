@@ -25,6 +25,7 @@
 
       <ul class="nav__menu" id="nav-menu">
 
+        <!-- HOME -->
         <li class="nav__item">
           <a
             href="{{ '/' | relative_url }}"
@@ -34,6 +35,7 @@
           </a>
         </li>
 
+        <!-- SOBRE (inclui páginas antigas de formação e experiências) -->
         <li class="nav__item">
           <a
             href="{{ '/sobre/' | relative_url }}"
@@ -43,6 +45,7 @@
           </a>
         </li>
 
+        <!-- HABILIDADES -->
         <li class="nav__item">
           <a
             href="{{ '/habilidades/' | relative_url }}"
@@ -52,15 +55,30 @@
           </a>
         </li>
 
+        <!-- PROJETOS (ativo também nas páginas individuais) -->
+        {% comment %}
+          Lista de URLs que devem marcar o item "Projetos" como ativo.
+          Mantenha esta lista atualizada quando adicionar novos projetos.
+        {% endcomment %}
+        {% assign projetos_urls = "/projetos/,/eye-tracker/,/monitor-multiparametrico/,/guia-respiracao/" | split: "," %}
+        {% assign is_projetos = false %}
+        {% for url in projetos_urls %}
+          {% if page.url == url %}
+            {% assign is_projetos = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
         <li class="nav__item">
           <a
             href="{{ '/projetos/' | relative_url }}"
-            class="nav__link {% if page.url == '/projetos/' %}active{% endif %}"
+            class="nav__link {% if is_projetos %}active{% endif %}"
           >
             Projetos
           </a>
         </li>
 
+        <!-- PUBLICAÇÕES -->
         <li class="nav__item">
           <a
             href="{{ '/publicacoes/' | relative_url }}"
@@ -70,6 +88,7 @@
           </a>
         </li>
 
+        <!-- CONQUISTAS -->
         <li class="nav__item">
           <a
             href="{{ '/conquistas/' | relative_url }}"
@@ -79,6 +98,7 @@
           </a>
         </li>
 
+        <!-- CONTATO -->
         <li class="nav__item">
           <a
             href="{{ '/contato/' | relative_url }}"
