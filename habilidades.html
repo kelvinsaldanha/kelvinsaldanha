@@ -1,191 +1,344 @@
 ---
 layout: default
 title: "Habilidades Técnicas | Kelvin Saldanha Mateus"
-description: "Habilidades técnicas de Kelvin Saldanha Mateus — Tecnologias como HTML5, CSS3, JavaScript, Git, GitHub e Python."
+description: "Habilidades técnicas de Kelvin Saldanha Mateus — Programação (C/C++), Eletrônica, Simulação (Proteus, Quartus Prime), Embarcados (Arduino, MPLABX), Gestão (Arkmeds), Pacote Office, Git, GitHub e Troubleshooting."
 ---
-<!-- ESTILOS ESPECÍFICOS DA PÁGINA HABILIDADES -->
 
+<!-- ============================================================
+     ESTILOS ESPECÍFICOS DA PÁGINA
+     ============================================================ -->
 <style>
+  .habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .habilidade-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 1.75rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .habilidade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .habilidade-card i {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .habilidade-card i.fa-solid,
+  .habilidade-card i.fa-regular {
+    color: var(--color-primary);
+  }
+
+  .habilidade-card__titulo {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 0.2rem;
+  }
+
+  .habilidade-card__descricao {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .habilidade-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .habilidade-card__tags span {
+    background: var(--color-surface-light);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 600px) {
     .habilidades-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1.5rem;
-        max-width: 900px;
-        margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
-
-    .habilidade-card {
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-lg);
-        padding: 1.75rem 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        transition: transform var(--transition), box-shadow var(--transition);
-        text-align: center;
-    }
-
-    .habilidade-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-
     .habilidade-card i {
-        font-size: 3rem;
-        line-height: 1;
-        margin-bottom: 0.25rem;
+      font-size: 2.2rem;
     }
-
-    .habilidade-card span {
-        font-weight: 600;
-        font-size: 1rem;
-        color: var(--color-text);
+    .habilidade-card__titulo {
+      font-size: 0.9rem;
     }
-
-    .habilidade-card p {
-        font-size: 0.85rem;
-        color: var(--color-text-muted);
-        margin: 0;
-        line-height: 1.4;
+    .habilidade-card__descricao {
+      font-size: 0.75rem;
     }
+  }
 
-    @media (max-width: 430px) {
-        .habilidades-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .habilidade-card i {
-            font-size: 2.5rem;
-        }
+  @media (max-width: 400px) {
+    .habilidades-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
     }
+    .habilidade-card {
+      padding: 1rem 0.5rem;
+    }
+    .habilidade-card i {
+      font-size: 1.8rem;
+    }
+  }
 </style>
 
-<!-- HERO INTERNO -->
-
+<!-- ============================================================
+     HERO INTERNO
+     ============================================================ -->
 <section class="hero" aria-labelledby="habilidades-titulo">
-    <div class="container">
-
-
-    <p class="hero__overline">
-        Habilidades
-    </p>
-
-    <h1 class="hero__title" id="habilidades-titulo">
-        Habilidades Técnicas
-    </h1>
-
+  <div class="container">
+    <p class="hero__overline">Habilidades</p>
+    <h1 class="hero__title" id="habilidades-titulo">Habilidades Técnicas</h1>
     <p class="hero__subtitle">
-        Tecnologias e ferramentas que utilizo nos meus projetos.
+      Tecnologias, softwares e práticas que utilizo nos meus projetos.
     </p>
-
-</div>
-
-
+  </div>
 </section>
 
-<!-- GRID DE HABILIDADES -->
-
-<section class="section" aria-labelledby="habilidades-titulo">
-    <div class="container">
-
+<!-- ============================================================
+     GRID DE HABILIDADES
+     ============================================================ -->
+<section class="section" aria-labelledby="habilidades-grid-titulo">
+  <div class="container">
 
     <div class="habilidades-grid">
 
-        <!-- HTML5 -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-html5-plain colored"
-                aria-hidden="true"
-            ></i>
+      <!-- ========== 1. LINGUAGENS & PROGRAMACÃO ========== -->
 
-            <span>HTML5</span>
-
-            <p>
-                Estruturação semântica de páginas web.
-            </p>
+      <!-- C -->
+      <div class="habilidade-card">
+        <i class="devicon-c-plain colored" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">C</span>
+        <p class="habilidade-card__descricao">
+          Programação de sistemas embarcados e firmware.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Microcontroladores</span>
+          <span>Firmware</span>
         </div>
+      </div>
 
-
-        <!-- CSS3 -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-css3-plain colored"
-                aria-hidden="true"
-            ></i>
-
-            <span>CSS3</span>
-
-            <p>
-                Estilização e design responsivo.
-            </p>
+      <!-- C++ -->
+      <div class="habilidade-card">
+        <i class="devicon-cplusplus-plain colored" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">C++</span>
+        <p class="habilidade-card__descricao">
+          Lógica de programação e aplicações orientadas a objetos.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>POO</span>
+          <span>Arduino</span>
         </div>
+      </div>
 
+      <!-- ========== 2. ELETRÔNICA & HARDWARE ========== -->
 
-        <!-- JavaScript -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-javascript-plain colored"
-                aria-hidden="true"
-            ></i>
-
-            <span>JavaScript</span>
-
-            <p>
-                Interatividade e lógica no front-end.
-            </p>
+      <!-- Eletrônica Básica -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Eletrônica Básica</span>
+        <p class="habilidade-card__descricao">
+          Componentes, circuitos analógicos/digitais e instrumentação.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Circuitos</span>
+          <span>Instrumentação</span>
         </div>
+      </div>
 
-
-        <!-- Git -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-git-plain colored"
-                aria-hidden="true"
-            ></i>
-
-            <span>Git</span>
-
-            <p>
-                Controle de versão de código.
-            </p>
+      <!-- Soldagem -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Soldagem de Componentes</span>
+        <p class="habilidade-card__descricao">
+          Montagem, reparo e prototipagem de placas eletrônicas.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>THT</span>
+          <span>SMD</span>
         </div>
+      </div>
 
-
-        <!-- GitHub -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-github-original colored"
-                aria-hidden="true"
-            ></i>
-
-            <span>GitHub</span>
-
-            <p>
-                Hospedagem e colaboração em projetos.
-            </p>
+      <!-- Troubleshooting -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Troubleshooting</span>
+        <p class="habilidade-card__descricao">
+          Diagnóstico e resolução de falhas em hardware e software.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Diagnóstico</span>
+          <span>Manutenção</span>
         </div>
+      </div>
 
+      <!-- ========== 3. SIMULAÇÃO & EDA ========== -->
 
-        <!-- Python -->
-        <div class="habilidade-card">
-            <i
-                class="devicon-python-plain colored"
-                aria-hidden="true"
-            ></i>
-
-            <span>Python</span>
-
-            <p>
-                Automação e desenvolvimento de scripts.
-            </p>
+      <!-- Proteus -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Proteus</span>
+        <p class="habilidade-card__descricao">
+          Simulação de circuitos eletrônicos e design de PCB.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Simulação</span>
+          <span>PCB</span>
         </div>
+      </div>
+
+      <!-- Quartus Prime -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Quartus Prime</span>
+        <p class="habilidade-card__descricao">
+          Projetos de lógica digital e síntese para FPGAs.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>VHDL</span>
+          <span>FPGA</span>
+        </div>
+      </div>
+
+      <!-- ========== 4. IDEs & PLATAFORMAS ========== -->
+
+      <!-- Arduino IDE -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-robot" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Arduino IDE</span>
+        <p class="habilidade-card__descricao">
+          Prototipagem rápida de sistemas embarcados.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Prototipagem</span>
+          <span>Sensores</span>
+        </div>
+      </div>
+
+      <!-- MPLABX -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">MPLABX</span>
+        <p class="habilidade-card__descricao">
+          Desenvolvimento e depuração para microcontroladores PIC.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>PIC</span>
+          <span>Debug</span>
+        </div>
+      </div>
+
+      <!-- ========== 5. GESTÃO & FERRAMENTAS ========== -->
+
+      <!-- Arkmeds -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Arkmeds</span>
+        <p class="habilidade-card__descricao">
+          Gestão de equipamentos e ordens de serviço em saúde.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Gestão</span>
+          <span>Biomédica</span>
+        </div>
+      </div>
+
+      <!-- Ordens de Serviço -->
+      <div class="habilidade-card">
+        <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Ordens de Serviço</span>
+        <p class="habilidade-card__descricao">
+          Criação, planejamento e documentação de manutenções.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Manutenção</span>
+          <span>Documentação</span>
+        </div>
+      </div>
+
+      <!-- Pacote Office -->
+      <div class="habilidade-card">
+        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Pacote Office</span>
+        <p class="habilidade-card__descricao">
+          Excel (planilhas), Word (relatórios) e PowerPoint (apresentações).
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Excel</span>
+          <span>Word</span>
+          <span>PowerPoint</span>
+        </div>
+      </div>
+
+      <!-- ========== 6. CONTROLE DE VERSÃO & COLABORAÇÃO ========== -->
+
+      <!-- Git -->
+      <div class="habilidade-card">
+        <i class="devicon-git-plain colored" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Git</span>
+        <p class="habilidade-card__descricao">
+          Controle de versão distribuído e gerenciamento de repositórios.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Versionamento</span>
+          <span>Branching</span>
+        </div>
+      </div>
+
+      <!-- GitHub -->
+      <div class="habilidade-card">
+        <i class="devicon-github-original colored" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">GitHub</span>
+        <p class="habilidade-card__descricao">
+          Hospedagem, colaboração e integração contínua de projetos.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Repositórios</span>
+          <span>CI/CD</span>
+        </div>
+      </div>
+
+      <!-- (Opcional) Python, se quiser manter
+      <div class="habilidade-card">
+        <i class="devicon-python-plain colored" aria-hidden="true"></i>
+        <span class="habilidade-card__titulo">Python</span>
+        <p class="habilidade-card__descricao">
+          Automação, análise de dados e scripts utilitários.
+        </p>
+        <div class="habilidade-card__tags">
+          <span>Automação</span>
+          <span>Dados</span>
+        </div>
+      </div>            -->
 
     </div>
 
-</div>
-
-
+  </div>
 </section>
